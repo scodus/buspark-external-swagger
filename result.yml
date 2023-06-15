@@ -249,6 +249,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: Bus Booking Id
           example: '544'
       responses:
         '200':

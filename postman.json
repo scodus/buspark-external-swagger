@@ -354,7 +354,8 @@
 							"variable": [
 								{
 									"key": "booking_id",
-									"value": "544"
+									"value": "544",
+									"description": "Bus Booking Id"
 								}
 							]
 						}

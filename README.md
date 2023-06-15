@@ -8,7 +8,7 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-# 4. View Api in : https://scodus.github.io/bus_reservation_swagger/
+# 4. View Api in : https://scodus.github.io/buspark-external-swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
 # bus_reservation_swagger
