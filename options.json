@@ -2,7 +2,7 @@
   "info": {
     "title": "Bus Reservation External",
     "version": "1.0",
-    "description": "Bus Reservation External",
+    "description": "Bus Reservation External | Generate Client Id and Secret from https://buspark.scodus.com/admin/site-setting/client-secret |  For Private routes : Authorization => Bearer <token>",
     "termsOfService": "#",
     "license": {
       "name": "MIT",

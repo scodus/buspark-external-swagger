@@ -327,7 +327,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"drop_location\": \"drop location here\",\n    \"rate\": 15,\n    \"qty\": 2,\n    \"discount\": \"\",\n    \"total\": 30,\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"\",\n    \"due\": \"\",\n    \"return\": \"\",\n    \"bus_details\": \"asdasd\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ],\n    \"payment_status\": \"pending\",\n    \"status\": \"OnBooking\",\n    \"t_price\": 30\n}",
+							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"drop_location\": \"drop location here\",\n    \"rate\": 15,\n    \"discount\": \"1\",\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"29\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"

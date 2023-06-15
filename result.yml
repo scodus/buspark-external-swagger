@@ -1,7 +1,10 @@
 openapi: 3.0.0
 info:
-  title: Bus Reservation
-  description: Bus Reservation
+  title: Bus Reservation External
+  description: >-
+    Bus Reservation External | Generate Client Id and Secret from
+    https://buspark.scodus.com/admin/site-setting/client-secret |  For Private
+    routes : Authorization => Bearer <token>
   version: '1.0'
   x-logo:
     url: https://github.com/joolfe/logoBanner.png
@@ -40,7 +43,7 @@ paths:
               type: object
               example:
                 grant_type: client_credentials
-                client_id: 3
+                client_id: 996a4b7e-1e60-4686-aac2-1a7eee51beee
                 client_secret: xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f
                 scope: '*'
       responses:
@@ -251,21 +254,13 @@ paths:
                 bus_facility_type_code: ac100
                 drop_location: drop location here
                 rate: 15
-                qty: 2
-                discount: ''
-                total: 30
+                discount: '1'
                 contact_name: Lal Bahadur
                 contact_phone: '98713264'
-                paid: ''
-                due: ''
-                return: ''
-                bus_details: asdasd
+                paid: '29'
                 seat_name:
                   - D
                   - GHA
-                payment_status: pending
-                status: OnBooking
-                t_price: 30
       security:
         - bearerAuth: []
       responses:
