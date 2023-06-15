@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "7f39668c-a0df-4cfb-85b2-d71cfee6d0c3",
+		"name": "bus api external",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15009917",
+		"_collection_link": "https://lunar-robot-597788.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&creator=15009917&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "bus schedule",
+			"item": [
+				{
+					"name": "bus schedule list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bus-schedule-list?route_code=ktmmnr100&association_code=m100&date=2080-02-32&bus_facility_type_code=ac100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus-schedule-list"
+							],
+							"query": [
+								{
+									"key": "route_code",
+									"value": "ktmmnr100",
+									"description": "Scheduled Bus Route Code"
+								},
+								{
+									"key": "association_code",
+									"value": "m100",
+									"description": "Scheduled Bus Association Code"
+								},
+								{
+									"key": "date",
+									"value": "2080-02-32",
+									"description": "Schedule Bus Date"
+								},
+								{
+									"key": "bus_facility_type_code",
+									"value": "ac100",
+									"description": "Scheduled Bus Facility Type Code"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus schedule bus detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus-schedule-bus-detail"
+							],
+							"query": [
+								{
+									"key": "route_code",
+									"value": "ktmmnr100",
+									"description": "Scheduled Bus Route Code"
+								},
+								{
+									"key": "association_code",
+									"value": "m100",
+									"description": "Scheduled Bus Association Code"
+								},
+								{
+									"key": "date",
+									"value": "2080-02-32",
+									"description": "Scheduled Bus Date"
+								},
+								{
+									"key": "time",
+									"value": "19:00",
+									"description": "Scheduled Bus Time"
+								},
+								{
+									"key": "bus_facility_type_code",
+									"value": "ac100",
+									"description": "Scheduled Bus Facility Type Code"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus schedule bus seats by bus schedule id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bus-schedule-bus-seats/:bus_schedule_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus-schedule-bus-seats",
+								":bus_schedule_id"
+							],
+							"variable": [
+								{
+									"key": "bus_schedule_id",
+									"value": "100",
+									"description": "Scheduled Bus Schedule Id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bus booking",
+			"item": [
+				{
+					"name": "pre booking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pre-booking?seat_name[]=D&seat_name[]=GHA&route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pre-booking"
+							],
+							"query": [
+								{
+									"key": "seat_name[]",
+									"value": "D",
+									"description": "Bus Seat Name"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "GHA",
+									"description": "Bus Seat Name"
+								},
+								{
+									"key": "route_code",
+									"value": "ktmmnr100",
+									"description": "Scheduled Bus Route Code"
+								},
+								{
+									"key": "association_code",
+									"value": "m100",
+									"description": "Scheduled Bus Association Code"
+								},
+								{
+									"key": "date",
+									"value": "2080-02-32",
+									"description": "Scheduled Bus Date"
+								},
+								{
+									"key": "time",
+									"value": "19:00",
+									"description": "Scheduled Bus Time"
+								},
+								{
+									"key": "bus_facility_type_code",
+									"value": "ac100",
+									"description": "Scheduled Bus Facility Type Code"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pre booking timeout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "seat_name[]",
+									"value": "D",
+									"description": "Bus Seat Name",
+									"type": "text"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "GHA",
+									"description": "Bus Seat Name",
+									"type": "text"
+								},
+								{
+									"key": "route_code",
+									"value": "ktmmnr100",
+									"description": "Scheduled Bus Route Code",
+									"type": "text"
+								},
+								{
+									"key": "association_code",
+									"value": "m100",
+									"description": "Scheduled Bus Association Code",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2080-02-32",
+									"description": "Scheduled Bus Date",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "19:00",
+									"description": "Scheduled Bus Time",
+									"type": "text"
+								},
+								{
+									"key": "bus_facility_type_code",
+									"value": "ac100",
+									"description": "Scheduled Bus Facility Type Code",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/pre-booking-timeout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pre-booking-timeout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"drop_location\": \"drop location here\",\n    \"rate\": 15,\n    \"qty\": 2,\n    \"discount\": \"\",\n    \"total\": 30,\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"\",\n    \"due\": \"\",\n    \"return\": \"\",\n    \"bus_details\": \"asdasd\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ],\n    \"payment_status\": \"pending\",\n    \"status\": \"OnBooking\",\n    \"t_price\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bus-booking/:booking_id/cancel",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus-booking",
+								":booking_id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "booking_id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schedule_id\": 51,\n    \"route_id\": 1,\n    \"drop_location\": \"drop location here\",\n    \"rate\": 2500,\n    \"qty\": 4,\n    \"discount\": \"\",\n    \"total\": 10000,\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"\",\n    \"due\": \"\",\n    \"return\": \"\",\n    \"bus_details\": \"asdasd\",\n    \"seat_id\": [\n        \"24\",\n        \"35\",\n        \"25\",\n        \"36\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bus-booking/:booking_id/cancel",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus-booking",
+								":booking_id",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "booking_id",
+									"value": "544"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/my-booking",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"my-booking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
