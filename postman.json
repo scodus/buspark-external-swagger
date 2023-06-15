@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": 3,\r\n    \"client_secret\": \"xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f\",\r\n    \"scope\": \"*\"\r\n}",
+							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"996a4b7e-1e60-4686-aac2-1a7eee51beee\",\r\n    \"client_secret\": \"xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f\",\r\n    \"scope\": \"*\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
