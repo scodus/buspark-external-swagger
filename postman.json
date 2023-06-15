@@ -8,6 +8,38 @@
 	},
 	"item": [
 		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "get token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": 3,\r\n    \"client_secret\": \"xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f\",\r\n    \"scope\": \"*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/oauth/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "bus schedule",
 			"item": [
 				{
@@ -16,11 +48,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/bus-schedule-list?route_code=ktmmnr100&association_code=m100&date=2080-02-32&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-list?route_code=ktmmnr100&association_code=m100&date=2080-02-32&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"bus-schedule-list"
 							],
 							"query": [
@@ -55,11 +88,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"bus-schedule-bus-detail"
 							],
 							"query": [
@@ -99,11 +133,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/bus-schedule-bus-seats/:bus_schedule_id",
+							"raw": "{{url}}/api-external/bus-schedule-bus-seats/:bus_schedule_id",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"bus-schedule-bus-seats",
 								":bus_schedule_id"
 							],
@@ -134,7 +169,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -151,11 +186,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/pre-booking?seat_name[]=D&seat_name[]=GHA&route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/pre-booking?seat_name[]=D&seat_name[]=GHA&route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"pre-booking"
 							],
 							"query": [
@@ -207,7 +243,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -262,11 +298,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/pre-booking-timeout",
+							"raw": "{{url}}/api-external/pre-booking-timeout",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"pre-booking-timeout"
 							]
 						}
@@ -281,7 +318,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -298,20 +335,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/bus-booking/:booking_id/cancel",
+							"raw": "{{url}}/api-external/bus-booking",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"bus-booking",
-								":booking_id",
-								"cancel"
-							],
-							"variable": [
-								{
-									"key": "booking_id",
-									"value": null
-								}
+								"api-external",
+								"bus-booking"
 							]
 						}
 					},
@@ -325,7 +355,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -342,11 +372,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/bus-booking/:booking_id/cancel",
+							"raw": "{{url}}/api-external/bus-booking/:booking_id/cancel",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"bus-booking",
 								":booking_id",
 								"cancel"
@@ -370,7 +401,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiMmFlY2JjNTEyMGM0YjVkYmYyNGVjNjJjNzYyOWQxMzNiMzE2ZmQzZDJkM2Y3YzlkMmMzMTljOTkxYWMxNzViY2EwNWU0YTIwMWMxZDA1MjgiLCJpYXQiOjE2ODY4MTk2NjAsIm5iZiI6MTY4NjgxOTY2MCwiZXhwIjoxNjg2OTA2MDYwLCJzdWIiOiIiLCJzY29wZXMiOlsiKiJdfQ.WEk4GeLKRtFR0v45wHSWqyJuXwIxMDAPFTIopK_4JD86bHI5m9jwJas9m-8cc6j5uKWD-a9Iac9HGqsMHI2b4jxkuOt7rsZ3Mgd8F-IebqqDnRjzR6PuZp6U2flV3St3A37BAXigQLo9JZv8Rgoct8bDn0-Vmg5j-p3kjCPH7aTw02qiX8ZLL_2HhKP61TnYYDOxZUqEpNGoMnXP-wBykt-VEHO7p05zLMEqzRWtjvkdElQhckM3Y8USCp0GSeSDn4xUoG75j7r8wS79jt_M731bO4Ocfoe0vTT8u3wvhE8uHXB88Wgimvn46-dVxuj4WhiMFNxGQOi-SBbPclDjFru9lCO0pNWEGMvTzWrMSE5C10QPXhFwXIuNb-qn9IFexNsA0XLIFevzHFPTwhQmG3YPv2YVis1L_LpUK1sV6V3z59dBWOLupkON5awvfLEoNFDgherxsDlaJQaP1uvp3GATAkRYR6Jyq2u0yz6KO3y2MB09nguh7IosdoD8WDTviGVhVvUYusbzMQkb0NJr9BPVAuSk58-QRT3pJO-c1Dz3MxLwRY8hv24Wnu6s85Zmz2Pmk_gmZLZLgnGeRtAZ0CxkddjP06usYh0ZmILFK0cPDHFWzHSUUZDkoywloXfRRPASf9GdbTae2r3sOjkI7eIKLFqIyN6TNxtEwxWQQ6E",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -378,11 +409,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/my-booking",
+							"raw": "{{url}}/api-external/my-booking",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
 								"my-booking"
 							]
 						}
