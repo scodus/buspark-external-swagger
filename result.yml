@@ -268,7 +268,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api-external/bus-booking/{booking_id}/cancel:
+  /api-external/bus-booking/cancel:
     post:
       tags:
         - bus booking
@@ -279,34 +279,16 @@ paths:
             schema:
               type: object
               example:
-                schedule_id: 51
-                route_id: 1
-                drop_location: drop location here
-                rate: 2500
-                qty: 4
-                discount: ''
-                total: 10000
-                contact_name: Lal Bahadur
-                contact_phone: '98713264'
-                paid: ''
-                due: ''
-                return: ''
-                bus_details: asdasd
-                seat_id:
-                  - '24'
-                  - '35'
-                  - '25'
-                  - '36'
+                route_code: ktmmnr100
+                association_code: m100
+                date: '2080-02-32'
+                time: '19:00'
+                bus_facility_type_code: ac100
+                seat_name:
+                  - D
+                  - GHA
       security:
         - bearerAuth: []
-      parameters:
-        - name: booking_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: Bus Booking Id
-          example: '544'
       responses:
         '200':
           description: Successful response

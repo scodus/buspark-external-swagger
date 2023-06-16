@@ -364,7 +364,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"schedule_id\": 51,\n    \"route_id\": 1,\n    \"drop_location\": \"drop location here\",\n    \"rate\": 2500,\n    \"qty\": 4,\n    \"discount\": \"\",\n    \"total\": 10000,\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"\",\n    \"due\": \"\",\n    \"return\": \"\",\n    \"bus_details\": \"asdasd\",\n    \"seat_id\": [\n        \"24\",\n        \"35\",\n        \"25\",\n        \"36\"\n    ]\n}",
+							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -372,22 +372,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api-external/bus-booking/:booking_id/cancel",
+							"raw": "{{url}}/api-external/bus-booking/cancel",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api-external",
 								"bus-booking",
-								":booking_id",
 								"cancel"
-							],
-							"variable": [
-								{
-									"key": "booking_id",
-									"value": "544",
-									"description": "Bus Booking Id"
-								}
 							]
 						}
 					},
