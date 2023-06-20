@@ -412,11 +412,13 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-03-01"
+									"value": "2080-03-01",
+									"description": "Departure Date From"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-03-31"
+									"value": "2080-03-31",
+									"description": "Departure Date To"
 								}
 							]
 						}

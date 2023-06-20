@@ -306,11 +306,13 @@ paths:
           in: query
           schema:
             type: string
+          description: Departure Date From
           example: '2080-03-01'
         - name: to_date
           in: query
           schema:
             type: string
+          description: Departure Date To
           example: '2080-03-31'
       responses:
         '200':
