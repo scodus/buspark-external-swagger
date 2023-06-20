@@ -301,6 +301,17 @@ paths:
       summary: my booking
       security:
         - bearerAuth: []
+      parameters:
+        - name: from_date
+          in: query
+          schema:
+            type: string
+          example: '2080-03-01'
+        - name: to_date
+          in: query
+          schema:
+            type: string
+          example: '2080-03-31'
       responses:
         '200':
           description: Successful response

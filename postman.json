@@ -401,13 +401,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking",
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-03-01&to_date=2080-03-31",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api-external",
 								"my-booking"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2080-03-01"
+								},
+								{
+									"key": "to_date",
+									"value": "2080-03-31"
+								}
 							]
 						}
 					},
