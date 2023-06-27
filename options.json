@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "https://buspark.scodus.com",
+      "url": "http://ticketing.madani.com.np",
       "description": "Base URL"
     }
   ]
