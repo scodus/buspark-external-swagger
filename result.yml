@@ -3,8 +3,8 @@ info:
   title: Bus Reservation External
   description: >-
     Bus Reservation External | Generate Client Id and Secret from
-    https://buspark.scodus.com/admin/site-setting/client-secret |  For Private
-    routes : Authorization => Bearer <token>
+    http://ticketing.madani.com.np/admin/site-setting/client-secret |  For
+    Private routes : Authorization => Bearer <token>
   version: '1.0'
   x-logo:
     url: https://github.com/joolfe/logoBanner.png
