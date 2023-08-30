@@ -31,11 +31,11 @@ tags:
   - name: bus schedule
   - name: bus booking
 paths:
-  /oauth/token:
+  /api-external/token-generate:
     post:
       tags:
         - Authentication
-      summary: get token
+      summary: token generate new method
       requestBody:
         content:
           application/json:
@@ -43,8 +43,28 @@ paths:
               type: object
               example:
                 grant_type: client_credentials
-                client_id: 996a4b7e-1e60-4686-aac2-1a7eee51beee
-                client_secret: xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f
+                client_id: 399ede22-e442-43ac-90b8-b6cd69962d75
+                client_secret: 4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3
+                scope: '*'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api-external/oauth/token:
+    post:
+      tags:
+        - Authentication
+      summary: get token old method
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                grant_type: client_credentials
+                client_id: 399ede22-e442-43ac-90b8-b6cd69962d75
+                client_secret: 4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3
                 scope: '*'
       responses:
         '200':
@@ -55,32 +75,28 @@ paths:
     get:
       tags:
         - bus schedule
-      summary: bus schedule list
+      summary: bus schedule list madani request
       parameters:
         - name: route_code
           in: query
           schema:
-            type: string
-          description: Scheduled Bus Route Code
-          example: ktmmnr100
+            type: integer
+          example: '1'
         - name: association_code
           in: query
           schema:
-            type: string
-          description: Scheduled Bus Association Code
-          example: m100
+            type: integer
+          example: '1'
         - name: date
           in: query
           schema:
             type: string
-          description: Schedule Bus Date
-          example: '2080-02-32'
+          example: '2080-03-12'
         - name: bus_facility_type_code
           in: query
           schema:
-            type: string
-          description: Scheduled Bus Facility Type Code
-          example: ac100
+            type: integer
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -109,19 +125,19 @@ paths:
           schema:
             type: string
           description: Scheduled Bus Date
-          example: '2080-02-32'
-        - name: time
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Time
-          example: '19:00'
+          example: '2080-05-31'
         - name: bus_facility_type_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Facility Type Code
+          description: Scheduled Bus Time
           example: ac100
+        - name: time
+          in: query
+          schema:
+            type: string
+          description: Scheduled Bus Facility Type Code
+          example: '20:00'
       responses:
         '200':
           description: Successful response
@@ -139,7 +155,7 @@ paths:
             type: integer
           required: true
           description: Scheduled Bus Schedule Id
-          example: '100'
+          example: '127'
       responses:
         '200':
           description: Successful response
@@ -153,42 +169,42 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - name: seat_name[]
-          in: query
-          schema:
-            type: string
-          description: Bus Seat Name
-          example: D
         - name: route_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Route Code
+          description: Bus Seat Name
           example: ktmmnr100
         - name: association_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Association Code
+          description: Bus Seat Name
           example: m100
         - name: date
           in: query
           schema:
             type: string
-          description: Scheduled Bus Date
-          example: '2080-02-32'
-        - name: time
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Time
-          example: '19:00'
+          description: Scheduled Bus Route Code
+          example: '2080-05-31'
         - name: bus_facility_type_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Facility Type Code
+          description: Scheduled Bus Association Code
           example: ac100
+        - name: time
+          in: query
+          schema:
+            type: string
+          description: Scheduled Bus Date
+          example: '20:00'
+        - name: seat_name[]
+          in: query
+          schema:
+            type: string
+          description: Scheduled Bus Time
+          example: B2
       responses:
         '200':
           description: Successful response
@@ -205,30 +221,29 @@ paths:
             schema:
               type: object
               properties:
-                seat_name[]:
-                  type: string
-                  description: Bus Seat Name
-                  example: GHA
                 route_code:
                   type: string
-                  description: Scheduled Bus Route Code
+                  description: Bus Seat Name
                   example: ktmmnr100
                 association_code:
                   type: string
-                  description: Scheduled Bus Association Code
+                  description: Bus Seat Name
                   example: m100
                 date:
                   type: string
-                  description: Scheduled Bus Date
-                  example: '2080-02-32'
-                time:
-                  type: string
-                  description: Scheduled Bus Time
-                  example: '19:00'
+                  description: Scheduled Bus Route Code
+                  example: '2080-05-31'
                 bus_facility_type_code:
                   type: string
-                  description: Scheduled Bus Facility Type Code
+                  description: Scheduled Bus Association Code
                   example: ac100
+                time:
+                  type: string
+                  description: Scheduled Bus Date
+                  example: '20:00'
+                seat_name[]:
+                  type: string
+                  example: KA
       security:
         - bearerAuth: []
       responses:
@@ -249,18 +264,16 @@ paths:
               example:
                 route_code: ktmmnr100
                 association_code: m100
-                date: '2080-02-32'
-                time: '19:00'
+                date: '2080-05-31'
+                time: '20:00'
                 bus_facility_type_code: ac100
-                drop_location: drop location here
+                drop_location: drop location here000
                 rate: 15
-                discount: '1'
-                contact_name: Lal Bahadur
-                contact_phone: '98713264'
-                paid: '29'
+                discount: 6
+                contact_name: Bikash SinghTEST
+                contact_phone: '98713264000'
                 seat_name:
-                  - D
-                  - GHA
+                  - B3
       security:
         - bearerAuth: []
       responses:
@@ -281,12 +294,12 @@ paths:
               example:
                 route_code: ktmmnr100
                 association_code: m100
-                date: '2080-02-32'
-                time: '19:00'
+                date: '2080-04-32'
+                time: '20:00'
                 bus_facility_type_code: ac100
                 seat_name:
-                  - D
-                  - GHA
+                  - x
+                  - KA
       security:
         - bearerAuth: []
       responses:
@@ -298,7 +311,7 @@ paths:
     get:
       tags:
         - bus booking
-      summary: my booking
+      summary: my booking history
       security:
         - bearerAuth: []
       parameters:
@@ -307,13 +320,13 @@ paths:
           schema:
             type: string
           description: Departure Date From
-          example: '2080-03-01'
+          example: '2080-05-31'
         - name: to_date
           in: query
           schema:
             type: string
           description: Departure Date To
-          example: '2080-03-31'
+          example: '2080-05-31'
       responses:
         '200':
           description: Successful response

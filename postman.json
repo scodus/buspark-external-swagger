@@ -1,23 +1,45 @@
 {
 	"info": {
 		"_postman_id": "7f39668c-a0df-4cfb-85b2-d71cfee6d0c3",
-		"name": "bus api external",
+		"name": "buspark external apis",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15009917",
-		"_collection_link": "https://lunar-robot-597788.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&creator=15009917&source=collection_link"
+		"_collection_link": "https://lunar-robot-597788.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&source=collection_link&creator=15009917"
 	},
 	"item": [
 		{
 			"name": "Authentication",
 			"item": [
 				{
-					"name": "get token",
+					"name": "token generate new method",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()\r",
+									"pm.environment.set('access_token', response.access_token)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"996a4b7e-1e60-4686-aac2-1a7eee51beee\",\r\n    \"client_secret\": \"xOTYScPsWL8EnfHgkIyqmHpM9lfywn1IfrKyal9f\",\r\n    \"scope\": \"*\"\r\n}",
+							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"399ede22-e442-43ac-90b8-b6cd69962d75\",\r\n    \"client_secret\": \"4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3\",\r\n    \"scope\": \"*\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -25,11 +47,61 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/oauth/token",
+							"raw": "{{url}}/api-external/token-generate",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"api-external",
+								"token-generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get token old method",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json()\r",
+									"pm.environment.set('access_token', response.access_token)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"399ede22-e442-43ac-90b8-b6cd69962d75\",\r\n    \"client_secret\": \"4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3\",\r\n    \"scope\": \"*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api-external/oauth/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
 								"oauth",
 								"token"
 							]
@@ -48,7 +120,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-list?route_code=ktmmnr100&association_code=m100&date=2080-02-32&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-list?route_code=ktmmnr100&association_code=m100&date=2080-05-31&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
@@ -69,7 +141,7 @@
 								},
 								{
 									"key": "date",
-									"value": "2080-02-32",
+									"value": "2080-05-31",
 									"description": "Schedule Bus Date"
 								},
 								{
@@ -88,7 +160,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-05-31&bus_facility_type_code=ac100&time=20:00",
 							"host": [
 								"{{url}}"
 							],
@@ -109,17 +181,17 @@
 								},
 								{
 									"key": "date",
-									"value": "2080-02-32",
+									"value": "2080-05-31",
 									"description": "Scheduled Bus Date"
-								},
-								{
-									"key": "time",
-									"value": "19:00",
-									"description": "Scheduled Bus Time"
 								},
 								{
 									"key": "bus_facility_type_code",
 									"value": "ac100",
+									"description": "Scheduled Bus Time"
+								},
+								{
+									"key": "time",
+									"value": "20:00",
 									"description": "Scheduled Bus Facility Type Code"
 								}
 							]
@@ -145,8 +217,48 @@
 							"variable": [
 								{
 									"key": "bus_schedule_id",
-									"value": "100",
+									"value": "127",
 									"description": "Scheduled Bus Schedule Id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus schedule list madani request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ticketing.madani.com.np/api-external/bus-schedule-list?route_code=1&association_code=1&date=2080-03-12&bus_facility_type_code=1",
+							"protocol": "http",
+							"host": [
+								"ticketing",
+								"madani",
+								"com",
+								"np"
+							],
+							"path": [
+								"api-external",
+								"bus-schedule-list"
+							],
+							"query": [
+								{
+									"key": "route_code",
+									"value": "1"
+								},
+								{
+									"key": "association_code",
+									"value": "1"
+								},
+								{
+									"key": "date",
+									"value": "2080-03-12"
+								},
+								{
+									"key": "bus_facility_type_code",
+									"value": "1"
 								}
 							]
 						}
@@ -175,7 +287,14 @@
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -186,7 +305,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api-external/pre-booking?seat_name[]=D&seat_name[]=GHA&route_code=ktmmnr100&association_code=m100&date=2080-02-32&time=19:00&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/pre-booking?route_code=ktmmnr100&association_code=m100&date=2080-05-31&bus_facility_type_code=ac100&time=20:00&seat_name[]=B2",
 							"host": [
 								"{{url}}"
 							],
@@ -196,39 +315,39 @@
 							],
 							"query": [
 								{
-									"key": "seat_name[]",
-									"value": "D",
-									"description": "Bus Seat Name"
-								},
-								{
-									"key": "seat_name[]",
-									"value": "GHA",
-									"description": "Bus Seat Name"
-								},
-								{
 									"key": "route_code",
 									"value": "ktmmnr100",
-									"description": "Scheduled Bus Route Code"
+									"description": "Bus Seat Name"
 								},
 								{
 									"key": "association_code",
 									"value": "m100",
-									"description": "Scheduled Bus Association Code"
+									"description": "Bus Seat Name"
 								},
 								{
 									"key": "date",
-									"value": "2080-02-32",
-									"description": "Scheduled Bus Date"
-								},
-								{
-									"key": "time",
-									"value": "19:00",
-									"description": "Scheduled Bus Time"
+									"value": "2080-05-31",
+									"description": "Scheduled Bus Route Code"
 								},
 								{
 									"key": "bus_facility_type_code",
 									"value": "ac100",
-									"description": "Scheduled Bus Facility Type Code"
+									"description": "Scheduled Bus Association Code"
+								},
+								{
+									"key": "time",
+									"value": "20:00",
+									"description": "Scheduled Bus Date"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "B2",
+									"description": "Scheduled Bus Time"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "GHA",
+									"disabled": true
 								}
 							]
 						}
@@ -254,46 +373,46 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "seat_name[]",
-									"value": "D",
-									"description": "Bus Seat Name",
-									"type": "text"
-								},
-								{
-									"key": "seat_name[]",
-									"value": "GHA",
-									"description": "Bus Seat Name",
-									"type": "text"
-								},
-								{
 									"key": "route_code",
 									"value": "ktmmnr100",
-									"description": "Scheduled Bus Route Code",
+									"description": "Bus Seat Name",
 									"type": "text"
 								},
 								{
 									"key": "association_code",
 									"value": "m100",
-									"description": "Scheduled Bus Association Code",
+									"description": "Bus Seat Name",
 									"type": "text"
 								},
 								{
 									"key": "date",
-									"value": "2080-02-32",
-									"description": "Scheduled Bus Date",
-									"type": "text"
-								},
-								{
-									"key": "time",
-									"value": "19:00",
-									"description": "Scheduled Bus Time",
+									"value": "2080-05-31",
+									"description": "Scheduled Bus Route Code",
 									"type": "text"
 								},
 								{
 									"key": "bus_facility_type_code",
 									"value": "ac100",
-									"description": "Scheduled Bus Facility Type Code",
+									"description": "Scheduled Bus Association Code",
 									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "20:00",
+									"description": "Scheduled Bus Date",
+									"type": "text"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "B2",
+									"description": "Scheduled Bus Time",
+									"type": "text"
+								},
+								{
+									"key": "seat_name[]",
+									"value": "KA",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -327,7 +446,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"drop_location\": \"drop location here\",\n    \"rate\": 15,\n    \"discount\": \"1\",\n    \"contact_name\": \"Lal Bahadur\",\n    \"contact_phone\": \"98713264\",\n    \"paid\": \"29\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-05-31\",\n    \"time\": \"20:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 15,\n    \"discount\": 6,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    // \"paid\": \"12\",\n    \"seat_name\": [\n        \"B3\"\n        // ,\n        // \"KA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -364,7 +483,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-02-32\",\n    \"time\": \"19:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"seat_name\": [\n        \"D\",\n        \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"route_code\": \"ktmmnr100\",\n    \"association_code\": \"m100\",\n    \"date\": \"2080-04-32\",\n    \"time\": \"20:00\",\n    \"bus_facility_type_code\": \"ac100\",\n    \"seat_name\": [\n        \"x\",\n        \"KA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -386,7 +505,7 @@
 					"response": []
 				},
 				{
-					"name": "my booking",
+					"name": "my booking history",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -401,7 +520,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-03-01&to_date=2080-03-31",
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-05-31&to_date=2080-05-31",
 							"host": [
 								"{{url}}"
 							],
@@ -412,12 +531,12 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-03-01",
+									"value": "2080-05-31",
 									"description": "Departure Date From"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-03-31",
+									"value": "2080-05-31",
 									"description": "Departure Date To"
 								}
 							]
