@@ -26,307 +26,4505 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 tags:
-  - name: Authentication
-  - name: bus schedule
-  - name: bus booking
+  - name: admin
+  - name: admin > album
+  - name: admin > gallery
+  - name: admin > user
+  - name: admin > amenity
+  - name: admin > room
+  - name: admin > room type
+  - name: admin > floor plan
+  - name: admin > department
+  - name: admin > position
+  - name: admin > employee
+  - name: admin > cleaning-check-list
+  - name: admin > cleaning-assign
+  - name: admin > roster-task
+  - name: admin > roster-time
+  - name: admin > site  setting
+  - name: admin > banner
+  - name: admin > offer
+  - name: admin > mission
+  - name: admin > Manual Enquiry
+  - name: admin > Contact Enquiry
+  - name: admin > Package Enquiry
+  - name: admin > roster-task-time-employee, roster-floor-plan-date
+  - name: admin > Booking
+  - name: admin > payment
+  - name: admin > dashboard
+  - name: front-apis
+  - name: front-apis > home
+  - name: front-apis > booking
+  - name: front-apis > room type
+  - name: front-apis > album
+  - name: front-apis > gallery
+  - name: front-apis > dining
 paths:
-  /api-external/token-generate:
+  /admin/album:
     post:
       tags:
-        - Authentication
-      summary: token generate new method
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                grant_type: client_credentials
-                client_id: 399ede22-e442-43ac-90b8-b6cd69962d75
-                client_secret: 4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3
-                scope: '*'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/oauth/token:
-    post:
-      tags:
-        - Authentication
-      summary: get token old method
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                grant_type: client_credentials
-                client_id: 399ede22-e442-43ac-90b8-b6cd69962d75
-                client_secret: 4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3
-                scope: '*'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-schedule-list:
-    get:
-      tags:
-        - bus schedule
-      summary: bus schedule list madani request
-      parameters:
-        - name: route_code
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: association_code
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: date
-          in: query
-          schema:
-            type: string
-          example: '2080-03-12'
-        - name: bus_facility_type_code
-          in: query
-          schema:
-            type: integer
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-schedule-bus-detail:
-    get:
-      tags:
-        - bus schedule
-      summary: bus schedule bus detail
-      parameters:
-        - name: route_code
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Route Code
-          example: ktmmnr100
-        - name: association_code
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Association Code
-          example: m100
-        - name: date
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Date
-          example: '2080-05-31'
-        - name: bus_facility_type_code
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Time
-          example: ac100
-        - name: time
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Facility Type Code
-          example: '20:00'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-schedule-bus-seats/{bus_schedule_id}:
-    get:
-      tags:
-        - bus schedule
-      summary: bus schedule bus seats by bus schedule id
-      parameters:
-        - name: bus_schedule_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: Scheduled Bus Schedule Id
-          example: '127'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/pre-booking:
-    get:
-      tags:
-        - bus booking
-      summary: pre booking
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: route_code
-          in: query
-          schema:
-            type: string
-          description: Bus Seat Name
-          example: ktmmnr100
-        - name: association_code
-          in: query
-          schema:
-            type: string
-          description: Bus Seat Name
-          example: m100
-        - name: date
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Route Code
-          example: '2080-05-31'
-        - name: bus_facility_type_code
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Association Code
-          example: ac100
-        - name: time
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Date
-          example: '20:00'
-        - name: seat_name[]
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Time
-          example: B2
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/pre-booking-timeout:
-    post:
-      tags:
-        - bus booking
-      summary: pre booking timeout
+        - admin > album
+      summary: store
       requestBody:
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                route_code:
+                title:
                   type: string
-                  description: Bus Seat Name
-                  example: ktmmnr100
-                association_code:
+                  example: title
+                feature_image:
                   type: string
-                  description: Bus Seat Name
-                  example: m100
-                date:
+                  format: binary
+                status:
                   type: string
-                  description: Scheduled Bus Route Code
-                  example: '2080-05-31'
-                bus_facility_type_code:
-                  type: string
-                  description: Scheduled Bus Association Code
-                  example: ac100
-                time:
-                  type: string
-                  description: Scheduled Bus Date
-                  example: '20:00'
-                seat_name[]:
-                  type: string
-                  example: KA
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-booking:
-    post:
-      tags:
-        - bus booking
-      summary: store booking
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                route_code: ktmmnr100
-                association_code: m100
-                date: '2080-05-31'
-                time: '20:00'
-                bus_facility_type_code: ac100
-                drop_location: drop location here000
-                rate: 15
-                discount: 6
-                contact_name: Bikash SinghTEST
-                contact_phone: '98713264000'
-                seat_name:
-                  - B3
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-booking/cancel:
-    post:
-      tags:
-        - bus booking
-      summary: cancel booking
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                route_code: ktmmnr100
-                association_code: m100
-                date: '2080-04-32'
-                time: '20:00'
-                bus_facility_type_code: ac100
-                seat_name:
-                  - x
-                  - KA
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/my-booking:
-    get:
-      tags:
-        - bus booking
-      summary: my booking history
+                  example: active
       security:
         - bearerAuth: []
       parameters:
-        - name: from_date
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > album
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
           in: query
           schema:
             type: string
-          description: Departure Date From
-          example: '2080-05-31'
-        - name: to_date
+        - name: limit
           in: query
           schema:
             type: string
-          description: Departure Date To
-          example: '2080-05-31'
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/album/{id}:
+    post:
+      tags:
+        - admin > album
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title edit
+                feature_image:
+                  type: string
+                  format: binary
+                status:
+                  type: string
+                  example: active
+                _method:
+                  type: string
+                  example: patch
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > album
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '11'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > album
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}/store-multiple:
+    post:
+      tags:
+        - admin > gallery
+      summary: store multiple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                data[0][title]:
+                  type: string
+                  example: title1
+                data[0][image]:
+                  type: string
+                  format: binary
+                data[1][title]:
+                  type: string
+                data[1][image]:
+                  type: string
+                  format: binary
+                image[0]:
+                  type: string
+                  format: binary
+                image[1]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '6'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}:
+    post:
+      tags:
+        - admin > gallery
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > gallery
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}/{id}:
+    post:
+      tags:
+        - admin > gallery
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title edit
+                image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: patch
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > gallery
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '6'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '14'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > gallery
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/register:
+    post:
+      tags:
+        - admin > user
+      summary: register
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: tomnjerry
+                email:
+                  type: string
+                  example: tomnjerry8963@gmail.com
+                password:
+                  type: string
+                  example: P@ssw0rd
+                password_confirmation:
+                  type: string
+                  example: P@ssw0rd
+                terms_and_conditions:
+                  type: integer
+                  example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/login:
+    post:
+      tags:
+        - admin > user
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: admin@admin.com
+                password:
+                  type: string
+                  example: P@ssw0rd
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user-detail:
+    get:
+      tags:
+        - admin > user
+      summary: user detail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/logout:
+    post:
+      tags:
+        - admin > user
+      summary: logout
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/refresh-token:
+    post:
+      tags:
+        - admin > user
+      summary: refresh token
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                refresh_token:
+                  type: string
+                  example: '{{refresh_token}}'
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/amenity:
+    post:
+      tags:
+        - admin > amenity
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: amenity title2
+                description:
+                  type: string
+                  example: amenity description
+                status:
+                  type: string
+                  example: active
+                icon:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > amenity
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/amenity/{id}:
+    post:
+      tags:
+        - admin > amenity
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: amenity title 2 edit
+                description:
+                  type: string
+                  example: amenity description 2 edits
+                icon:
+                  type: string
+                  format: binary
+                status:
+                  type: string
+                  example: active
+                _method:
+                  type: string
+                  example: patch
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > amenity
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > amenity
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/room:
+    post:
+      tags:
+        - admin > room
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title 100
+                description:
+                  type: string
+                  example: des 1
+                status:
+                  type: string
+                  example: active
+                room_type_id:
+                  type: string
+                floor_plan_id:
+                  type: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room
+      summary: list where room_cleaning_status is dirty
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: room_condition
+          in: query
+          schema:
+            type: string
+          example: dirty
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/room/store-multiple:
+    post:
+      tags:
+        - admin > room
+      summary: store Multiple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title:
+                  - 10s
+                  - 2s
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/room/{id}:
+    post:
+      tags:
+        - admin > room
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: title 2 edit
+                description:
+                  type: string
+                  example: des 2 edit
+                status:
+                  type: string
+                  example: inactive
+                room_type_id:
+                  type: integer
+                  example: '31'
+                floor_type_id:
+                  type: string
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '22'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > room
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '22'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '22'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/room-type:
+    post:
+      tags:
+        - admin > room type
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title 200
+                description:
+                  type: integer
+                  example: '2'
+                max_occupancy:
+                  type: integer
+                  example: '06'
+                no_of_adult:
+                  type: integer
+                  example: '04'
+                no_of_child:
+                  type: integer
+                  example: '02'
+                base_price:
+                  type: integer
+                  example: '100'
+                offer_price:
+                  type: integer
+                  example: '25'
+                discount_percent:
+                  type: integer
+                  example: '10'
+                tax_status:
+                  type: integer
+                  example: '0'
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+                inclusions[0]:
+                  type: string
+                  example: inclusion1
+                inclusions[1]:
+                  type: string
+                  example: inclusion2
+                inclusions[2]:
+                  type: string
+                  example: inclusion3
+                additional_price:
+                  type: integer
+                  example: '0'
+                hotel_id:
+                  type: string
+                status:
+                  type: string
+                  example: active
+                discount_type:
+                  type: string
+                  example: rs
+                discount:
+                  type: integer
+                  example: '20'
+                room_id[]:
+                  type: integer
+                  example: '11'
+                amenity_id[]:
+                  type: integer
+                  example: '2'
+                images[]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room type
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/room-type/{id}:
+    post:
+      tags:
+        - admin > room type
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: PATCH
+                title:
+                  type: string
+                  example: title 2
+                description:
+                  type: integer
+                  example: '2'
+                max_occupancy:
+                  type: integer
+                  example: '06'
+                no_of_adult:
+                  type: integer
+                  example: '04'
+                no_of_child:
+                  type: integer
+                  example: '02'
+                base_price:
+                  type: integer
+                  example: '100'
+                tax_status:
+                  type: integer
+                  example: '0'
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+                inclusions[0]:
+                  type: string
+                  example: inclusion1
+                inclusions[1]:
+                  type: string
+                  example: inclusion2
+                inclusions[2]:
+                  type: string
+                  example: inclusion3
+                additional_price:
+                  type: integer
+                  example: '0'
+                hotel_id:
+                  type: string
+                status:
+                  type: string
+                  example: active
+                discount_type:
+                  type: string
+                  example: rs
+                discount:
+                  type: integer
+                  example: '20'
+                room_id[]:
+                  type: integer
+                  example: '15'
+                amenity_id[]:
+                  type: integer
+                  example: '2'
+                images[]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '9'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > room type
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '31'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > room type
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '9'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/floor-plan:
+    post:
+      tags:
+        - admin > floor plan
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: floor 20
+                description:
+                  type: integer
+                  example: '2'
+                status:
+                  type: string
+                  example: active
+                room_id[]:
+                  type: integer
+                  example: '22'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > floor plan
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/floor-plan/{id}:
+    post:
+      tags:
+        - admin > floor plan
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title 2
+                description:
+                  type: string
+                status:
+                  type: string
+                  example: active
+                _method:
+                  type: string
+                  example: PATCH
+                room_id[]:
+                  type: integer
+                  example: '16'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '7'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > floor plan
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '11'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > floor plan
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '4'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/department:
+    post:
+      tags:
+        - admin > department
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title 1
+                description:
+                  type: string
+                  example: des 1
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > department
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/department/{id}:
+    post:
+      tags:
+        - admin > department
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: title 2 edit
+                description:
+                  type: string
+                  example: des 2 edit
+                status:
+                  type: string
+                  example: inactive
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > department
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > department
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/position:
+    post:
+      tags:
+        - admin > position
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: ceo
+                description:
+                  type: string
+                  example: des 2 edit
+                status:
+                  type: string
+                  example: inactive
+                is_housekeeping:
+                  type: integer
+                  example: '0'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > position
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/position/{id}:
+    post:
+      tags:
+        - admin > position
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: cleaning
+                description:
+                  type: string
+                  example: des 2 edit
+                status:
+                  type: string
+                  example: active
+                is_housekeeping:
+                  type: integer
+                  example: '1'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > position
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > position
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/employee:
+    post:
+      tags:
+        - admin > employee
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Mr X4
+                description:
+                  type: string
+                  example: des 2
+                status:
+                  type: string
+                  example: active
+                position_id:
+                  type: integer
+                  example: '2'
+                short_name:
+                  type: string
+                  example: x4
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > employee
+      summary: list position->is_housekeeping true
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: is_housekeeping
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/employee/{id}:
+    post:
+      tags:
+        - admin > employee
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                name:
+                  type: string
+                  example: Mr X3s
+                description:
+                  type: string
+                  example: des 2 edit
+                status:
+                  type: string
+                  example: active
+                position_id:
+                  type: integer
+                  example: '2'
+                short_name:
+                  type: string
+                  example: x3s
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > employee
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > employee
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-check-list:
+    post:
+      tags:
+        - admin > cleaning-check-list
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: clean room
+                type:
+                  type: string
+                  example: housekeeping
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > cleaning-check-list
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-check-list/{id}:
+    post:
+      tags:
+        - admin > cleaning-check-list
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                name:
+                  type: string
+                  example: clean room update
+                type:
+                  type: string
+                  example: housekeeping
+                status:
+                  type: string
+                  example: inactive
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > cleaning-check-list
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > cleaning-check-list
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-assign:
+    post:
+      tags:
+        - admin > cleaning-assign
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                room_id[]:
+                  type: integer
+                  example: '14'
+                employee_id:
+                  type: integer
+                  example: '2'
+                status:
+                  type: string
+                  example: ongoing
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > cleaning-assign
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-assign/{id}/update-employee:
+    post:
+      tags:
+        - admin > cleaning-assign
+      summary: update employee
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                employee_id:
+                  type: integer
+                  example: '2'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-assign/{id}/cancel:
+    post:
+      tags:
+        - admin > cleaning-assign
+      summary: cleaning assign cancel
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-assign/{id}/cleaning-check-list:
+    post:
+      tags:
+        - admin > cleaning-assign
+      summary: cleaning assign store checklist
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                cleaning_check_list_id[]:
+                  type: integer
+                  example: '2'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/cleaning-assign/{id}:
+    delete:
+      tags:
+        - admin > cleaning-assign
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > cleaning-assign
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task:
+    post:
+      tags:
+        - admin > roster-task
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: kaam 3
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-task
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task/{id}:
+    post:
+      tags:
+        - admin > roster-task
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: tk 1
+                status:
+                  type: string
+                  example: inactive
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > roster-task
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-task
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-time:
+    post:
+      tags:
+        - admin > roster-time
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: '13:00:00'
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-time
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-time/{id}:
+    post:
+      tags:
+        - admin > roster-time
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: integer
+                  example: '7'
+                status:
+                  type: string
+                  example: inactive
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > roster-time
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-time
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting:
+    get:
+      tags:
+        - admin > site  setting
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > site  setting
+      summary: site setting
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                site_title:
+                  type: string
+                  example: offer 1
+                primary_phone:
+                  type: string
+                  example: asdfghj gfhj
+                secondary_phone:
+                  type: integer
+                  example: '1232345'
+                address:
+                  type: string
+                  example: sd f sfd234
+                primary_email:
+                  type: string
+                  example: b@s.com
+                secondary_email:
+                  type: string
+                  example: b1@s.com
+                map_location:
+                  type: string
+                  example: ewrewrwe rew rwe rwe
+                registration_number:
+                  type: string
+                  example: 12221-12
+                facebook_url:
+                  type: string
+                  example: https://www.google.com/
+                twitter_url:
+                  type: string
+                  example: https://www.google.com/
+                linkedin_url:
+                  type: string
+                  example: https://www.google.com/
+                youtube_url:
+                  type: string
+                  example: https://www.google.com/
+                instagram_url:
+                  type: string
+                  example: https://www.google.com/
+                logo:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting/{key}:
+    get:
+      tags:
+        - admin > site  setting
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: key
+          in: path
+          schema:
+            type: string
+          required: true
+          example: logo
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-welcome-message-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: welcome message section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                welcome_message_headperson_name:
+                  type: string
+                  example: offer 1
+                welcome_message_headperson_designation:
+                  type: string
+                  example: post
+                welcome_message_description:
+                  type: string
+                  example: asdfghj gfhj
+                welcome_message_headperson_signature:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: welcome message section Copy
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-deals-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: deals section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                deals_name:
+                  type: string
+                  example: offer 1 up
+                deals_description:
+                  type: string
+                  example: asdfghj gfhj
+                deals_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: deals section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-rooms-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: rooms section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                rooms_text:
+                  type: string
+                  example: offer 1 up
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: rooms section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-special-offer-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: special offer section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                special_offer_title:
+                  type: string
+                  example: offer 1 up
+                special_offer_description:
+                  type: string
+                  example: post
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: special offers section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-about-banner-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: about banner section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                about_banner_title:
+                  type: string
+                  example: offer 1 up
+                about_banner_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: about banner section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-message-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: message section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                message_overview:
+                  type: string
+                  example: post
+                message_why_choose_us:
+                  type: string
+                  example: offer 1 up
+                message_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: message section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-dining-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: dining section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                dining_name:
+                  type: string
+                  example: offer 1 up
+                dining_description:
+                  type: string
+                  example: asdfghj gfhj
+                dining_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: dining  section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-other-banner-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: other banner section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  description: gallery
+                  example: patch
+                gallery_banner_title:
+                  type: string
+                  example: Images Gallery
+                gallery_banner_image:
+                  type: string
+                  format: binary
+                contact_banner_title:
+                  type: string
+                  example: Contact
+                contact_banner_image:
+                  type: string
+                  format: binary
+                dining_banner_title:
+                  type: string
+                  example: Restaurant
+                dining_banner_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: other banner section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-list:
+    get:
+      tags:
+        - admin > site  setting
+      summary: site setting list
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/banner:
+    post:
+      tags:
+        - admin > banner
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  example: banner1
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > banner
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/banner/{id}:
+    post:
+      tags:
+        - admin > banner
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                text:
+                  type: string
+                  example: banner 1 up
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > banner
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > banner
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '4'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/offer:
+    post:
+      tags:
+        - admin > offer
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: offer1
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > offer
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/offer/{id}:
+    post:
+      tags:
+        - admin > offer
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: offer 1 up
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > offer
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > offer
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/mission:
+    post:
+      tags:
+        - admin > mission
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: offer1
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > mission
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/mission/{id}:
+    post:
+      tags:
+        - admin > mission
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: offer 1 up
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > mission
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > mission
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/manual-enquiry:
+    post:
+      tags:
+        - admin > Manual Enquiry
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                subject:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > Manual Enquiry
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/manual-enquiry/{id}:
+    post:
+      tags:
+        - admin > Manual Enquiry
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                subject:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > Manual Enquiry
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > Manual Enquiry
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/contact-enquiry/{id}:
+    delete:
+      tags:
+        - admin > Contact Enquiry
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > Contact Enquiry
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/contact-enquiry:
+    get:
+      tags:
+        - admin > Contact Enquiry
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/package-enquiry/{id}:
+    delete:
+      tags:
+        - admin > Package Enquiry
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > Package Enquiry
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > Package Enquiry
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                package:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/package-enquiry:
+    get:
+      tags:
+        - admin > Package Enquiry
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > Package Enquiry
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                package:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task-time-employee:
+    post:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: store
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                floor_plan_id: 1
+                date: '2023-08-23'
+                roster_task_time_employee:
+                  - roster_task_id: 1
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 1
+                      - roster_time_id: 2
+                        employee_id: 1
+                  - roster_task_id: 2
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 1
+                      - roster_time_id: 2
+                        employee_id: 2
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task-time-employee/with/floor-plan:
+    get:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: get date ->  roster task  time employee with floor plan list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: date
+          in: query
+          schema:
+            type: string
+          example: '2023-08-23'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task-time-employee/update:
+    post:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                _method: PATCH
+                floor_plan_id: 1
+                date: '2023-08-23'
+                roster_task_time_employee:
+                  - roster_task_id: 1
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 122
+                      - roster_time_id: 2
+                        employee_id: 1
+                  - roster_task_id: 2
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 1
+                      - roster_time_id: 2
+                        employee_id: 200
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/roster-task-time-employee/{id}:
+    delete:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > roster-task-time-employee, roster-floor-plan-date
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/search/available-rooms:
+    get:
+      tags:
+        - admin > Booking
+      summary: list available rooms
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: check_in
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
+        - name: check_out
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking:
+    get:
+      tags:
+        - admin > Booking
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > Booking
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  example: '2023-09-30'
+                check_out:
+                  type: string
+                  example: '2023-09-30'
+                name:
+                  type: string
+                  example: Sirjeet Tamrakaar
+                email:
+                  type: string
+                  example: sirjeet@sco.com
+                phone:
+                  type: integer
+                  example: '0123456789'
+                address:
+                  type: string
+                  example: kapur
+                no_of_adult:
+                  type: integer
+                  example: '2'
+                no_of_child:
+                  type: integer
+                  example: '1'
+                room_id[]:
+                  type: integer
+                  example: '12'
+                amount:
+                  type: integer
+                  example: '100'
+                discount:
+                  type: integer
+                  example: '10'
+                gender:
+                  type: string
+                  example: male
+                message:
+                  type: string
+                  example: 'dfgmndgdfsgdfgdf gsdfgsdf gdf '
+                postCode:
+                  type: integer
+                  example: '44600'
+                city:
+                  type: string
+                  example: Kathmandu
+                country:
+                  type: string
+                  example: Nepal
+                id_card[0][title]:
+                  type: string
+                  description: >-
+                    * id_card is array where id_card = [ {"title" :
+                    id_card_front, "image": ........} , {"title" : id_card_back,
+                    "image": ........}]
+                  example: id_card_front
+                id_card[0][image]:
+                  type: string
+                  format: binary
+                id_card[1][title]:
+                  type: string
+                  example: id_card_back
+                id_card[1][image]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}:
+    get:
+      tags:
+        - admin > Booking
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10015'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > Booking
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                paid:
+                  type: integer
+                  example: '90'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10011'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/status-cancel:
+    post:
+      tags:
+        - admin > Booking
+      summary: status cancelled
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10009'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/status-checkout:
+    post:
+      tags:
+        - admin > Booking
+      summary: status checkout
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10010'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/payment-store:
+    post:
+      tags:
+        - admin > Booking
+      summary: payment store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                paid_amount:
+                  type: integer
+                  example: '10'
+                payment_method:
+                  type: string
+                  example: fonepay1
+                invoice_no:
+                  type: integer
+                  example: '10100'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10011'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/status-checkin:
+    post:
+      tags:
+        - admin > Booking
+      summary: status checkin
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10015'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/payment:
+    get:
+      tags:
+        - admin > payment
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+          example: Bikash
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/dashboard:
+    get:
+      tags:
+        - admin > dashboard
+      summary: dashboard
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /homepage:
+    get:
+      tags:
+        - front-apis > home
+      summary: homepage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /aboutpage:
+    get:
+      tags:
+        - front-apis > home
+      summary: aboutpage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /other-banner:
+    get:
+      tags:
+        - front-apis > home
+      summary: other banner
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /contact-enquiry:
+    post:
+      tags:
+        - front-apis > home
+      summary: contact enquiry
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                subject:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /booking/search/available-rooms:
+    post:
+      tags:
+        - front-apis > booking
+      summary: list available rooms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                occupancy:
+                  - no_of_adult: 15
+                    no_of_child: 2
+                  - no_of_adult: 4
+                    no_of_child: 1
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: check_in
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
+        - name: check_out
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /create/booking:
+    post:
+      tags:
+        - front-apis > booking
+      summary: create booking
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  example: '2023-08-30'
+                check_out:
+                  type: string
+                  example: '2023-08-30'
+                name:
+                  type: string
+                  example: Sirjeet Tamrakaar
+                email:
+                  type: string
+                  example: sirjeet@sco.com
+                phone:
+                  type: integer
+                  example: '0123456789'
+                address:
+                  type: string
+                  example: kapur
+                room_id[]:
+                  type: integer
+                  example: '12'
+                amount:
+                  type: integer
+                  example: '100'
+                discount:
+                  type: integer
+                  example: '10'
+                gender:
+                  type: string
+                  example: male
+                message:
+                  type: string
+                  example: 'dfgmndgdfsgdfgdf gsdfgsdf gdf '
+                postCode:
+                  type: integer
+                  example: '44600'
+                city:
+                  type: string
+                  example: Kathmandu
+                country:
+                  type: string
+                  example: Nepal
+                id_card[0][title]:
+                  type: string
+                  description: >-
+                    * id_card is array where id_card = [ {"title" :
+                    id_card_front, "image": ........} , {"title" : id_card_back,
+                    "image": ........}]
+                  example: id_card_front
+                id_card[0][image]:
+                  type: string
+                  format: binary
+                id_card[1][title]:
+                  type: string
+                  example: id_card_back
+                id_card[1][image]:
+                  type: string
+                  format: binary
+                no_of_adult:
+                  type: integer
+                  example: '2'
+                no_of_child:
+                  type: integer
+                  example: '0'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /room-type:
+    get:
+      tags:
+        - front-apis > room type
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /room-type/{id}:
+    get:
+      tags:
+        - front-apis > room type
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '7'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /album:
+    get:
+      tags:
+        - front-apis > album
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /album/{id}:
+    get:
+      tags:
+        - front-apis > album
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /gallery/{album_id}:
+    get:
+      tags:
+        - front-apis > gallery
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '8'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /gallery/{album_id}/{id}:
+    get:
+      tags:
+        - front-apis > gallery
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dininginfo:
+    get:
+      tags:
+        - front-apis > dining
+      summary: get
       responses:
         '200':
           description: Successful response
