@@ -30,7 +30,7 @@ tags:
   - name: Authentication
   - name: bus
   - name: bus schedule
-  - name: bus booking OLD
+  - name: bus booking OLDs
   - name: bus booking NEW
 paths:
   /api-external/token-generate:
@@ -435,7 +435,7 @@ paths:
   /api-external/bus-booking/cancel:
     post:
       tags:
-        - bus booking OLD
+        - bus booking OLDs
       summary: cancel booking
       requestBody:
         content:
