@@ -30,7 +30,6 @@ tags:
   - name: Authentication
   - name: bus
   - name: bus schedule
-  - name: bus booking OLDs
   - name: bus booking NEW
 paths:
   /api-external/token-generate:
@@ -427,32 +426,6 @@ paths:
             type: string
           description: Departure Date To
           example: '2080-05-31'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api-external/bus-booking/cancel:
-    post:
-      tags:
-        - bus booking OLDs
-      summary: cancel booking
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                route_code: ktmmnr100
-                association_code: m100
-                date: '2080-04-32'
-                time: '20:00'
-                bus_facility_type_code: ac100
-                seat_name:
-                  - x
-                  - KA
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
