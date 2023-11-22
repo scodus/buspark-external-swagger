@@ -4,7 +4,7 @@
 		"name": "buspark external apis",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15009917",
-		"_collection_link": "https://lunar-robot-597788.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&source=collection_link&creator=15009917"
+		"_collection_link": "https://bikash-projects.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&source=collection_link&creator=15009917"
 	},
 	"item": [
 		{
@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"399ede22-e442-43ac-90b8-b6cd69962d75\",\r\n    \"client_secret\": \"4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3\",\r\n    \"scope\": \"*\"\r\n}",
+							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"61064e63-c5ae-4c30-88c1-1a77f76ab803\",\r\n    \"client_secret\": \"W0BFPqMg0yEpRvkkhYk9nPwgk4nX1kS1CPlHMuWs\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -60,7 +60,7 @@
 					"response": []
 				},
 				{
-					"name": "get token old method",
+					"name": "user",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -75,8 +75,6 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"const response = pm.response.json()\r",
-									"pm.environment.set('access_token', response.access_token)\r",
 									""
 								],
 								"type": "text/javascript"
@@ -84,26 +82,26 @@
 						}
 					],
 					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"grant_type\": \"client_credentials\",\r\n    \"client_id\": \"399ede22-e442-43ac-90b8-b6cd69962d75\",\r\n    \"client_secret\": \"4oRjLF0sw8rjlD3JzfYRdOAd5g5C0xcCSAP7Pcb3\",\r\n    \"scope\": \"*\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
 								}
-							}
+							]
 						},
+						"method": "GET",
+						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/oauth/token",
+							"raw": "{{url}}/api-external/user",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api-external",
-								"oauth",
-								"token"
+								"user"
 							]
 						}
 					},
@@ -188,7 +186,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-list?date=2080-05-28&route_code=ktmmnr100&association_code=m100&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-list?date=2080-08-30&route_code=ktmmnr100&association_code=m100&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
@@ -199,7 +197,7 @@
 							"query": [
 								{
 									"key": "date",
-									"value": "2080-05-28",
+									"value": "2080-08-30",
 									"description": "Schedule Bus Date"
 								},
 								{
@@ -228,7 +226,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-05-31&bus_facility_type_code=ac100&time=20:00",
+							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-08-30&bus_facility_type_code=ac100&time=20:00",
 							"host": [
 								"{{url}}"
 							],
@@ -249,7 +247,7 @@
 								},
 								{
 									"key": "date",
-									"value": "2080-05-31",
+									"value": "2080-08-30",
 									"description": "Scheduled Bus Date"
 								},
 								{
@@ -285,7 +283,7 @@
 							"variable": [
 								{
 									"key": "bus_schedule_id",
-									"value": "127",
+									"value": "153",
 									"description": "Scheduled Bus Schedule Id"
 								}
 							]
@@ -323,12 +321,12 @@
 								},
 								{
 									"key": "departure_date",
-									"value": "2080-05-28",
+									"value": "2080-08-29",
 									"type": "text"
 								},
 								{
 									"key": "departure_date_ad",
-									"value": "2023-09-14",
+									"value": "2023-12-15",
 									"type": "text"
 								},
 								{
@@ -550,7 +548,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api-external/pre-booking?schedule_id=127&date=2080-05-31&seat_name[]=B2&seat_name[]=GHA",
+							"raw": "{{url}}/api-external/pre-booking?schedule_id=153&date=2080-08-30&seat_name[]=A4",
 							"host": [
 								"{{url}}"
 							],
@@ -571,22 +569,23 @@
 								},
 								{
 									"key": "schedule_id",
-									"value": "127",
+									"value": "153",
 									"description": "Bus Schedule Id "
 								},
 								{
 									"key": "date",
-									"value": "2080-05-31",
+									"value": "2080-08-30",
 									"description": "Scheduled Bus Date"
 								},
 								{
 									"key": "seat_name[]",
-									"value": "B2",
+									"value": "A4",
 									"description": "Bus Seat Name"
 								},
 								{
 									"key": "seat_name[]",
-									"value": "GHA"
+									"value": "GHA",
+									"disabled": true
 								}
 							]
 						}
@@ -661,7 +660,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"schedule_id\": 127,\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 15,\n    \"discount\": 6,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    // \"paid\": \"12\",\n    \"seat_name\": [\n        \"B2\"\n        ,\n        \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"schedule_id\": 153,\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 15,\n    \"discount\": 6,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    // \"paid\": \"12\",\n    \"seat_name\": [\n        \"A4\"\n        // ,\n        // \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -697,7 +696,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-05-31&to_date=2080-05-31",
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-08-30&to_date=2080-08-30",
 							"host": [
 								"{{url}}"
 							],
@@ -708,12 +707,12 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-05-31",
+									"value": "2080-08-30",
 									"description": "Departure Date From"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-05-31",
+									"value": "2080-08-30",
 									"description": "Departure Date To"
 								}
 							]
