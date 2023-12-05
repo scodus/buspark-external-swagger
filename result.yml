@@ -43,8 +43,8 @@ paths:
             schema:
               type: object
               example:
-                client_id: 61064e63-c5ae-4c30-88c1-1a77f76ab803
-                client_secret: W0BFPqMg0yEpRvkkhYk9nPwgk4nX1kS1CPlHMuWs
+                client_id: e7d3f09a-0243-42ce-9898-a787ebccce2c
+                client_secret: rV3cfOGm8Ii8IBTzDGI5A8EElhX0sLUPClxyXZL7
       responses:
         '200':
           description: Successful response
@@ -196,19 +196,23 @@ paths:
               properties:
                 route_code:
                   type: string
-                  example: ktmmnr100
+                  description: ktmmnr100
+                  example: R-002
                 bus_id:
                   type: integer
-                  example: '38'
+                  description: '38'
+                  example: '673'
                 departure_date:
                   type: string
-                  example: '2080-08-29'
+                  description: 2080-08-18 BS Format Required
+                  example: '2080-08-18'
                 departure_date_ad:
                   type: string
-                  example: '2023-12-15'
+                  description: 2023-12-04 AD Format Required
+                  example: '2023-12-04'
                 departure_time:
                   type: string
-                  example: '20:00'
+                  example: '23:00'
                 status:
                   type: string
                   example: Active
@@ -408,7 +412,7 @@ paths:
           schema:
             type: string
           description: Departure Date From
-          example: '2080-08-30'
+          example: '2080-05-30'
         - name: to_date
           in: query
           schema:

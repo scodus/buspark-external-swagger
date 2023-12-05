@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"61064e63-c5ae-4c30-88c1-1a77f76ab803\",\r\n    \"client_secret\": \"W0BFPqMg0yEpRvkkhYk9nPwgk4nX1kS1CPlHMuWs\"\r\n}",
+							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"e7d3f09a-0243-42ce-9898-a787ebccce2c\",\r\n    \"client_secret\": \"rV3cfOGm8Ii8IBTzDGI5A8EElhX0sLUPClxyXZL7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -311,27 +311,31 @@
 							"formdata": [
 								{
 									"key": "route_code",
-									"value": "ktmmnr100",
+									"value": "R-002",
+									"description": "ktmmnr100",
 									"type": "text"
 								},
 								{
 									"key": "bus_id",
-									"value": "38",
+									"value": "673",
+									"description": "38",
 									"type": "text"
 								},
 								{
 									"key": "departure_date",
-									"value": "2080-08-29",
+									"value": "2080-08-18",
+									"description": "2080-08-18 BS Format Required",
 									"type": "text"
 								},
 								{
 									"key": "departure_date_ad",
-									"value": "2023-12-15",
+									"value": "2023-12-04",
+									"description": "2023-12-04 AD Format Required",
 									"type": "text"
 								},
 								{
 									"key": "departure_time",
-									"value": "20:00",
+									"value": "23:00",
 									"type": "text"
 								},
 								{
@@ -696,7 +700,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-08-30&to_date=2080-08-30",
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-05-30&to_date=2080-08-30",
 							"host": [
 								"{{url}}"
 							],
@@ -707,7 +711,7 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-08-30",
+									"value": "2080-05-30",
 									"description": "Departure Date From"
 								},
 								{
