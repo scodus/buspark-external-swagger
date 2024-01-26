@@ -27,7 +27,7 @@
 							"script": {
 								"exec": [
 									"const response = pm.response.json()\r",
-									"pm.environment.set('access_token', response.access_token)\r",
+									"pm.environment.set('access_token', response.data.access_token)\r",
 									""
 								],
 								"type": "text/javascript"
@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"e7d3f09a-0243-42ce-9898-a787ebccce2c\",\r\n    \"client_secret\": \"rV3cfOGm8Ii8IBTzDGI5A8EElhX0sLUPClxyXZL7\"\r\n}",
+							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"f163c9f3-3ec5-4594-9505-c299c94d2236\",\r\n    \"client_secret\": \"WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -168,7 +168,7 @@
 							"variable": [
 								{
 									"key": "bus_id",
-									"value": "42"
+									"value": "7"
 								}
 							]
 						}
@@ -178,7 +178,7 @@
 			]
 		},
 		{
-			"name": "bus schedule",
+			"name": "bus-schedule",
 			"item": [
 				{
 					"name": "bus schedule list",
@@ -226,7 +226,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=ktmmnr100&association_code=m100&date=2080-08-30&bus_facility_type_code=ac100&time=20:00",
+							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=km1&association_code=m100&date=2080-08-30&bus_facility_type_code=ac100&time=20:00",
 							"host": [
 								"{{url}}"
 							],
@@ -237,7 +237,7 @@
 							"query": [
 								{
 									"key": "route_code",
-									"value": "ktmmnr100",
+									"value": "km1",
 									"description": "Scheduled Bus Route Code"
 								},
 								{
@@ -283,7 +283,7 @@
 							"variable": [
 								{
 									"key": "bus_schedule_id",
-									"value": "153",
+									"value": "168",
 									"description": "Scheduled Bus Schedule Id"
 								}
 							]
@@ -311,27 +311,28 @@
 							"formdata": [
 								{
 									"key": "route_code",
-									"value": "R-002",
-									"description": "ktmmnr100",
+									"value": "ktmmnr100",
+									"description": "ktmmnr100,km1",
 									"type": "text"
 								},
 								{
 									"key": "bus_id",
-									"value": "673",
-									"description": "38",
+									"value": "1",
+									"description": "38,29",
 									"type": "text"
 								},
 								{
 									"key": "departure_date",
-									"value": "2080-08-18",
+									"value": "2080-10-14",
 									"description": "2080-08-18 BS Format Required",
 									"type": "text"
 								},
 								{
 									"key": "departure_date_ad",
-									"value": "2023-12-04",
+									"value": "2024-01-13",
 									"description": "2023-12-04 AD Format Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "departure_time",
@@ -552,7 +553,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api-external/pre-booking?schedule_id=153&date=2080-08-30&seat_name[]=A4",
+							"raw": "{{url}}/api-external/pre-booking?schedule_id=7067&date=2080-09-27&seat_name[]=B2",
 							"host": [
 								"{{url}}"
 							],
@@ -563,27 +564,27 @@
 							"query": [
 								{
 									"key": "from",
-									"value": "1",
+									"value": "",
 									"disabled": true
 								},
 								{
 									"key": "to",
-									"value": "2",
+									"value": "",
 									"disabled": true
 								},
 								{
 									"key": "schedule_id",
-									"value": "153",
+									"value": "7067",
 									"description": "Bus Schedule Id "
 								},
 								{
 									"key": "date",
-									"value": "2080-08-30",
+									"value": "2080-09-27",
 									"description": "Scheduled Bus Date"
 								},
 								{
 									"key": "seat_name[]",
-									"value": "A4",
+									"value": "B2",
 									"description": "Bus Seat Name"
 								},
 								{
@@ -616,7 +617,7 @@
 							"formdata": [
 								{
 									"key": "schedule_id",
-									"value": "127",
+									"value": "7067",
 									"description": "Bus Seat Name",
 									"type": "text"
 								},
@@ -630,7 +631,8 @@
 									"key": "seat_name[]",
 									"value": "GHA",
 									"description": "Scheduled Bus Route Code",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -664,7 +666,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"schedule_id\": 153,\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 15,\n    \"discount\": 6,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    // \"paid\": \"12\",\n    \"seat_name\": [\n        \"A4\"\n        // ,\n        // \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"schedule_id\": 7067,\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 2150,\n    \"discount\": 100,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    \"paid\": 2000,\n    \"seat_name\": [\n        \"B2\"\n        // ,\n        // \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -700,7 +702,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-05-30&to_date=2080-08-30",
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-10-12&to_date=2080-10-12",
 							"host": [
 								"{{url}}"
 							],
@@ -711,12 +713,12 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-05-30",
+									"value": "2080-10-12",
 									"description": "Departure Date From"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-08-30",
+									"value": "2080-10-12",
 									"description": "Departure Date To"
 								}
 							]
@@ -753,7 +755,7 @@
 							"variable": [
 								{
 									"key": "booking_id",
-									"value": "661"
+									"value": "665"
 								}
 							]
 						}
@@ -798,7 +800,111 @@
 							"variable": [
 								{
 									"key": "booking_id",
-									"value": "663"
+									"value": "665"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus booking list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/bus-booking-list/?bus_schedule_id=7261",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"bus-booking-list",
+								""
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2080-10-12",
+									"description": "Departure Date From",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "2080-10-12",
+									"description": "Departure Date To",
+									"disabled": true
+								},
+								{
+									"key": "bus_schedule_id",
+									"value": "7261",
+									"description": "Bus Schedule Id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus booking single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/bus-booking/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"bus-booking",
+								":id"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2080-10-12",
+									"description": "Departure Date From",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "2080-10-12",
+									"description": "Departure Date To",
+									"disabled": true
+								},
+								{
+									"key": "bus_schedule_id",
+									"value": null,
+									"description": "Bus Schedule Id",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Bus Booking Id"
 								}
 							]
 						}

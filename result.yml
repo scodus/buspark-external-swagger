@@ -29,7 +29,7 @@ components:
 tags:
   - name: Authentication
   - name: bus
-  - name: bus schedule
+  - name: bus-schedule
   - name: bus booking NEW
 paths:
   /api-external/token-generate:
@@ -43,8 +43,8 @@ paths:
             schema:
               type: object
               example:
-                client_id: e7d3f09a-0243-42ce-9898-a787ebccce2c
-                client_secret: rV3cfOGm8Ii8IBTzDGI5A8EElhX0sLUPClxyXZL7
+                client_id: f163c9f3-3ec5-4594-9505-c299c94d2236
+                client_secret: WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R
       responses:
         '200':
           description: Successful response
@@ -83,7 +83,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '42'
+          example: '7'
       responses:
         '200':
           description: Successful response
@@ -92,7 +92,7 @@ paths:
   /api-external/bus-schedule-list:
     get:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: bus schedule list
       parameters:
         - name: date
@@ -127,7 +127,7 @@ paths:
   /api-external/bus-schedule-bus-detail:
     get:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: bus schedule bus detail
       parameters:
         - name: route_code
@@ -135,7 +135,7 @@ paths:
           schema:
             type: string
           description: Scheduled Bus Route Code
-          example: ktmmnr100
+          example: km1
         - name: association_code
           in: query
           schema:
@@ -168,7 +168,7 @@ paths:
   /api-external/bus-schedule-bus-seats/{bus_schedule_id}:
     get:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: bus schedule bus seats by bus schedule id
       parameters:
         - name: bus_schedule_id
@@ -177,7 +177,7 @@ paths:
             type: integer
           required: true
           description: Scheduled Bus Schedule Id
-          example: '153'
+          example: '168'
       responses:
         '200':
           description: Successful response
@@ -186,7 +186,7 @@ paths:
   /api-external/bus-schedule:
     post:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: bus schedule
       requestBody:
         content:
@@ -196,20 +196,20 @@ paths:
               properties:
                 route_code:
                   type: string
-                  description: ktmmnr100
-                  example: R-002
+                  description: ktmmnr100,km1
+                  example: ktmmnr100
                 bus_id:
                   type: integer
-                  description: '38'
-                  example: '673'
+                  description: 38,29
+                  example: '1'
                 departure_date:
                   type: string
                   description: 2080-08-18 BS Format Required
-                  example: '2080-08-18'
+                  example: '2080-10-14'
                 departure_date_ad:
                   type: string
                   description: 2023-12-04 AD Format Required
-                  example: '2023-12-04'
+                  example: '2024-01-13'
                 departure_time:
                   type: string
                   example: '23:00'
@@ -226,7 +226,7 @@ paths:
   /api-external/bus-schedule/{id}/status-change:
     post:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: status change
       requestBody:
         content:
@@ -257,7 +257,7 @@ paths:
   /api-external/bus-schedule/{id}/booking-status-change:
     post:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: booking status change
       requestBody:
         content:
@@ -288,7 +288,7 @@ paths:
   /api-external/bus-schedule/{id}/departure-time-change:
     post:
       tags:
-        - bus schedule
+        - bus-schedule
       summary: departure time change
       requestBody:
         content:
@@ -329,19 +329,19 @@ paths:
           schema:
             type: integer
           description: 'Bus Schedule Id '
-          example: '153'
+          example: '7067'
         - name: date
           in: query
           schema:
             type: string
           description: Scheduled Bus Date
-          example: '2080-08-30'
+          example: '2080-09-27'
         - name: seat_name[]
           in: query
           schema:
             type: string
           description: Bus Seat Name
-          example: A4
+          example: B2
       responses:
         '200':
           description: Successful response
@@ -361,7 +361,7 @@ paths:
                 schedule_id:
                   type: integer
                   description: Bus Seat Name
-                  example: '127'
+                  example: '7067'
                 seat_name[]:
                   type: string
                   description: Scheduled Bus Route Code
@@ -384,14 +384,15 @@ paths:
             schema:
               type: object
               example:
-                schedule_id: 153
+                schedule_id: 7067
                 drop_location: drop location here000
-                rate: 15
-                discount: 6
+                rate: 2150
+                discount: 100
                 contact_name: Bikash SinghTEST
                 contact_phone: '98713264000'
+                paid: 2000
                 seat_name:
-                  - A4
+                  - B2
       security:
         - bearerAuth: []
       responses:
@@ -412,13 +413,13 @@ paths:
           schema:
             type: string
           description: Departure Date From
-          example: '2080-05-30'
+          example: '2080-10-12'
         - name: to_date
           in: query
           schema:
             type: string
           description: Departure Date To
-          example: '2080-08-30'
+          example: '2080-10-12'
       responses:
         '200':
           description: Successful response
@@ -439,7 +440,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '661'
+          example: '665'
       responses:
         '200':
           description: Successful response
@@ -467,7 +468,45 @@ paths:
           schema:
             type: integer
           required: true
-          example: '663'
+          example: '665'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api-external/bus-booking-list/:
+    get:
+      tags:
+        - bus booking NEW
+      summary: bus booking list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: bus_schedule_id
+          in: query
+          schema:
+            type: integer
+          description: Bus Schedule Id
+          example: '7261'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api-external/bus-booking/{id}:
+    get:
+      tags:
+        - bus booking NEW
+      summary: bus booking single
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: Bus Booking Id
       responses:
         '200':
           description: Successful response
