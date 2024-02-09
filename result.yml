@@ -19,7 +19,7 @@ info:
     name: MIT
     url: https://es.wikipedia.org/wiki/Licencia_MIT
 servers:
-  - url: http://ticketing.madani.com.np
+  - url: https://ticketing.madani.com.np
     description: Base URL
   - url: https://buspark.scodus.com
     description: Base URL
@@ -32,7 +32,7 @@ tags:
   - name: Authentication
   - name: bus
   - name: bus-schedule
-  - name: bus booking NEW
+  - name: bus booking
 paths:
   /api-external/token-generate:
     post:
@@ -45,8 +45,8 @@ paths:
             schema:
               type: object
               example:
-                client_id: f163c9f3-3ec5-4594-9505-c299c94d2236
-                client_secret: WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R
+                client_id: b373a0ff-194f-4514-ab14-048448b9615c
+                client_secret: E8090rTPLCt3PUPEnCTRAACH2rQ4LviMwwdqcDJN
       responses:
         '200':
           description: Successful response
@@ -321,7 +321,7 @@ paths:
   /api-external/pre-booking:
     get:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: pre booking
       security:
         - bearerAuth: []
@@ -352,7 +352,7 @@ paths:
   /api-external/pre-booking-timeout:
     post:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: pre booking timeout
       requestBody:
         content:
@@ -378,7 +378,7 @@ paths:
   /api-external/bus-booking:
     post:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: store booking
       requestBody:
         content:
@@ -405,7 +405,7 @@ paths:
   /api-external/my-booking:
     get:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: my booking history
       security:
         - bearerAuth: []
@@ -430,7 +430,7 @@ paths:
   /api-external/bus-booking/{booking_id}/cancel:
     post:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: cancel  whole booking
       requestBody:
         content: {}
@@ -451,7 +451,7 @@ paths:
   /api-external/bus-booking/{booking_id}/seat-cancel:
     post:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: seat wise cancel
       requestBody:
         content:
@@ -479,7 +479,7 @@ paths:
   /api-external/bus-booking-list/:
     get:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: bus booking list
       security:
         - bearerAuth: []
@@ -498,7 +498,7 @@ paths:
   /api-external/bus-booking/{id}:
     get:
       tags:
-        - bus booking NEW
+        - bus booking
       summary: bus booking single
       security:
         - bearerAuth: []

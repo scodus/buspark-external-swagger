@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "http://ticketing.madani.com.np",
+      "url": "https://ticketing.madani.com.np",
       "description": "Base URL"
     },
     {

@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "7f39668c-a0df-4cfb-85b2-d71cfee6d0c3",
-		"name": "buspark external apis",
+		"_postman_id": "aa1a5994-3325-4b63-b758-6fd40601165d",
+		"name": "BUSPARK External APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "15009917",
-		"_collection_link": "https://bikash-projects.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-7f39668c-a0df-4cfb-85b2-d71cfee6d0c3?action=share&source=collection_link&creator=15009917"
+		"_collection_link": "https://bikash-projects.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-aa1a5994-3325-4b63-b758-6fd40601165d?action=share&source=collection_link&creator=15009917"
 	},
 	"item": [
 		{
@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"f163c9f3-3ec5-4594-9505-c299c94d2236\",\r\n    \"client_secret\": \"WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R\"\r\n}",
+							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"b373a0ff-194f-4514-ab14-048448b9615c\",\r\n    \"client_secret\": \"E8090rTPLCt3PUPEnCTRAACH2rQ4LviMwwdqcDJN\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -516,7 +516,7 @@
 			]
 		},
 		{
-			"name": "bus booking NEW",
+			"name": "bus booking",
 			"item": [
 				{
 					"name": "pre booking",
