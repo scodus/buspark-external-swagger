@@ -666,7 +666,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"schedule_id\": 7067,\n    \"drop_location\": \"drop location here000\",\n    \"rate\": 2150,\n    \"discount\": 100,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    \"paid\": 2000,\n    \"seat_name\": [\n        \"B2\"\n        // ,\n        // \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"schedule_id\": 7067,\n    \"drop_location\": \"DJE\",\n    \"pickup_location\": \"kalanki\",\n    // \"rate\": 2150,\n    \"discount\": 100,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    \"paid\": 2000,\n    \"seat_name\": [\n        \"B2\"\n        // ,\n        // \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"

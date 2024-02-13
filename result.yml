@@ -387,8 +387,8 @@ paths:
               type: object
               example:
                 schedule_id: 7067
-                drop_location: drop location here000
-                rate: 2150
+                drop_location: DJE
+                pickup_location: kalanki
                 discount: 100
                 contact_name: Bikash SinghTEST
                 contact_phone: '98713264000'
