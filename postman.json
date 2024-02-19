@@ -60,7 +60,7 @@
 					"response": []
 				},
 				{
-					"name": "user",
+					"name": "user detail",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -95,13 +95,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/user",
+							"raw": "{{url}}/api-external/user-detail",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api-external",
-								"user"
+								"user-detail"
 							]
 						}
 					},
@@ -118,7 +118,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-list",
+							"raw": "{{url}}/api-external/bus-list?route_code=ktmmnr100&association_code=m100&bus_facility_type_code=ac100",
 							"host": [
 								"{{url}}"
 							],
@@ -130,19 +130,31 @@
 								{
 									"key": "route_code",
 									"value": "ktmmnr100",
-									"description": "Bus Route Code",
-									"disabled": true
+									"description": "Bus Route Code"
 								},
 								{
 									"key": "association_code",
 									"value": "m100",
-									"description": "Bus Association Code",
-									"disabled": true
+									"description": "Bus Association Code"
 								},
 								{
 									"key": "bus_facility_type_code",
 									"value": "ac100",
-									"description": "Bus Facility Type Code",
+									"description": "Bus Facility Type Code"
+								},
+								{
+									"key": "paginate",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
 									"disabled": true
 								}
 							]
@@ -214,6 +226,21 @@
 									"key": "bus_facility_type_code",
 									"value": "ac100",
 									"description": "Scheduled Bus Facility Type Code"
+								},
+								{
+									"key": "paginate",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
 								}
 							]
 						}
@@ -687,46 +714,6 @@
 					"response": []
 				},
 				{
-					"name": "my booking history",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-10-12&to_date=2080-10-12",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api-external",
-								"my-booking"
-							],
-							"query": [
-								{
-									"key": "from_date",
-									"value": "2080-10-12",
-									"description": "Departure Date From"
-								},
-								{
-									"key": "to_date",
-									"value": "2080-10-12",
-									"description": "Departure Date To"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "cancel  whole booking",
 					"request": {
 						"auth": {
@@ -808,6 +795,61 @@
 					"response": []
 				},
 				{
+					"name": "my booking history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/my-booking?from_date=2080-10-12&to_date=2080-10-12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"my-booking"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "2080-10-12",
+									"description": "Departure Date From"
+								},
+								{
+									"key": "to_date",
+									"value": "2080-10-12",
+									"description": "Departure Date To"
+								},
+								{
+									"key": "paginate",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "bus booking list",
 					"request": {
 						"auth": {
@@ -849,6 +891,21 @@
 									"key": "bus_schedule_id",
 									"value": "7261",
 									"description": "Bus Schedule Id"
+								},
+								{
+									"key": "paginate",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
 								}
 							]
 						}

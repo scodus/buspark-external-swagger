@@ -52,11 +52,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api-external/user:
+  /api-external/user-detail:
     get:
       tags:
         - Authentication
-      summary: user
+      summary: user detail
       security:
         - bearerAuth: []
       responses:
@@ -69,6 +69,25 @@ paths:
       tags:
         - bus
       summary: bus list
+      parameters:
+        - name: route_code
+          in: query
+          schema:
+            type: string
+          description: Bus Route Code
+          example: ktmmnr100
+        - name: association_code
+          in: query
+          schema:
+            type: string
+          description: Bus Association Code
+          example: m100
+        - name: bus_facility_type_code
+          in: query
+          schema:
+            type: string
+          description: Bus Facility Type Code
+          example: ac100
       responses:
         '200':
           description: Successful response
@@ -402,31 +421,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api-external/my-booking:
-    get:
-      tags:
-        - bus booking
-      summary: my booking history
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: from_date
-          in: query
-          schema:
-            type: string
-          description: Departure Date From
-          example: '2080-10-12'
-        - name: to_date
-          in: query
-          schema:
-            type: string
-          description: Departure Date To
-          example: '2080-10-12'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api-external/bus-booking/{booking_id}/cancel:
     post:
       tags:
@@ -471,6 +465,31 @@ paths:
             type: integer
           required: true
           example: '665'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api-external/my-booking:
+    get:
+      tags:
+        - bus booking
+      summary: my booking history
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: from_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date From
+          example: '2080-10-12'
+        - name: to_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date To
+          example: '2080-10-12'
       responses:
         '200':
           description: Successful response
