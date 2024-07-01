@@ -19,13 +19,13 @@ info:
     name: MIT
     url: https://es.wikipedia.org/wiki/Licencia_MIT
 servers:
-  - url: https://ticketing.madani.com.np
+  - url: https://ticketing.gongabubuspark.com
     description: Base URL
-  - url: http://ticketing.madani.com.np
+  - url: http://ticketing.gongabubuspark.com
     description: Base URL
-  - url: https://buspark.scodus.com
+  - url: https://buspark.scoduscorp.com
     description: Base URL
-  - url: http://buspark.scodus.com
+  - url: http://buspark.scoduscorp.com
     description: Base URL
 components:
   securitySchemes:
