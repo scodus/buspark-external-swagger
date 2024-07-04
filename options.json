@@ -1,6 +1,6 @@
 {
   "info": {
-    "title": "Bus Reservation External",
+    "title": "Madani - Gongagbu Bus Park Reservation External",
     "version": "1.0",
     "description": "Bus Reservation External | Generate Client Id and Secret from http://ticketing.madani.com.np/admin/site-setting/client-secret |  For Private routes : Authorization => Bearer <token>",
     "termsOfService": "#",
