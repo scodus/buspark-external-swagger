@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Bus Reservation External
+  title: Madani - Gongagbu Bus Park Reservation External
   description: >-
     Bus Reservation External | Generate Client Id and Secret from
     http://ticketing.madani.com.np/admin/site-setting/client-secret |  For
