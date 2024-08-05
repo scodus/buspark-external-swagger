@@ -918,7 +918,7 @@
 					"response": []
 				},
 				{
-					"name": "bus booking list cancelled",
+					"name": "bus booking cancelled list",
 					"request": {
 						"auth": {
 							"type": "bearer",

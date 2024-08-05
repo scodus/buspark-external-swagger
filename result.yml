@@ -575,7 +575,7 @@ paths:
     get:
       tags:
         - bus booking
-      summary: bus booking list cancelled
+      summary: bus booking cancelled list
       security:
         - bearerAuth: []
       parameters:
