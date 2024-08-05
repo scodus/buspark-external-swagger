@@ -3,8 +3,8 @@
 		"_postman_id": "aa1a5994-3325-4b63-b758-6fd40601165d",
 		"name": "BUSPARK External APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15009917",
-		"_collection_link": "https://bikash-projects.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-aa1a5994-3325-4b63-b758-6fd40601165d?action=share&source=collection_link&creator=15009917"
+		"_exporter_id": "34655126",
+		"_collection_link": "https://bikash-projects.postman.co/workspace/Bikash's-Workspace~07b4d747-08b6-4eac-9f94-41a4bad205fa/collection/15009917-aa1a5994-3325-4b63-b758-6fd40601165d?action=share&source=collection_link&creator=34655126"
 	},
 	"item": [
 		{
@@ -19,7 +19,8 @@
 								"exec": [
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -30,7 +31,8 @@
 									"pm.environment.set('access_token', response.data.access_token)\r",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -39,7 +41,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"b373a0ff-194f-4514-ab14-048448b9615c\",\r\n    \"client_secret\": \"E8090rTPLCt3PUPEnCTRAACH2rQ4LviMwwdqcDJN\"\r\n}",
+							"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"f163c9f3-3ec5-4594-9505-c299c94d2236\",\r\n    \"client_secret\": \"WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -118,7 +120,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-list?route_code=ktmmnr100&association_code=m100&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-list?route_code=&association_code=&bus_facility_type_code=&paginate=&limit=&page=",
 							"host": [
 								"{{url}}"
 							],
@@ -129,33 +131,33 @@
 							"query": [
 								{
 									"key": "route_code",
-									"value": "ktmmnr100",
+									"value": "",
 									"description": "Bus Route Code"
 								},
 								{
 									"key": "association_code",
-									"value": "m100",
+									"value": "",
 									"description": "Bus Association Code"
 								},
 								{
 									"key": "bus_facility_type_code",
-									"value": "ac100",
+									"value": "",
 									"description": "Bus Facility Type Code"
 								},
 								{
 									"key": "paginate",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								},
 								{
 									"key": "limit",
-									"value": "5",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 10"
 								},
 								{
 									"key": "page",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								}
 							]
 						}
@@ -180,7 +182,8 @@
 							"variable": [
 								{
 									"key": "bus_id",
-									"value": "7"
+									"value": "7",
+									"description": "Bus Id"
 								}
 							]
 						}
@@ -198,7 +201,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-list?date=2080-08-30&route_code=ktmmnr100&association_code=m100&bus_facility_type_code=ac100",
+							"raw": "{{url}}/api-external/bus-schedule-list?date=&route_code=&association_code=&bus_facility_type_code=&paginate=&limit=&page=",
 							"host": [
 								"{{url}}"
 							],
@@ -209,38 +212,38 @@
 							"query": [
 								{
 									"key": "date",
-									"value": "2080-08-30",
-									"description": "Schedule Bus Date"
+									"value": "",
+									"description": "required, Schedule Bus Date e.g. 2081-04-03"
 								},
 								{
 									"key": "route_code",
-									"value": "ktmmnr100",
+									"value": "",
 									"description": "Scheduled Bus Route Code"
 								},
 								{
 									"key": "association_code",
-									"value": "m100",
+									"value": "",
 									"description": "Scheduled Bus Association Code"
 								},
 								{
 									"key": "bus_facility_type_code",
-									"value": "ac100",
+									"value": "",
 									"description": "Scheduled Bus Facility Type Code"
 								},
 								{
 									"key": "paginate",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								},
 								{
 									"key": "limit",
-									"value": "5",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 10"
 								},
 								{
 									"key": "page",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								}
 							]
 						}
@@ -253,7 +256,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=km1&association_code=m100&date=2080-08-30&bus_facility_type_code=ac100&time=20:00",
+							"raw": "{{url}}/api-external/bus-schedule-bus-detail?route_code=&association_code=&date=&bus_facility_type_code=&time=",
 							"host": [
 								"{{url}}"
 							],
@@ -264,28 +267,28 @@
 							"query": [
 								{
 									"key": "route_code",
-									"value": "km1",
-									"description": "Scheduled Bus Route Code"
+									"value": "",
+									"description": "required, Scheduled Bus Route Code"
 								},
 								{
 									"key": "association_code",
-									"value": "m100",
-									"description": "Scheduled Bus Association Code"
+									"value": "",
+									"description": "required, Scheduled Bus Association Code"
 								},
 								{
 									"key": "date",
-									"value": "2080-08-30",
-									"description": "Scheduled Bus Date"
+									"value": "",
+									"description": "required, Scheduled Bus Date e.g. 2080-10-12 (B.S.)"
 								},
 								{
 									"key": "bus_facility_type_code",
-									"value": "ac100",
-									"description": "Scheduled Bus Time"
+									"value": "",
+									"description": "required, Scheduled Bus Facility Type Code"
 								},
 								{
 									"key": "time",
-									"value": "20:00",
-									"description": "Scheduled Bus Facility Type Code"
+									"value": "",
+									"description": "required, Scheduled Bus Time e.g. 18:00"
 								}
 							]
 						}
@@ -310,8 +313,8 @@
 							"variable": [
 								{
 									"key": "bus_schedule_id",
-									"value": "168",
-									"description": "Scheduled Bus Schedule Id"
+									"value": "12718",
+									"description": "Bus Schedule Id"
 								}
 							]
 						}
@@ -431,7 +434,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "131"
+									"value": "131",
+									"description": "Bus Schdedule Id"
 								}
 							]
 						}
@@ -482,7 +486,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "131"
+									"value": "131",
+									"description": "Bus Schdedule Id"
 								}
 							]
 						}
@@ -533,7 +538,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "131"
+									"value": "131",
+									"description": "Bus Schdedule Id"
 								}
 							]
 						}
@@ -580,7 +586,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api-external/pre-booking?schedule_id=7067&date=2080-09-27&seat_name[]=B2",
+							"raw": "{{url}}/api-external/pre-booking?schedule_id=12718&seat_name[]=Bख&seat_name[]=GHA",
 							"host": [
 								"{{url}}"
 							],
@@ -600,24 +606,25 @@
 									"disabled": true
 								},
 								{
+									"key": "date",
+									"value": "2081-04-03",
+									"description": "Scheduled Bus Date e.g. 2080-10-12 (B.S.)",
+									"disabled": true
+								},
+								{
 									"key": "schedule_id",
-									"value": "7067",
+									"value": "12718",
 									"description": "Bus Schedule Id "
 								},
 								{
-									"key": "date",
-									"value": "2080-09-27",
-									"description": "Scheduled Bus Date"
-								},
-								{
 									"key": "seat_name[]",
-									"value": "B2",
+									"value": "Bख",
 									"description": "Bus Seat Name"
 								},
 								{
 									"key": "seat_name[]",
 									"value": "GHA",
-									"disabled": true
+									"description": "Bus Seat Name"
 								}
 							]
 						}
@@ -693,7 +700,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"schedule_id\": 7067,\n    \"drop_location\": \"DJE\",\n    \"pickup_location\": \"kalanki\",\n    // \"rate\": 2150,\n    \"discount\": 100,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    \"paid\": 2000,\n    \"seat_name\": [\n        \"B2\"\n        // ,\n        // \"GHA\"\n    ]\n}",
+							"raw": "{\n    \"schedule_id\": 12718,\n    \"drop_location\": \"DJE\",\n    \"pickup_location\": \"kalanki\",\n    // \"rate\": 2150,\n    \"discount\": 100,\n    \"contact_name\": \"Bikash SinghTEST\",\n    \"contact_phone\": \"98713264000\",\n    \"paid\": 2000,\n    \"seat_name\": [\n        \"Bख\"\n        // ,\n        // \"GHA\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -810,7 +817,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/my-booking?from_date=2080-10-12&to_date=2080-10-12",
+							"raw": "{{url}}/api-external/my-booking?from_date=&to_date=&paginate=&limit=&page=",
 							"host": [
 								"{{url}}"
 							],
@@ -821,28 +828,28 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-10-12",
-									"description": "Departure Date From"
+									"value": "",
+									"description": "Departure Date From e.g. 2080-10-12 (B.S.)"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-10-12",
-									"description": "Departure Date To"
+									"value": "",
+									"description": "Departure Date To e.g. 2080-10-12 (B.S.)"
 								},
 								{
 									"key": "paginate",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								},
 								{
 									"key": "limit",
-									"value": "5",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 10"
 								},
 								{
 									"key": "page",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								}
 							]
 						}
@@ -865,7 +872,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-booking-list/?bus_schedule_id=7261",
+							"raw": "{{url}}/api-external/bus-booking-list/?from_date=&to_date=&bus_schedule_id=&paginate=&limit=&page=",
 							"host": [
 								"{{url}}"
 							],
@@ -877,35 +884,94 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "2080-10-12",
-									"description": "Departure Date From",
-									"disabled": true
+									"value": "",
+									"description": "Departure Date From e.g. 2080-10-12 (B.S.)"
 								},
 								{
 									"key": "to_date",
-									"value": "2080-10-12",
-									"description": "Departure Date To",
-									"disabled": true
+									"value": "",
+									"description": "Departure Date To e.g. 2080-10-12 (B.S.)"
 								},
 								{
 									"key": "bus_schedule_id",
-									"value": "7261",
-									"description": "Bus Schedule Id"
+									"value": "",
+									"description": "required, Bus Schedule Id e.g. 7261"
 								},
 								{
 									"key": "paginate",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
 								},
 								{
 									"key": "limit",
-									"value": "5",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 10"
 								},
 								{
 									"key": "page",
-									"value": "1",
-									"disabled": true
+									"value": "",
+									"description": "e.g. 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bus booking list cancelled",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/bus-booking-cancelled-list/?from_date=&to_date=&bus_schedule_id=&paginate=&limit=&page=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"bus-booking-cancelled-list",
+								""
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "",
+									"description": "Departure Date From e.g. 2080-10-12 (B.S.)"
+								},
+								{
+									"key": "to_date",
+									"value": "",
+									"description": "Departure Date To e.g. 2080-10-12 (B.S.)"
+								},
+								{
+									"key": "bus_schedule_id",
+									"value": "",
+									"description": "required, Bus Schedule Id e.g. 7261"
+								},
+								{
+									"key": "paginate",
+									"value": "",
+									"description": "e.g. 1"
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "e.g. 10"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "e.g. 1"
 								}
 							]
 						}

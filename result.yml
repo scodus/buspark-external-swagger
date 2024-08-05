@@ -3,7 +3,7 @@ info:
   title: Madani - Gongagbu Bus Park Reservation External
   description: >-
     Bus Reservation External | Generate Client Id and Secret from
-    http://ticketing.madani.com.np/admin/site-setting/client-secret |  For
+    http://ticketing.madani.com.np/admin/site-setting/client-secret | For
     Private routes : Authorization => Bearer <token>
   version: '1.0'
   x-logo:
@@ -20,13 +20,13 @@ info:
     url: https://es.wikipedia.org/wiki/Licencia_MIT
 servers:
   - url: https://ticketing.gongabubuspark.com
-    description: Base URL
+    description: Base URL Live Site
   - url: http://ticketing.gongabubuspark.com
-    description: Base URL
+    description: Base URL Live Site
   - url: https://buspark.scoduscorp.com
-    description: Base URL
+    description: Base URL for testing
   - url: http://buspark.scoduscorp.com
-    description: Base URL
+    description: Base URL for testing
 components:
   securitySchemes:
     bearerAuth:
@@ -49,8 +49,8 @@ paths:
             schema:
               type: object
               example:
-                client_id: b373a0ff-194f-4514-ab14-048448b9615c
-                client_secret: E8090rTPLCt3PUPEnCTRAACH2rQ4LviMwwdqcDJN
+                client_id: f163c9f3-3ec5-4594-9505-c299c94d2236
+                client_secret: WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R
       responses:
         '200':
           description: Successful response
@@ -79,19 +79,31 @@ paths:
           schema:
             type: string
           description: Bus Route Code
-          example: ktmmnr100
         - name: association_code
           in: query
           schema:
             type: string
           description: Bus Association Code
-          example: m100
         - name: bus_facility_type_code
           in: query
           schema:
             type: string
           description: Bus Facility Type Code
-          example: ac100
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
       responses:
         '200':
           description: Successful response
@@ -108,6 +120,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: Bus Id
           example: '7'
       responses:
         '200':
@@ -124,26 +137,37 @@ paths:
           in: query
           schema:
             type: string
-          description: Schedule Bus Date
-          example: '2080-08-30'
+          description: required, Schedule Bus Date e.g. 2081-04-03
         - name: route_code
           in: query
           schema:
             type: string
           description: Scheduled Bus Route Code
-          example: ktmmnr100
         - name: association_code
           in: query
           schema:
             type: string
           description: Scheduled Bus Association Code
-          example: m100
         - name: bus_facility_type_code
           in: query
           schema:
             type: string
           description: Scheduled Bus Facility Type Code
-          example: ac100
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
       responses:
         '200':
           description: Successful response
@@ -159,32 +183,27 @@ paths:
           in: query
           schema:
             type: string
-          description: Scheduled Bus Route Code
-          example: km1
+          description: required, Scheduled Bus Route Code
         - name: association_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Association Code
-          example: m100
+          description: required, Scheduled Bus Association Code
         - name: date
           in: query
           schema:
             type: string
-          description: Scheduled Bus Date
-          example: '2080-08-30'
+          description: required, Scheduled Bus Date e.g. 2080-10-12 (B.S.)
         - name: bus_facility_type_code
           in: query
           schema:
             type: string
-          description: Scheduled Bus Time
-          example: ac100
+          description: required, Scheduled Bus Facility Type Code
         - name: time
           in: query
           schema:
             type: string
-          description: Scheduled Bus Facility Type Code
-          example: '20:00'
+          description: required, Scheduled Bus Time e.g. 18:00
       responses:
         '200':
           description: Successful response
@@ -201,8 +220,8 @@ paths:
           schema:
             type: integer
           required: true
-          description: Scheduled Bus Schedule Id
-          example: '168'
+          description: Bus Schedule Id
+          example: '12718'
       responses:
         '200':
           description: Successful response
@@ -273,6 +292,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: Bus Schdedule Id
           example: '131'
       responses:
         '200':
@@ -304,6 +324,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: Bus Schdedule Id
           example: '131'
       responses:
         '200':
@@ -335,6 +356,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: Bus Schdedule Id
           example: '131'
       responses:
         '200':
@@ -354,19 +376,13 @@ paths:
           schema:
             type: integer
           description: 'Bus Schedule Id '
-          example: '7067'
-        - name: date
-          in: query
-          schema:
-            type: string
-          description: Scheduled Bus Date
-          example: '2080-09-27'
+          example: '12718'
         - name: seat_name[]
           in: query
           schema:
             type: string
           description: Bus Seat Name
-          example: B2
+          example: Bख
       responses:
         '200':
           description: Successful response
@@ -409,7 +425,7 @@ paths:
             schema:
               type: object
               example:
-                schedule_id: 7067
+                schedule_id: 12718
                 drop_location: DJE
                 pickup_location: kalanki
                 discount: 100
@@ -417,7 +433,7 @@ paths:
                 contact_phone: '98713264000'
                 paid: 2000
                 seat_name:
-                  - B2
+                  - Bख
       security:
         - bearerAuth: []
       responses:
@@ -486,14 +502,27 @@ paths:
           in: query
           schema:
             type: string
-          description: Departure Date From
-          example: '2080-10-12'
+          description: Departure Date From e.g. 2080-10-12 (B.S.)
         - name: to_date
           in: query
           schema:
             type: string
-          description: Departure Date To
-          example: '2080-10-12'
+          description: Departure Date To e.g. 2080-10-12 (B.S.)
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
       responses:
         '200':
           description: Successful response
@@ -507,12 +536,79 @@ paths:
       security:
         - bearerAuth: []
       parameters:
+        - name: from_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date From e.g. 2080-10-12 (B.S.)
+        - name: to_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date To e.g. 2080-10-12 (B.S.)
         - name: bus_schedule_id
           in: query
           schema:
-            type: integer
-          description: Bus Schedule Id
-          example: '7261'
+            type: string
+          description: required, Bus Schedule Id e.g. 7261
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api-external/bus-booking-cancelled-list/:
+    get:
+      tags:
+        - bus booking
+      summary: bus booking list cancelled
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: from_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date From e.g. 2080-10-12 (B.S.)
+        - name: to_date
+          in: query
+          schema:
+            type: string
+          description: Departure Date To e.g. 2080-10-12 (B.S.)
+        - name: bus_schedule_id
+          in: query
+          schema:
+            type: string
+          description: required, Bus Schedule Id e.g. 7261
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
       responses:
         '200':
           description: Successful response
