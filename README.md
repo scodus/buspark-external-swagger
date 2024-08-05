@@ -1,3 +1,4 @@
+# gongabubuspark-swagger
 # Generate OpenAPI yaml from Postman json file:
 
 ###
@@ -8,8 +9,10 @@
 
 3. Run `make doc` in terminal to generate openApi.
 
-# 4. View Api in : https://madanitechnologies.github.io/buspark-external-swagger/
+4.Live Server
+# View Api in : https://madanitechnologies.github.io/buspark-external-swagger/
 
-# 4. View Api in : https://scodus.github.io/buspark-external-swagger/
+5.Test Server
+# View Api in : https://scodus.github.io/buspark-external-swagger/
 
 #### Reference `https://joolfe.github.io/postman-to-openapi/`
