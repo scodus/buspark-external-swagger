@@ -59,7 +59,38 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "token generate new method",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    // \"grant_type\": \"ExternalCredential\",\r\n    // \"scope\": \"*\",\r\n    \"client_id\": \"f163c9f3-3ec5-4594-9505-c299c94d2236\",\r\n    \"client_secret\": \"WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api-external/token-generate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"token-generate"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "user detail",
@@ -107,7 +138,29 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "user detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api-external/user-detail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"user-detail"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			]
 		},

@@ -52,10 +52,12 @@ paths:
                 client_id: f163c9f3-3ec5-4594-9505-c299c94d2236
                 client_secret: WI7UBYoLrKZZV7hpR9O4u3XtIuA4lLmKbusOQF8R
       responses:
-        '200':
-          description: Successful response
+        undefined:
           content:
-            application/json: {}
+            text/plain:
+              schema:
+                type: string
+              example: null
   /api-external/user-detail:
     get:
       tags:
@@ -64,10 +66,12 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
-          description: Successful response
+        undefined:
           content:
-            application/json: {}
+            text/plain:
+              schema:
+                type: string
+              example: null
   /api-external/bus-list:
     get:
       tags:
