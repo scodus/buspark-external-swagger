@@ -34,6 +34,8 @@ components:
       scheme: bearer
 tags:
   - name: Authentication
+  - name: location
+  - name: route
   - name: bus
   - name: bus-schedule
   - name: bus booking
@@ -74,6 +76,1897 @@ paths:
               schema:
                 type: string
               example: "{\r\n    \"data\": {\r\n        \"id\": 74,\r\n        \"username\": null,\r\n        \"first_name\": \"BusPark Ticketing\",\r\n        \"last_name\": null,\r\n        \"email\": \"buspark@madani.com.np\",\r\n        \"phone\": null,\r\n        \"image\": null,\r\n        \"status\": \"Active\",\r\n        \"role\": [\r\n            \"External\"\r\n        ],\r\n        \"permissions\": []\r\n    },\r\n    \"message\": \"User\"\r\n}"
+  /api-external/location-list:
+    get:
+      tags:
+        - location
+      summary: location list
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Date:
+              schema:
+                type: string
+                example: Tue, 13 Aug 2024 09:25:12 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '54'
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc;
+                  expires=Tue, 13-Aug-2024 11:25:12 GMT; Max-Age=7200; path=/;
+                  httponly; samesite=lax
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  data:
+                    - id: 126
+                      city: 4number
+                      slug: 4number
+                    - id: 89
+                      city: Aambasa
+                      slug: aambasa
+                    - id: 84
+                      city: Aatariya
+                      slug: aatariya
+                    - id: 67
+                      city: Agahakhola
+                      slug: agahakhola
+                    - id: 185
+                      city: Agaiya
+                      slug: agaiya
+                    - id: 284
+                      city: Babiyachaur
+                      slug: babiyachhar
+                    - id: 58
+                      city: Baddada
+                      slug: baddada
+                    - id: 61
+                      city: Bagdula
+                      slug: bagdula
+                    - id: 77
+                      city: Bagkmara
+                      slug: bagkmara
+                    - id: 15
+                      city: Baglung
+                      slug: baglung
+                    - id: 268
+                      city: Bagthala
+                      slug: bagthala
+                    - id: 83
+                      city: Bahane
+                      slug: bahane
+                    - id: 91
+                      city: Baitadi
+                      slug: baitadi
+                    - id: 280
+                      city: Bajhang
+                      slug: bajhang
+                    - id: 112
+                      city: Bajura
+                      slug: bajura
+                    - id: 119
+                      city: Baladev
+                      slug: baladev
+                    - id: 236
+                      city: Baletaksar
+                      slug: baletaksar
+                    - id: 122
+                      city: Bamka
+                      slug: bamka
+                    - id: 247
+                      city: Barala
+                      slug: barala
+                    - id: 258
+                      city: Bardaghat
+                      slug: bardaghat
+                    - id: 8
+                      city: Bardibas
+                      slug: bardibas
+                    - id: 132
+                      city: Bardiya
+                      slug: bardiya
+                    - id: 266
+                      city: Basali
+                      slug: basali
+                    - id: 198
+                      city: Basantapur
+                      slug: basantapur
+                    - id: 85
+                      city: Basgadi
+                      slug: basgadi
+                    - id: 90
+                      city: Bauniya
+                      slug: bauniya
+                    - id: 281
+                      city: Bayedi
+                      slug: bayedi
+                    - id: 134
+                      city: Beltar
+                      slug: beltar
+                    - id: 40
+                      city: Beni
+                      slug: beni
+                    - id: 116
+                      city: Betalmandu
+                      slug: betalmandu
+                    - id: 11
+                      city: Bhadrapur
+                      slug: bhardrapur
+                    - id: 255
+                      city: Bhairawa
+                      slug: bhairawa
+                    - id: 158
+                      city: Bhajani
+                      slug: bhajani
+                    - id: 24
+                      city: Bhalkot
+                      slug: bhalkot
+                    - id: 57
+                      city: Bhaluwang
+                      slug: bhaluwang
+                    - id: 241
+                      city: Bhangaylakuri
+                      slug: bhangaylakuri
+                    - id: 21
+                      city: Bhimghithe
+                      slug: bhimghithe
+                    - id: 211
+                      city: Bhingri
+                      slug: bhingri
+                    - id: 146
+                      city: Bhuregau
+                      slug: bhuregau
+                    - id: 138
+                      city: Bhusha
+                      slug: bhusha
+                    - id: 288
+                      city: Bhuwachidi(Gulmi)
+                      slug: bhuwachidi-gulmi
+                    - id: 60
+                      city: Bijuwar
+                      slug: bijuwar
+                    - id: 120
+                      city: Binayak
+                      slug: binayak
+                    - id: 4
+                      city: Biratnagar
+                      slug: brtngr
+                    - id: 137
+                      city: Birgunj
+                      slug: birgunj
+                    - id: 50
+                      city: Birtamod
+                      slug: birtamod
+                    - id: 272
+                      city: Bitthad
+                      slug: bitthad
+                    - id: 43
+                      city: Boksekhala
+                      slug: boksekhala
+                    - id: 174
+                      city: Botechaur
+                      slug: botechaur
+                    - id: 208
+                      city: Boteychaur
+                      slug: boteychaur
+                    - id: 105
+                      city: Budar
+                      slug: budar
+                    - id: 101
+                      city: Budha
+                      slug: budha
+                    - id: 115
+                      city: Budhabagar
+                      slug: budhabagar
+                    - id: 166
+                      city: Budhabare
+                      slug: budhabare
+                    - id: 22
+                      city: Burtibang
+                      slug: burtibang
+                    - id: 56
+                      city: Butwal
+                      slug: butwal
+                    - id: 59
+                      city: Chackchake
+                      slug: chackchake
+                    - id: 81
+                      city: Chakchake
+                      slug: chakchake
+                    - id: 249
+                      city: Chakhlighat
+                      slug: chakhlighat
+                    - id: 79
+                      city: Chanauta
+                      slug: chanauta
+                    - id: 82
+                      city: Charneta
+                      slug: charneta
+                    - id: 10
+                      city: Chatara
+                      slug: chatara
+                    - id: 114
+                      city: Chaukhutte
+                      slug: chaukhutte
+                    - id: 99
+                      city: Chaumala
+                      slug: chaumala
+                    - id: 201
+                      city: Chayanpur
+                      slug: chayanpur
+                    - id: 207
+                      city: Cheda
+                      slug: cheda
+                    - id: 7
+                      city: Chhinchu
+                      slug: kohalpur
+                    - id: 94
+                      city: Chisapani
+                      slug: chisapani
+                    - id: 88
+                      city: Dadeldhura
+                      slug: dadeldhura
+                    - id: 65
+                      city: Dailekh
+                      slug: dailekh
+                    - id: 49
+                      city: Damak
+                      slug: damak
+                    - id: 68
+                      city: Damar gau
+                      slug: damar-gau
+                    - id: 32
+                      city: Dana
+                      slug: dana
+                    - id: 78
+                      city: Dang
+                      slug: dang
+                    - id: 47
+                      city: Darbang
+                      slug: darbang
+                    - id: 72
+                      city: Darbot
+                      slug: darbot
+                    - id: 148
+                      city: Darchula
+                      slug: darchula
+                    - id: 150
+                      city: Dattu
+                      slug: dattu
+                    - id: 92
+                      city: Dehimandau
+                      slug: dehimandau
+                    - id: 273
+                      city: Deulekh
+                      slug: deulekh
+                    - id: 276
+                      city: Deura
+                      slug: deura
+                    - id: 5
+                      city: Dhadhing
+                      slug: dhadhing
+                    - id: 159
+                      city: Dhangadi
+                      slug: dhangadi
+                    - id: 160
+                      city: Dhankuta
+                      slug: dhankuta
+                    - id: 303
+                      city: Dhankuta-Hile
+                      slug: dhankuta-hile
+                    - id: 182
+                      city: Dhanusha Dham
+                      slug: dhanusha-dham
+                    - id: 149
+                      city: Dhap
+                      slug: dhap
+                    - id: 52
+                      city: Dharan
+                      slug: dharan-2
+                    - id: 175
+                      city: Dharapani
+                      slug: dharapani
+                    - id: 248
+                      city: Dhorchaul
+                      slug: dhorchaul
+                    - id: 259
+                      city: Dimuwa(Naya Pul)
+                      slug: dimuwa-naya-pul
+                    - id: 109
+                      city: Dipayal
+                      slug: dipayal
+                    - id: 269
+                      city: Dudilakhan
+                      slug: dudilakhan
+                    - id: 76
+                      city: Duikholi
+                      slug: duikholi
+                    - id: 170
+                      city: Fera
+                      slug: fera
+                    - id: 229
+                      city: Fidim
+                      slug: fidim
+                    - id: 165
+                      city: Fikkal
+                      slug: fikkal
+                    - id: 141
+                      city: Gaduwa
+                      slug: gaduwa
+                    - id: 162
+                      city: GaiGhat
+                      slug: gaighat
+                    - id: 267
+                      city: Gaira
+                      slug: gaira
+                    - id: 64
+                      city: Galayang
+                      slug: galayang
+                    - id: 302
+                      city: Gaurigunj
+                      slug: gaurigunj
+                    - id: 74
+                      city: Ghartigoun
+                      slug: ghartigoun
+                    - id: 33
+                      city: Ghasa
+                      slug: ghasa
+                    - id: 142
+                      city: Ghorahi
+                      slug: ghorahi
+                    - id: 225
+                      city: Ghuldhara Pokhara
+                      slug: ghuldhara-pokhara
+                    - id: 147
+                      city: Gokuleswor
+                      slug: gokuleswor
+                    - id: 108
+                      city: Gopghat
+                      slug: gopghat
+                    - id: 104
+                      city: Gorushingha
+                      slug: gorushingha
+                    - id: 125
+                      city: Guleriya
+                      slug: guleriya
+                    - id: 239
+                      city: Gulmi
+                      slug: gulmi
+                    - id: 296
+                      city: Haraiya
+                      slug: haraiya
+                    - id: 19
+                      city: Hatiya
+                      slug: hatiya
+                    - id: 261
+                      city: Hemja
+                      slug: hemja
+                    - id: 161
+                      city: Hile
+                      slug: hile
+                    - id: 69
+                      city: Holeli
+                      slug: holeli
+                    - id: 168
+                      city: Illam
+                      slug: illam
+                    - id: 293
+                      city: Inar Pani
+                      slug: inar-pani
+                    - id: 291
+                      city: Indragauda
+                      slug: indragauda
+                    - id: 48
+                      city: Ithari
+                      slug: ithari
+                    - id: 173
+                      city: Jahare
+                      slug: jahare
+                    - id: 227
+                      city: Jait Pani
+                      slug: jait-pani
+                    - id: 172
+                      city: Jajarkot
+                      slug: jajarkot
+                    - id: 181
+                      city: Jaleshor
+                      slug: jaleshor
+                    - id: 176
+                      city: Jamuney Bazzar
+                      slug: jamuney-bazzar
+                    - id: 179
+                      city: Janakpur
+                      slug: janakpur
+                    - id: 180
+                      city: Jathe
+                      slug: jathe
+                    - id: 187
+                      city: Jayanagar
+                      slug: jayanagar
+                    - id: 294
+                      city: Jhakri Sthan
+                      slug: jhakri-sthan
+                    - id: 9
+                      city: Jhapa
+                      slug: jhapa
+                    - id: 275
+                      city: Jhota
+                      slug: jhota
+                    - id: 242
+                      city: Jhulneta
+                      slug: jhulneta
+                    - id: 190
+                      city: Jite
+                      slug: jite
+                    - id: 39
+                      city: Jomsom
+                      slug: jomsom
+                    - id: 195
+                      city: Jumla
+                      slug: jumla
+                    - id: 17
+                      city: Kadebas\Gyalang
+                      slug: kadebas-gyalang
+                    - id: 44
+                      city: Kaghbeni
+                      slug: kaghbeni
+                    - id: 12
+                      city: Kakadvitta
+                      slug: kakadvitta
+                    - id: 25
+                      city: Kakri
+                      slug: kakri
+                    - id: 251
+                      city: Kalakhet
+                      slug: kalakhet
+                    - id: 144
+                      city: Kalimati
+                      slug: kalimati
+                    - id: 34
+                      city: Kaprebhir
+                      slug: kaprebhir
+                    - id: 219
+                      city: Kapurkot
+                      slug: kapurkot
+                    - id: 197
+                      city: Katari
+                      slug: katari
+                    - id: 1
+                      city: Kathmandu
+                      slug: ktm
+                    - id: 27
+                      city: Khabang Bazzar
+                      slug: khabang-bazzar
+                    - id: 204
+                      city: Khadbari
+                      slug: khadbari
+                    - id: 131
+                      city: khajuri
+                      slug: khajuri
+                    - id: 29
+                      city: Khalanga
+                      slug: khalanga
+                    - id: 192
+                      city: Khallaghat
+                      slug: khallaghat
+                    - id: 18
+                      city: Kharbang
+                      slug: kharbang
+                    - id: 252
+                      city: Kharibot
+                      slug: kharibot
+                    - id: 253
+                      city: Khaula
+                      slug: khaula
+                    - id: 264
+                      city: Khaulara\Khara
+                      slug: khaulara-khara
+                    - id: 98
+                      city: Khodep
+                      slug: khodep
+                    - id: 155
+                      city: khojlak
+                      slug: khojlak
+                    - id: 212
+                      city: Khungri
+                      slug: khungri
+                    - id: 218
+                      city: Kimichaur
+                      slug: kimichaur
+                    - id: 36
+                      city: Kobang
+                      slug: kobang
+                    - id: 53
+                      city: Koholpur
+                      slug: koholpur
+                    - id: 128
+                      city: Kothiyaghat
+                      slug: kothiyaghat
+                    - id: 171
+                      city: Kudu
+                      slug: kudu
+                    - id: 14
+                      city: Kusma
+                      slug: kusma
+                    - id: 102
+                      city: Kusum
+                      slug: kusum
+                    - id: 133
+                      city: lahan
+                      slug: lahan
+                    - id: 26
+                      city: Lakum
+                      slug: lakum
+                    - id: 55
+                      city: Lamahi
+                      slug: lamahi
+                    - id: 145
+                      city: Lamki
+                      slug: lamki
+                    - id: 221
+                      city: Lanti
+                      slug: lanti
+                    - id: 35
+                      city: Lete
+                      slug: lete
+                    - id: 214
+                      city: Libang
+                      slug: libang
+                    - id: 220
+                      city: Luham
+                      slug: luham
+                    - id: 256
+                      city: Lumbini
+                      slug: lumbini
+                    - id: 260
+                      city: Lumla Kada
+                      slug: lumla-kada
+                    - id: 231
+                      city: Macchi
+                      slug: macchi
+                    - id: 216
+                      city: Madichaur
+                      slug: madichaur
+                    - id: 123
+                      city: madilekh
+                      slug: madilekh
+                    - id: 2
+                      city: Mahendranagar
+                      slug: mnr
+                    - id: 124
+                      city: MainaPokhar
+                      slug: mainapokhar
+                    - id: 262
+                      city: Maldhunga
+                      slug: maldhunga
+                    - id: 152
+                      city: Malikarjun
+                      slug: malikarjun
+                    - id: 66
+                      city: Malungga
+                      slug: malungga
+                    - id: 200
+                      city: Mamling
+                      slug: mamling
+                    - id: 205
+                      city: Mane Bhanjyang
+                      slug: mane-bhanjyang
+                    - id: 295
+                      city: Manewa Pata
+                      slug: manewa-pata
+                    - id: 191
+                      city: Manma
+                      slug: manma
+                    - id: 232
+                      city: Maranthana
+                      slug: maranthana
+                    - id: 38
+                      city: Marfa
+                      slug: marfa
+                    - id: 121
+                      city: Masuriya
+                      slug: masuriya
+                    - id: 178
+                      city: Matela
+                      slug: matela
+                    - id: 277
+                      city: Mauribagar
+                      slug: mauribagar
+                    - id: 265
+                      city: Melkheath
+                      slug: melkheath
+                    - id: 209
+                      city: Melkuna
+                      slug: melkuna
+                    - id: 73
+                      city: Minahi
+                      slug: minahi
+                    - id: 196
+                      city: Mirchaiya
+                      slug: mirchaiya
+                    - id: 287
+                      city: Mirmi
+                      slug: mirmi
+                    - id: 250
+                      city: Mokhla
+                      slug: mokhla
+                    - id: 199
+                      city: Mude
+                      slug: mude
+                    - id: 42
+                      city: Muktinath
+                      slug: muktinath
+                    - id: 164
+                      city: Murkuchi
+                      slug: murkuchi
+                    - id: 97
+                      city: Musuriya
+                      slug: musuriya
+                    - id: 270
+                      city: Musyakhan
+                      slug: musyakhan
+                    - id: 194
+                      city: Nagma
+                      slug: nagma
+                    - id: 6
+                      city: Narayangarh
+                      slug: narayangadh
+                    - id: 263
+                      city: Naudada
+                      slug: naudada
+                    - id: 51
+                      city: Nepalgunj
+                      slug: dharan
+                    - id: 163
+                      city: Nepaltar
+                      slug: nepaltar
+                    - id: 23
+                      city: Nisi
+                      slug: nisi
+                    - id: 20
+                      city: Nowara
+                      slug: nowara
+                    - id: 41
+                      city: Nuwakot
+                      slug: kusma-2
+                    - id: 95
+                      city: Pahalmanpur
+                      slug: pahalmanpur
+                    - id: 234
+                      city: Palpa
+                      slug: palpa
+                    - id: 153
+                      city: Panjyunaya
+                      slug: panjyunaya
+                    - id: 167
+                      city: Pashupatinagar
+                      slug: pashupatinagar
+                    - id: 151
+                      city: Pasthi
+                      slug: pasthi
+                    - id: 96
+                      city: Patan
+                      slug: patan
+                    - id: 193
+                      city: Pile
+                      slug: pile
+                    - id: 210
+                      city: Pipey
+                      slug: pipey
+                    - id: 3
+                      city: Pokhara
+                      slug: pkr
+                    - id: 45
+                      city: Pokharebaar
+                      slug: pokharebaar
+                    - id: 254
+                      city: Pyuthan
+                      slug: pyuthan
+                    - id: 177
+                      city: Radi
+                      slug: radi
+                    - id: 107
+                      city: Raduwa Khola
+                      slug: raduwa-khola
+                    - id: 129
+                      city: Rajapur
+                      slug: rajapur
+                    - id: 297
+                      city: Rajbiraj
+                      slug: rajbiraj
+                    - id: 301
+                      city: Rajgadh
+                      slug: rajgadh
+                    - id: 189
+                      city: Rakam
+                      slug: rakam
+                    - id: 186
+                      city: Rambapur
+                      slug: rambapur
+                    - id: 135
+                      city: Rampur
+                      slug: rampur
+                    - id: 136
+                      city: Rangely
+                      slug: rangely
+                    - id: 299
+                      city: Ranipani
+                      slug: ranipani
+                    - id: 298
+                      city: Ratna Chaur
+                      slug: ratna-chaur
+                    - id: 286
+                      city: Ratodhunga
+                      slug: ratodhunga
+                    - id: 235
+                      city: Ridi
+                      slug: ridi
+                    - id: 16
+                      city: Rijalchok/Ghoda badi
+                      slug: rijalchok-ghoda-badi
+                    - id: 206
+                      city: Rimna
+                      slug: rimna
+                    - id: 215
+                      city: Rolpa
+                      slug: rolpa
+                    - id: 245
+                      city: Rukumkhalanga
+                      slug: rukumkhalanga
+                    - id: 28
+                      city: Rukumkot
+                      slug: rukumkot
+                    - id: 86
+                      city: Sadbach
+                      slug: sadbach
+                    - id: 111
+                      city: SafeyBagar
+                      slug: safeybagar
+                    - id: 113
+                      city: Sajhghat
+                      slug: sajhghat
+                    - id: 244
+                      city: Salabhang
+                      slug: salabhang
+                    - id: 169
+                      city: salli
+                      slug: salli
+                    - id: 223
+                      city: Salyan
+                      slug: salyan
+                    - id: 103
+                      city: Samsherganj
+                      slug: samsherganj
+                    - id: 224
+                      city: Sankhamul
+                      slug: sankhamul
+                    - id: 217
+                      city: Satdobato
+                      slug: satdobato
+                    - id: 157
+                      city: Satti
+                      slug: satti
+                    - id: 202
+                      city: Sawakhola
+                      slug: sawakhola
+                    - id: 290
+                      city: Sera
+                      slug: sera
+                    - id: 226
+                      city: Sgim Kharka
+                      slug: sgim-kharka
+                    - id: 246
+                      city: Shank
+                      slug: shank
+                    - id: 130
+                      city: Shanti Bazar
+                      slug: shanti-bazar
+                    - id: 243
+                      city: Shimroute
+                      slug: shimroute
+                    - id: 285
+                      city: Shinga Tatopani
+                      slug: shinga-tatopani
+                    - id: 75
+                      city: Shisne
+                      slug: shisne
+                    - id: 271
+                      city: Shreebhawar
+                      slug: shreebhawar
+                    - id: 222
+                      city: Shreenagar
+                      slug: shreenagar
+                    - id: 110
+                      city: Silgadhi
+                      slug: silgadhi
+                    - id: 154
+                      city: Sillagada
+                      slug: sillagada
+                    - id: 238
+                      city: Simaltari
+                      slug: simaltari
+                    - id: 31
+                      city: Simli
+                      slug: simlya
+                    - id: 283
+                      city: Singa
+                      slug: singa
+                    - id: 140
+                      city: Sobarnapur
+                      slug: sobarnapur
+                    - id: 279
+                      city: Subeda
+                      slug: subeda
+                    - id: 93
+                      city: Sukkhad
+                      slug: sukkhad
+                    - id: 213
+                      city: Sulichaur
+                      slug: sulichaur
+                    - id: 257
+                      city: Sunauli
+                      slug: sunauli
+                    - id: 274
+                      city: Sunkudaa
+                      slug: sunkudaa
+                    - id: 54
+                      city: Surkhet
+                      slug: surkhet
+                    - id: 62
+                      city: Syanja
+                      slug: syanja
+                    - id: 100
+                      city: Syaowl
+                      slug: syaowl
+                    - id: 106
+                      city: Syaule
+                      slug: syaule
+                    - id: 292
+                      city: Tallafat
+                      slug: tallafat
+                    - id: 300
+                      city: Tallu Bagar
+                      slug: tallu-bagar
+                    - id: 278
+                      city: Tamel
+                      slug: tamel
+                    - id: 237
+                      city: Tamgas
+                      slug: tamgas
+                    - id: 117
+                      city: Tapkesera
+                      slug: tapkesera
+                    - id: 228
+                      city: Taplejung
+                      slug: taplegung
+                    - id: 127
+                      city: Tarataal
+                      slug: tarataal
+                    - id: 30
+                      city: Tatopani
+                      slug: tatopani
+                    - id: 184
+                      city: Tenkoriya
+                      slug: tenkoriya
+                    - id: 80
+                      city: Thakleni
+                      slug: thakleni
+                    - id: 282
+                      city: Thakurdwar
+                      slug: thakurdwar
+                    - id: 240
+                      city: Tharmarey
+                      slug: tharmarey
+                    - id: 230
+                      city: Therathum
+                      slug: therathum
+                    - id: 139
+                      city: Thori
+                      slug: thori
+                    - id: 233
+                      city: Thulabesi
+                      slug: thulabesi
+                    - id: 156
+                      city: Tikapur
+                      slug: tikapur
+                    - id: 71
+                      city: Tila
+                      slug: tila
+                    - id: 46
+                      city: TipLang
+                      slug: tiplang
+                    - id: 70
+                      city: Tribeni
+                      slug: tribeni
+                    - id: 118
+                      city: Tripada
+                      slug: tripada
+                    - id: 37
+                      city: Tukuche
+                      slug: tukuche
+                    - id: 143
+                      city: Tulsipur
+                      slug: tulsipur
+                    - id: 203
+                      city: Tumlingtar
+                      slug: tumlingtar
+                    - id: 188
+                      city: Tunibagar
+                      slug: tunibagar
+                    - id: 63
+                      city: Walling
+                      slug: walling
+                    - id: 289
+                      city: Wamitaksar
+                      slug: wamitaksar
+                    - id: 183
+                      city: Yedhukuwa
+                      slug: yedhukuwa
+                message: Location
+  /api-external/location-detail/{location_id}:
+    get:
+      tags:
+        - location
+      summary: location single detail
+      parameters:
+        - name: location_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Date:
+              schema:
+                type: string
+                example: Tue, 13 Aug 2024 09:25:31 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '59'
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc;
+                  expires=Tue, 13-Aug-2024 11:25:31 GMT; Max-Age=7200; path=/;
+                  httponly; samesite=lax
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  city: Kathmandu
+                  slug: ktm
+                message: Location Single
+  /api-external/route-list:
+    get:
+      tags:
+        - route
+      summary: route list
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: e.g. 10
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: e.g. 1
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Date:
+              schema:
+                type: string
+                example: Tue, 13 Aug 2024 09:25:56 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '57'
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc;
+                  expires=Tue, 13-Aug-2024 11:25:56 GMT; Max-Age=7200; path=/;
+                  httponly; samesite=lax
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  data:
+                    - id: 65
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 161
+                        city: Hile
+                        slug: hile
+                      status: Enabled
+                      code: R-025
+                    - id: 64
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 302
+                        city: Gaurigunj
+                        slug: gaurigunj
+                      status: Enabled
+                      code: R-064
+                    - id: 63
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 301
+                        city: Rajgadh
+                        slug: rajgadh
+                      status: Enabled
+                      code: R-063
+                    - id: 37
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 300
+                        city: Tallu Bagar
+                        slug: tallu-bagar
+                      status: Enabled
+                      code: R-037
+                    - id: 62
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 299
+                        city: Ranipani
+                        slug: ranipani
+                      status: Enabled
+                      code: R-062
+                    - id: 6
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 39
+                        city: Jomsom
+                        slug: jomsom
+                      status: Enabled
+                      code: R-006
+                    - id: 61
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 298
+                        city: Ratna Chaur
+                        slug: ratna-chaur
+                      status: Enabled
+                      code: R-061
+                    - id: 60
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 297
+                        city: Rajbiraj
+                        slug: rajbiraj
+                      status: Enabled
+                      code: R-060
+                    - id: 59
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 166
+                        city: Budhabare
+                        slug: budhabare
+                      status: Enabled
+                      code: R-059
+                    - id: 58
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 296
+                        city: Haraiya
+                        slug: haraiya
+                      status: Enabled
+                      code: R-058
+                    - id: 57
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 24
+                        city: Bhalkot
+                        slug: bhalkot
+                      status: Enabled
+                      code: R-057
+                    - id: 56
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 288
+                        city: Bhuwachidi(Gulmi)
+                        slug: bhuwachidi-gulmi
+                      status: Enabled
+                      code: R-056
+                    - id: 17
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 132
+                        city: Bardiya
+                        slug: bardiya
+                      status: Enabled
+                      code: R-017
+                    - id: 55
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 287
+                        city: Mirmi
+                        slug: mirmi
+                      status: Enabled
+                      code: R-055
+                    - id: 54
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 47
+                        city: Darbang
+                        slug: darbang
+                      status: Enabled
+                      code: R-054
+                    - id: 53
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 280
+                        city: Bajhang
+                        slug: bajhang
+                      status: Enabled
+                      code: R-053
+                    - id: 52
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 148
+                        city: Darchula
+                        slug: darchula
+                      status: Enabled
+                      code: R-052
+                    - id: 51
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 22
+                        city: Burtibang
+                        slug: burtibang
+                      status: Enabled
+                      code: R-051
+                    - id: 50
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 15
+                        city: Baglung
+                        slug: baglung
+                      status: Enabled
+                      code: R-050
+                    - id: 49
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 40
+                        city: Beni
+                        slug: beni
+                      status: Enabled
+                      code: R-049
+                    - id: 48
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 257
+                        city: Sunauli
+                        slug: sunauli
+                      status: Enabled
+                      code: R-048
+                    - id: 47
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 256
+                        city: Lumbini
+                        slug: lumbini
+                      status: Enabled
+                      code: R-047
+                    - id: 46
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 254
+                        city: Pyuthan
+                        slug: pyuthan
+                      status: Enabled
+                      code: R-046
+                    - id: 45
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 28
+                        city: Rukumkot
+                        slug: rukumkot
+                      status: Enabled
+                      code: R-045
+                    - id: 44
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 239
+                        city: Gulmi
+                        slug: gulmi
+                      status: Enabled
+                      code: R-044
+                    - id: 43
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 233
+                        city: Thulabesi
+                        slug: thulabesi
+                      status: Enabled
+                      code: R-043
+                    - id: 42
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 156
+                        city: Tikapur
+                        slug: tikapur
+                      status: Enabled
+                      code: R-042
+                    - id: 41
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 230
+                        city: Therathum
+                        slug: therathum
+                      status: Enabled
+                      code: R-041
+                    - id: 40
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 228
+                        city: Taplejung
+                        slug: taplegung
+                      status: Enabled
+                      code: R-040
+                    - id: 39
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 223
+                        city: Salyan
+                        slug: salyan
+                      status: Enabled
+                      code: R-039
+                    - id: 38
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 215
+                        city: Rolpa
+                        slug: rolpa
+                      status: Enabled
+                      code: R-038
+                    - id: 36
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 167
+                        city: Pashupatinagar
+                        slug: pashupatinagar
+                      status: Enabled
+                      code: R-036
+                    - id: 35
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 163
+                        city: Nepaltar
+                        slug: nepaltar
+                      status: Enabled
+                      code: R-035
+                    - id: 34
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 51
+                        city: Nepalgunj
+                        slug: dharan
+                      status: Enabled
+                      code: R-034
+                    - id: 33
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 204
+                        city: Khadbari
+                        slug: khadbari
+                      status: Enabled
+                      code: R-033
+                    - id: 32
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 197
+                        city: Katari
+                        slug: katari
+                      status: Enabled
+                      code: R-032
+                    - id: 31
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 195
+                        city: Jumla
+                        slug: jumla
+                      status: Enabled
+                      code: R-031
+                    - id: 30
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 179
+                        city: Janakpur
+                        slug: janakpur
+                      status: Enabled
+                      code: R-030
+                    - id: 29
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 172
+                        city: Jajarkot
+                        slug: jajarkot
+                      status: Enabled
+                      code: R-029
+                    - id: 28
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 168
+                        city: Illam
+                        slug: illam
+                      status: Enabled
+                      code: R-028
+                    - id: 27
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 64
+                        city: Galayang
+                        slug: galayang
+                      status: Enabled
+                      code: R-027
+                    - id: 26
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 162
+                        city: GaiGhat
+                        slug: gaighat
+                      status: Enabled
+                      code: R-026
+                    - id: 24
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 159
+                        city: Dhangadi
+                        slug: dhangadi
+                      status: Enabled
+                      code: R-024
+                    - id: 23
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 88
+                        city: Dadeldhura
+                        slug: dadeldhura
+                      status: Enabled
+                      code: R-023
+                    - id: 22
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 78
+                        city: Dang
+                        slug: dang
+                      status: Enabled
+                      code: R-022
+                    - id: 21
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 137
+                        city: Birgunj
+                        slug: birgunj
+                      status: Enabled
+                      code: R-021
+                    - id: 19
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 4
+                        city: Biratnagar
+                        slug: brtngr
+                      status: Enabled
+                      code: R-019
+                    - id: 18
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 134
+                        city: Beltar
+                        slug: beltar
+                      status: Enabled
+                      code: R-018
+                    - id: 16
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 112
+                        city: Bajura
+                        slug: bajura
+                      status: Enabled
+                      code: R-016
+                    - id: 15
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 91
+                        city: Baitadi
+                        slug: baitadi
+                      status: Enabled
+                      code: R-015
+                    - id: 14
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 83
+                        city: Bahane
+                        slug: bahane
+                      status: Enabled
+                      code: R-014
+                    - id: 13
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 77
+                        city: Bagkmara
+                        slug: bagkmara
+                      status: Enabled
+                      code: R-013
+                    - id: 12
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 67
+                        city: Agahakhola
+                        slug: agahakhola
+                      status: Enabled
+                      code: R-012
+                    - id: 11
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 65
+                        city: Dailekh
+                        slug: dailekh
+                      status: Enabled
+                      code: R-011
+                    - id: 10
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 62
+                        city: Syanja
+                        slug: syanja
+                      status: Enabled
+                      code: R-010
+                    - id: 9
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 29
+                        city: Khalanga
+                        slug: khalanga
+                      status: Enabled
+                      code: R-009
+                    - id: 8
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 54
+                        city: Surkhet
+                        slug: surkhet
+                      status: Enabled
+                      code: R-008
+                    - id: 7
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 52
+                        city: Dharan
+                        slug: dharan-2
+                      status: Enabled
+                      code: R-007
+                    - id: 5
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 31
+                        city: Simli
+                        slug: simlya
+                      status: Enabled
+                      code: R-005
+                    - id: 1
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 12
+                        city: Kakadvitta
+                        slug: kakadvitta
+                      status: Enabled
+                      code: R-001
+                    - id: 4
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 11
+                        city: Bhadrapur
+                        slug: bhardrapur
+                      status: Enabled
+                      code: R-004
+                    - id: 2
+                      from_location:
+                        id: 1
+                        city: Kathmandu
+                        slug: ktm
+                      to_location:
+                        id: 2
+                        city: Mahendranagar
+                        slug: mnr
+                      status: Enabled
+                      code: R-002
+                message: Route
+  /api-external/route-detail/{route_id}:
+    get:
+      tags:
+        - route
+      summary: route single detail
+      parameters:
+        - name: route_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.2.12
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Date:
+              schema:
+                type: string
+                example: Tue, 13 Aug 2024 09:26:02 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            X-RateLimit-Limit:
+              schema:
+                type: integer
+                example: '60'
+            X-RateLimit-Remaining:
+              schema:
+                type: integer
+                example: '56'
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Set-Cookie:
+              schema:
+                type: string
+                example: >-
+                  buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc;
+                  expires=Tue, 13-Aug-2024 11:26:02 GMT; Max-Age=7200; path=/;
+                  httponly; samesite=lax
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  from_location:
+                    id: 1
+                    city: Kathmandu
+                    slug: ktm
+                  to_location:
+                    id: 12
+                    city: Kakadvitta
+                    slug: kakadvitta
+                  status: Enabled
+                  code: R-001
+                message: Route Single
   /api-external/bus-list:
     get:
       tags:
@@ -423,7 +2316,7 @@ paths:
           schema:
             type: string
           description: required, Schedule Bus Date e.g. 2081-04-03
-          example: '2081-04-22'
+          example: '2081-05-01'
         - name: route_code
           in: query
           schema:

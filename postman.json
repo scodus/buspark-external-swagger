@@ -169,6 +169,460 @@
 			]
 		},
 		{
+			"name": "location",
+			"item": [
+				{
+					"name": "location list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/location-list?paginate=&limit=&page=&search_keyword=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"location-list"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": "",
+									"description": "e.g. 1"
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "e.g. 10"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "e.g. 1"
+								},
+								{
+									"key": "search_keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "location list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api-external/location-list?paginate=&limit=&page=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"location-list"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "",
+											"description": "e.g. 1"
+										},
+										{
+											"key": "limit",
+											"value": "",
+											"description": "e.g. 10"
+										},
+										{
+											"key": "page",
+											"value": "",
+											"description": "e.g. 1"
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Aug 2024 09:25:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc; expires=Tue, 13-Aug-2024 11:25:12 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 126,\n                \"city\": \"4number\",\n                \"slug\": \"4number\"\n            },\n            {\n                \"id\": 89,\n                \"city\": \"Aambasa\",\n                \"slug\": \"aambasa\"\n            },\n            {\n                \"id\": 84,\n                \"city\": \"Aatariya\",\n                \"slug\": \"aatariya\"\n            },\n            {\n                \"id\": 67,\n                \"city\": \"Agahakhola\",\n                \"slug\": \"agahakhola\"\n            },\n            {\n                \"id\": 185,\n                \"city\": \"Agaiya\",\n                \"slug\": \"agaiya\"\n            },\n            {\n                \"id\": 284,\n                \"city\": \"Babiyachaur\",\n                \"slug\": \"babiyachhar\"\n            },\n            {\n                \"id\": 58,\n                \"city\": \"Baddada\",\n                \"slug\": \"baddada\"\n            },\n            {\n                \"id\": 61,\n                \"city\": \"Bagdula\",\n                \"slug\": \"bagdula\"\n            },\n            {\n                \"id\": 77,\n                \"city\": \"Bagkmara\",\n                \"slug\": \"bagkmara\"\n            },\n            {\n                \"id\": 15,\n                \"city\": \"Baglung\",\n                \"slug\": \"baglung\"\n            },\n            {\n                \"id\": 268,\n                \"city\": \"Bagthala\",\n                \"slug\": \"bagthala\"\n            },\n            {\n                \"id\": 83,\n                \"city\": \"Bahane\",\n                \"slug\": \"bahane\"\n            },\n            {\n                \"id\": 91,\n                \"city\": \"Baitadi\",\n                \"slug\": \"baitadi\"\n            },\n            {\n                \"id\": 280,\n                \"city\": \"Bajhang\",\n                \"slug\": \"bajhang\"\n            },\n            {\n                \"id\": 112,\n                \"city\": \"Bajura\",\n                \"slug\": \"bajura\"\n            },\n            {\n                \"id\": 119,\n                \"city\": \"Baladev\",\n                \"slug\": \"baladev\"\n            },\n            {\n                \"id\": 236,\n                \"city\": \"Baletaksar\",\n                \"slug\": \"baletaksar\"\n            },\n            {\n                \"id\": 122,\n                \"city\": \"Bamka\",\n                \"slug\": \"bamka\"\n            },\n            {\n                \"id\": 247,\n                \"city\": \"Barala\",\n                \"slug\": \"barala\"\n            },\n            {\n                \"id\": 258,\n                \"city\": \"Bardaghat\",\n                \"slug\": \"bardaghat\"\n            },\n            {\n                \"id\": 8,\n                \"city\": \"Bardibas\",\n                \"slug\": \"bardibas\"\n            },\n            {\n                \"id\": 132,\n                \"city\": \"Bardiya\",\n                \"slug\": \"bardiya\"\n            },\n            {\n                \"id\": 266,\n                \"city\": \"Basali\",\n                \"slug\": \"basali\"\n            },\n            {\n                \"id\": 198,\n                \"city\": \"Basantapur\",\n                \"slug\": \"basantapur\"\n            },\n            {\n                \"id\": 85,\n                \"city\": \"Basgadi\",\n                \"slug\": \"basgadi\"\n            },\n            {\n                \"id\": 90,\n                \"city\": \"Bauniya\",\n                \"slug\": \"bauniya\"\n            },\n            {\n                \"id\": 281,\n                \"city\": \"Bayedi\",\n                \"slug\": \"bayedi\"\n            },\n            {\n                \"id\": 134,\n                \"city\": \"Beltar\",\n                \"slug\": \"beltar\"\n            },\n            {\n                \"id\": 40,\n                \"city\": \"Beni\",\n                \"slug\": \"beni\"\n            },\n            {\n                \"id\": 116,\n                \"city\": \"Betalmandu\",\n                \"slug\": \"betalmandu\"\n            },\n            {\n                \"id\": 11,\n                \"city\": \"Bhadrapur\",\n                \"slug\": \"bhardrapur\"\n            },\n            {\n                \"id\": 255,\n                \"city\": \"Bhairawa\",\n                \"slug\": \"bhairawa\"\n            },\n            {\n                \"id\": 158,\n                \"city\": \"Bhajani\",\n                \"slug\": \"bhajani\"\n            },\n            {\n                \"id\": 24,\n                \"city\": \"Bhalkot\",\n                \"slug\": \"bhalkot\"\n            },\n            {\n                \"id\": 57,\n                \"city\": \"Bhaluwang\",\n                \"slug\": \"bhaluwang\"\n            },\n            {\n                \"id\": 241,\n                \"city\": \"Bhangaylakuri\",\n                \"slug\": \"bhangaylakuri\"\n            },\n            {\n                \"id\": 21,\n                \"city\": \"Bhimghithe\",\n                \"slug\": \"bhimghithe\"\n            },\n            {\n                \"id\": 211,\n                \"city\": \"Bhingri\",\n                \"slug\": \"bhingri\"\n            },\n            {\n                \"id\": 146,\n                \"city\": \"Bhuregau\",\n                \"slug\": \"bhuregau\"\n            },\n            {\n                \"id\": 138,\n                \"city\": \"Bhusha\",\n                \"slug\": \"bhusha\"\n            },\n            {\n                \"id\": 288,\n                \"city\": \"Bhuwachidi(Gulmi)\",\n                \"slug\": \"bhuwachidi-gulmi\"\n            },\n            {\n                \"id\": 60,\n                \"city\": \"Bijuwar\",\n                \"slug\": \"bijuwar\"\n            },\n            {\n                \"id\": 120,\n                \"city\": \"Binayak\",\n                \"slug\": \"binayak\"\n            },\n            {\n                \"id\": 4,\n                \"city\": \"Biratnagar\",\n                \"slug\": \"brtngr\"\n            },\n            {\n                \"id\": 137,\n                \"city\": \"Birgunj\",\n                \"slug\": \"birgunj\"\n            },\n            {\n                \"id\": 50,\n                \"city\": \"Birtamod\",\n                \"slug\": \"birtamod\"\n            },\n            {\n                \"id\": 272,\n                \"city\": \"Bitthad\",\n                \"slug\": \"bitthad\"\n            },\n            {\n                \"id\": 43,\n                \"city\": \"Boksekhala\",\n                \"slug\": \"boksekhala\"\n            },\n            {\n                \"id\": 174,\n                \"city\": \"Botechaur\",\n                \"slug\": \"botechaur\"\n            },\n            {\n                \"id\": 208,\n                \"city\": \"Boteychaur\",\n                \"slug\": \"boteychaur\"\n            },\n            {\n                \"id\": 105,\n                \"city\": \"Budar\",\n                \"slug\": \"budar\"\n            },\n            {\n                \"id\": 101,\n                \"city\": \"Budha\",\n                \"slug\": \"budha\"\n            },\n            {\n                \"id\": 115,\n                \"city\": \"Budhabagar\",\n                \"slug\": \"budhabagar\"\n            },\n            {\n                \"id\": 166,\n                \"city\": \"Budhabare\",\n                \"slug\": \"budhabare\"\n            },\n            {\n                \"id\": 22,\n                \"city\": \"Burtibang\",\n                \"slug\": \"burtibang\"\n            },\n            {\n                \"id\": 56,\n                \"city\": \"Butwal\",\n                \"slug\": \"butwal\"\n            },\n            {\n                \"id\": 59,\n                \"city\": \"Chackchake\",\n                \"slug\": \"chackchake\"\n            },\n            {\n                \"id\": 81,\n                \"city\": \"Chakchake\",\n                \"slug\": \"chakchake\"\n            },\n            {\n                \"id\": 249,\n                \"city\": \"Chakhlighat\",\n                \"slug\": \"chakhlighat\"\n            },\n            {\n                \"id\": 79,\n                \"city\": \"Chanauta\",\n                \"slug\": \"chanauta\"\n            },\n            {\n                \"id\": 82,\n                \"city\": \"Charneta\",\n                \"slug\": \"charneta\"\n            },\n            {\n                \"id\": 10,\n                \"city\": \"Chatara\",\n                \"slug\": \"chatara\"\n            },\n            {\n                \"id\": 114,\n                \"city\": \"Chaukhutte\",\n                \"slug\": \"chaukhutte\"\n            },\n            {\n                \"id\": 99,\n                \"city\": \"Chaumala\",\n                \"slug\": \"chaumala\"\n            },\n            {\n                \"id\": 201,\n                \"city\": \"Chayanpur\",\n                \"slug\": \"chayanpur\"\n            },\n            {\n                \"id\": 207,\n                \"city\": \"Cheda\",\n                \"slug\": \"cheda\"\n            },\n            {\n                \"id\": 7,\n                \"city\": \"Chhinchu\",\n                \"slug\": \"kohalpur\"\n            },\n            {\n                \"id\": 94,\n                \"city\": \"Chisapani\",\n                \"slug\": \"chisapani\"\n            },\n            {\n                \"id\": 88,\n                \"city\": \"Dadeldhura\",\n                \"slug\": \"dadeldhura\"\n            },\n            {\n                \"id\": 65,\n                \"city\": \"Dailekh\",\n                \"slug\": \"dailekh\"\n            },\n            {\n                \"id\": 49,\n                \"city\": \"Damak\",\n                \"slug\": \"damak\"\n            },\n            {\n                \"id\": 68,\n                \"city\": \"Damar gau\",\n                \"slug\": \"damar-gau\"\n            },\n            {\n                \"id\": 32,\n                \"city\": \"Dana\",\n                \"slug\": \"dana\"\n            },\n            {\n                \"id\": 78,\n                \"city\": \"Dang\",\n                \"slug\": \"dang\"\n            },\n            {\n                \"id\": 47,\n                \"city\": \"Darbang\",\n                \"slug\": \"darbang\"\n            },\n            {\n                \"id\": 72,\n                \"city\": \"Darbot\",\n                \"slug\": \"darbot\"\n            },\n            {\n                \"id\": 148,\n                \"city\": \"Darchula\",\n                \"slug\": \"darchula\"\n            },\n            {\n                \"id\": 150,\n                \"city\": \"Dattu\",\n                \"slug\": \"dattu\"\n            },\n            {\n                \"id\": 92,\n                \"city\": \"Dehimandau\",\n                \"slug\": \"dehimandau\"\n            },\n            {\n                \"id\": 273,\n                \"city\": \"Deulekh\",\n                \"slug\": \"deulekh\"\n            },\n            {\n                \"id\": 276,\n                \"city\": \"Deura\",\n                \"slug\": \"deura\"\n            },\n            {\n                \"id\": 5,\n                \"city\": \"Dhadhing\",\n                \"slug\": \"dhadhing\"\n            },\n            {\n                \"id\": 159,\n                \"city\": \"Dhangadi\",\n                \"slug\": \"dhangadi\"\n            },\n            {\n                \"id\": 160,\n                \"city\": \"Dhankuta\",\n                \"slug\": \"dhankuta\"\n            },\n            {\n                \"id\": 303,\n                \"city\": \"Dhankuta-Hile\",\n                \"slug\": \"dhankuta-hile\"\n            },\n            {\n                \"id\": 182,\n                \"city\": \"Dhanusha Dham\",\n                \"slug\": \"dhanusha-dham\"\n            },\n            {\n                \"id\": 149,\n                \"city\": \"Dhap\",\n                \"slug\": \"dhap\"\n            },\n            {\n                \"id\": 52,\n                \"city\": \"Dharan\",\n                \"slug\": \"dharan-2\"\n            },\n            {\n                \"id\": 175,\n                \"city\": \"Dharapani\",\n                \"slug\": \"dharapani\"\n            },\n            {\n                \"id\": 248,\n                \"city\": \"Dhorchaul\",\n                \"slug\": \"dhorchaul\"\n            },\n            {\n                \"id\": 259,\n                \"city\": \"Dimuwa(Naya Pul)\",\n                \"slug\": \"dimuwa-naya-pul\"\n            },\n            {\n                \"id\": 109,\n                \"city\": \"Dipayal\",\n                \"slug\": \"dipayal\"\n            },\n            {\n                \"id\": 269,\n                \"city\": \"Dudilakhan\",\n                \"slug\": \"dudilakhan\"\n            },\n            {\n                \"id\": 76,\n                \"city\": \"Duikholi\",\n                \"slug\": \"duikholi\"\n            },\n            {\n                \"id\": 170,\n                \"city\": \"Fera\",\n                \"slug\": \"fera\"\n            },\n            {\n                \"id\": 229,\n                \"city\": \"Fidim\",\n                \"slug\": \"fidim\"\n            },\n            {\n                \"id\": 165,\n                \"city\": \"Fikkal\",\n                \"slug\": \"fikkal\"\n            },\n            {\n                \"id\": 141,\n                \"city\": \"Gaduwa\",\n                \"slug\": \"gaduwa\"\n            },\n            {\n                \"id\": 162,\n                \"city\": \"GaiGhat\",\n                \"slug\": \"gaighat\"\n            },\n            {\n                \"id\": 267,\n                \"city\": \"Gaira\",\n                \"slug\": \"gaira\"\n            },\n            {\n                \"id\": 64,\n                \"city\": \"Galayang\",\n                \"slug\": \"galayang\"\n            },\n            {\n                \"id\": 302,\n                \"city\": \"Gaurigunj\",\n                \"slug\": \"gaurigunj\"\n            },\n            {\n                \"id\": 74,\n                \"city\": \"Ghartigoun\",\n                \"slug\": \"ghartigoun\"\n            },\n            {\n                \"id\": 33,\n                \"city\": \"Ghasa\",\n                \"slug\": \"ghasa\"\n            },\n            {\n                \"id\": 142,\n                \"city\": \"Ghorahi\",\n                \"slug\": \"ghorahi\"\n            },\n            {\n                \"id\": 225,\n                \"city\": \"Ghuldhara Pokhara\",\n                \"slug\": \"ghuldhara-pokhara\"\n            },\n            {\n                \"id\": 147,\n                \"city\": \"Gokuleswor\",\n                \"slug\": \"gokuleswor\"\n            },\n            {\n                \"id\": 108,\n                \"city\": \"Gopghat\",\n                \"slug\": \"gopghat\"\n            },\n            {\n                \"id\": 104,\n                \"city\": \"Gorushingha\",\n                \"slug\": \"gorushingha\"\n            },\n            {\n                \"id\": 125,\n                \"city\": \"Guleriya\",\n                \"slug\": \"guleriya\"\n            },\n            {\n                \"id\": 239,\n                \"city\": \"Gulmi\",\n                \"slug\": \"gulmi\"\n            },\n            {\n                \"id\": 296,\n                \"city\": \"Haraiya\",\n                \"slug\": \"haraiya\"\n            },\n            {\n                \"id\": 19,\n                \"city\": \"Hatiya\",\n                \"slug\": \"hatiya\"\n            },\n            {\n                \"id\": 261,\n                \"city\": \"Hemja\",\n                \"slug\": \"hemja\"\n            },\n            {\n                \"id\": 161,\n                \"city\": \"Hile\",\n                \"slug\": \"hile\"\n            },\n            {\n                \"id\": 69,\n                \"city\": \"Holeli\",\n                \"slug\": \"holeli\"\n            },\n            {\n                \"id\": 168,\n                \"city\": \"Illam\",\n                \"slug\": \"illam\"\n            },\n            {\n                \"id\": 293,\n                \"city\": \"Inar Pani\",\n                \"slug\": \"inar-pani\"\n            },\n            {\n                \"id\": 291,\n                \"city\": \"Indragauda\",\n                \"slug\": \"indragauda\"\n            },\n            {\n                \"id\": 48,\n                \"city\": \"Ithari\",\n                \"slug\": \"ithari\"\n            },\n            {\n                \"id\": 173,\n                \"city\": \"Jahare\",\n                \"slug\": \"jahare\"\n            },\n            {\n                \"id\": 227,\n                \"city\": \"Jait Pani\",\n                \"slug\": \"jait-pani\"\n            },\n            {\n                \"id\": 172,\n                \"city\": \"Jajarkot\",\n                \"slug\": \"jajarkot\"\n            },\n            {\n                \"id\": 181,\n                \"city\": \"Jaleshor\",\n                \"slug\": \"jaleshor\"\n            },\n            {\n                \"id\": 176,\n                \"city\": \"Jamuney Bazzar\",\n                \"slug\": \"jamuney-bazzar\"\n            },\n            {\n                \"id\": 179,\n                \"city\": \"Janakpur\",\n                \"slug\": \"janakpur\"\n            },\n            {\n                \"id\": 180,\n                \"city\": \"Jathe\",\n                \"slug\": \"jathe\"\n            },\n            {\n                \"id\": 187,\n                \"city\": \"Jayanagar\",\n                \"slug\": \"jayanagar\"\n            },\n            {\n                \"id\": 294,\n                \"city\": \"Jhakri Sthan\",\n                \"slug\": \"jhakri-sthan\"\n            },\n            {\n                \"id\": 9,\n                \"city\": \"Jhapa\",\n                \"slug\": \"jhapa\"\n            },\n            {\n                \"id\": 275,\n                \"city\": \"Jhota\",\n                \"slug\": \"jhota\"\n            },\n            {\n                \"id\": 242,\n                \"city\": \"Jhulneta\",\n                \"slug\": \"jhulneta\"\n            },\n            {\n                \"id\": 190,\n                \"city\": \"Jite\",\n                \"slug\": \"jite\"\n            },\n            {\n                \"id\": 39,\n                \"city\": \"Jomsom\",\n                \"slug\": \"jomsom\"\n            },\n            {\n                \"id\": 195,\n                \"city\": \"Jumla\",\n                \"slug\": \"jumla\"\n            },\n            {\n                \"id\": 17,\n                \"city\": \"Kadebas\\\\Gyalang\",\n                \"slug\": \"kadebas-gyalang\"\n            },\n            {\n                \"id\": 44,\n                \"city\": \"Kaghbeni\",\n                \"slug\": \"kaghbeni\"\n            },\n            {\n                \"id\": 12,\n                \"city\": \"Kakadvitta\",\n                \"slug\": \"kakadvitta\"\n            },\n            {\n                \"id\": 25,\n                \"city\": \"Kakri\",\n                \"slug\": \"kakri\"\n            },\n            {\n                \"id\": 251,\n                \"city\": \"Kalakhet\",\n                \"slug\": \"kalakhet\"\n            },\n            {\n                \"id\": 144,\n                \"city\": \"Kalimati\",\n                \"slug\": \"kalimati\"\n            },\n            {\n                \"id\": 34,\n                \"city\": \"Kaprebhir\",\n                \"slug\": \"kaprebhir\"\n            },\n            {\n                \"id\": 219,\n                \"city\": \"Kapurkot\",\n                \"slug\": \"kapurkot\"\n            },\n            {\n                \"id\": 197,\n                \"city\": \"Katari\",\n                \"slug\": \"katari\"\n            },\n            {\n                \"id\": 1,\n                \"city\": \"Kathmandu\",\n                \"slug\": \"ktm\"\n            },\n            {\n                \"id\": 27,\n                \"city\": \"Khabang Bazzar\",\n                \"slug\": \"khabang-bazzar\"\n            },\n            {\n                \"id\": 204,\n                \"city\": \"Khadbari\",\n                \"slug\": \"khadbari\"\n            },\n            {\n                \"id\": 131,\n                \"city\": \"khajuri\",\n                \"slug\": \"khajuri\"\n            },\n            {\n                \"id\": 29,\n                \"city\": \"Khalanga\",\n                \"slug\": \"khalanga\"\n            },\n            {\n                \"id\": 192,\n                \"city\": \"Khallaghat\",\n                \"slug\": \"khallaghat\"\n            },\n            {\n                \"id\": 18,\n                \"city\": \"Kharbang\",\n                \"slug\": \"kharbang\"\n            },\n            {\n                \"id\": 252,\n                \"city\": \"Kharibot\",\n                \"slug\": \"kharibot\"\n            },\n            {\n                \"id\": 253,\n                \"city\": \"Khaula\",\n                \"slug\": \"khaula\"\n            },\n            {\n                \"id\": 264,\n                \"city\": \"Khaulara\\\\Khara\",\n                \"slug\": \"khaulara-khara\"\n            },\n            {\n                \"id\": 98,\n                \"city\": \"Khodep\",\n                \"slug\": \"khodep\"\n            },\n            {\n                \"id\": 155,\n                \"city\": \"khojlak\",\n                \"slug\": \"khojlak\"\n            },\n            {\n                \"id\": 212,\n                \"city\": \"Khungri\",\n                \"slug\": \"khungri\"\n            },\n            {\n                \"id\": 218,\n                \"city\": \"Kimichaur\",\n                \"slug\": \"kimichaur\"\n            },\n            {\n                \"id\": 36,\n                \"city\": \"Kobang\",\n                \"slug\": \"kobang\"\n            },\n            {\n                \"id\": 53,\n                \"city\": \"Koholpur\",\n                \"slug\": \"koholpur\"\n            },\n            {\n                \"id\": 128,\n                \"city\": \"Kothiyaghat\",\n                \"slug\": \"kothiyaghat\"\n            },\n            {\n                \"id\": 171,\n                \"city\": \"Kudu\",\n                \"slug\": \"kudu\"\n            },\n            {\n                \"id\": 14,\n                \"city\": \"Kusma\",\n                \"slug\": \"kusma\"\n            },\n            {\n                \"id\": 102,\n                \"city\": \"Kusum\",\n                \"slug\": \"kusum\"\n            },\n            {\n                \"id\": 133,\n                \"city\": \"lahan\",\n                \"slug\": \"lahan\"\n            },\n            {\n                \"id\": 26,\n                \"city\": \"Lakum\",\n                \"slug\": \"lakum\"\n            },\n            {\n                \"id\": 55,\n                \"city\": \"Lamahi\",\n                \"slug\": \"lamahi\"\n            },\n            {\n                \"id\": 145,\n                \"city\": \"Lamki\",\n                \"slug\": \"lamki\"\n            },\n            {\n                \"id\": 221,\n                \"city\": \"Lanti\",\n                \"slug\": \"lanti\"\n            },\n            {\n                \"id\": 35,\n                \"city\": \"Lete\",\n                \"slug\": \"lete\"\n            },\n            {\n                \"id\": 214,\n                \"city\": \"Libang\",\n                \"slug\": \"libang\"\n            },\n            {\n                \"id\": 220,\n                \"city\": \"Luham\",\n                \"slug\": \"luham\"\n            },\n            {\n                \"id\": 256,\n                \"city\": \"Lumbini\",\n                \"slug\": \"lumbini\"\n            },\n            {\n                \"id\": 260,\n                \"city\": \"Lumla Kada\",\n                \"slug\": \"lumla-kada\"\n            },\n            {\n                \"id\": 231,\n                \"city\": \"Macchi\",\n                \"slug\": \"macchi\"\n            },\n            {\n                \"id\": 216,\n                \"city\": \"Madichaur\",\n                \"slug\": \"madichaur\"\n            },\n            {\n                \"id\": 123,\n                \"city\": \"madilekh\",\n                \"slug\": \"madilekh\"\n            },\n            {\n                \"id\": 2,\n                \"city\": \"Mahendranagar\",\n                \"slug\": \"mnr\"\n            },\n            {\n                \"id\": 124,\n                \"city\": \"MainaPokhar\",\n                \"slug\": \"mainapokhar\"\n            },\n            {\n                \"id\": 262,\n                \"city\": \"Maldhunga\",\n                \"slug\": \"maldhunga\"\n            },\n            {\n                \"id\": 152,\n                \"city\": \"Malikarjun\",\n                \"slug\": \"malikarjun\"\n            },\n            {\n                \"id\": 66,\n                \"city\": \"Malungga\",\n                \"slug\": \"malungga\"\n            },\n            {\n                \"id\": 200,\n                \"city\": \"Mamling\",\n                \"slug\": \"mamling\"\n            },\n            {\n                \"id\": 205,\n                \"city\": \"Mane Bhanjyang\",\n                \"slug\": \"mane-bhanjyang\"\n            },\n            {\n                \"id\": 295,\n                \"city\": \"Manewa Pata\",\n                \"slug\": \"manewa-pata\"\n            },\n            {\n                \"id\": 191,\n                \"city\": \"Manma\",\n                \"slug\": \"manma\"\n            },\n            {\n                \"id\": 232,\n                \"city\": \"Maranthana\",\n                \"slug\": \"maranthana\"\n            },\n            {\n                \"id\": 38,\n                \"city\": \"Marfa\",\n                \"slug\": \"marfa\"\n            },\n            {\n                \"id\": 121,\n                \"city\": \"Masuriya\",\n                \"slug\": \"masuriya\"\n            },\n            {\n                \"id\": 178,\n                \"city\": \"Matela\",\n                \"slug\": \"matela\"\n            },\n            {\n                \"id\": 277,\n                \"city\": \"Mauribagar\",\n                \"slug\": \"mauribagar\"\n            },\n            {\n                \"id\": 265,\n                \"city\": \"Melkheath\",\n                \"slug\": \"melkheath\"\n            },\n            {\n                \"id\": 209,\n                \"city\": \"Melkuna\",\n                \"slug\": \"melkuna\"\n            },\n            {\n                \"id\": 73,\n                \"city\": \"Minahi\",\n                \"slug\": \"minahi\"\n            },\n            {\n                \"id\": 196,\n                \"city\": \"Mirchaiya\",\n                \"slug\": \"mirchaiya\"\n            },\n            {\n                \"id\": 287,\n                \"city\": \"Mirmi\",\n                \"slug\": \"mirmi\"\n            },\n            {\n                \"id\": 250,\n                \"city\": \"Mokhla\",\n                \"slug\": \"mokhla\"\n            },\n            {\n                \"id\": 199,\n                \"city\": \"Mude\",\n                \"slug\": \"mude\"\n            },\n            {\n                \"id\": 42,\n                \"city\": \"Muktinath\",\n                \"slug\": \"muktinath\"\n            },\n            {\n                \"id\": 164,\n                \"city\": \"Murkuchi\",\n                \"slug\": \"murkuchi\"\n            },\n            {\n                \"id\": 97,\n                \"city\": \"Musuriya\",\n                \"slug\": \"musuriya\"\n            },\n            {\n                \"id\": 270,\n                \"city\": \"Musyakhan\",\n                \"slug\": \"musyakhan\"\n            },\n            {\n                \"id\": 194,\n                \"city\": \"Nagma\",\n                \"slug\": \"nagma\"\n            },\n            {\n                \"id\": 6,\n                \"city\": \"Narayangarh\",\n                \"slug\": \"narayangadh\"\n            },\n            {\n                \"id\": 263,\n                \"city\": \"Naudada\",\n                \"slug\": \"naudada\"\n            },\n            {\n                \"id\": 51,\n                \"city\": \"Nepalgunj\",\n                \"slug\": \"dharan\"\n            },\n            {\n                \"id\": 163,\n                \"city\": \"Nepaltar\",\n                \"slug\": \"nepaltar\"\n            },\n            {\n                \"id\": 23,\n                \"city\": \"Nisi\",\n                \"slug\": \"nisi\"\n            },\n            {\n                \"id\": 20,\n                \"city\": \"Nowara\",\n                \"slug\": \"nowara\"\n            },\n            {\n                \"id\": 41,\n                \"city\": \"Nuwakot\",\n                \"slug\": \"kusma-2\"\n            },\n            {\n                \"id\": 95,\n                \"city\": \"Pahalmanpur\",\n                \"slug\": \"pahalmanpur\"\n            },\n            {\n                \"id\": 234,\n                \"city\": \"Palpa\",\n                \"slug\": \"palpa\"\n            },\n            {\n                \"id\": 153,\n                \"city\": \"Panjyunaya\",\n                \"slug\": \"panjyunaya\"\n            },\n            {\n                \"id\": 167,\n                \"city\": \"Pashupatinagar\",\n                \"slug\": \"pashupatinagar\"\n            },\n            {\n                \"id\": 151,\n                \"city\": \"Pasthi\",\n                \"slug\": \"pasthi\"\n            },\n            {\n                \"id\": 96,\n                \"city\": \"Patan\",\n                \"slug\": \"patan\"\n            },\n            {\n                \"id\": 193,\n                \"city\": \"Pile\",\n                \"slug\": \"pile\"\n            },\n            {\n                \"id\": 210,\n                \"city\": \"Pipey\",\n                \"slug\": \"pipey\"\n            },\n            {\n                \"id\": 3,\n                \"city\": \"Pokhara\",\n                \"slug\": \"pkr\"\n            },\n            {\n                \"id\": 45,\n                \"city\": \"Pokharebaar\",\n                \"slug\": \"pokharebaar\"\n            },\n            {\n                \"id\": 254,\n                \"city\": \"Pyuthan\",\n                \"slug\": \"pyuthan\"\n            },\n            {\n                \"id\": 177,\n                \"city\": \"Radi\",\n                \"slug\": \"radi\"\n            },\n            {\n                \"id\": 107,\n                \"city\": \"Raduwa Khola\",\n                \"slug\": \"raduwa-khola\"\n            },\n            {\n                \"id\": 129,\n                \"city\": \"Rajapur\",\n                \"slug\": \"rajapur\"\n            },\n            {\n                \"id\": 297,\n                \"city\": \"Rajbiraj\",\n                \"slug\": \"rajbiraj\"\n            },\n            {\n                \"id\": 301,\n                \"city\": \"Rajgadh\",\n                \"slug\": \"rajgadh\"\n            },\n            {\n                \"id\": 189,\n                \"city\": \"Rakam\",\n                \"slug\": \"rakam\"\n            },\n            {\n                \"id\": 186,\n                \"city\": \"Rambapur\",\n                \"slug\": \"rambapur\"\n            },\n            {\n                \"id\": 135,\n                \"city\": \"Rampur\",\n                \"slug\": \"rampur\"\n            },\n            {\n                \"id\": 136,\n                \"city\": \"Rangely\",\n                \"slug\": \"rangely\"\n            },\n            {\n                \"id\": 299,\n                \"city\": \"Ranipani\",\n                \"slug\": \"ranipani\"\n            },\n            {\n                \"id\": 298,\n                \"city\": \"Ratna Chaur\",\n                \"slug\": \"ratna-chaur\"\n            },\n            {\n                \"id\": 286,\n                \"city\": \"Ratodhunga\",\n                \"slug\": \"ratodhunga\"\n            },\n            {\n                \"id\": 235,\n                \"city\": \"Ridi\",\n                \"slug\": \"ridi\"\n            },\n            {\n                \"id\": 16,\n                \"city\": \"Rijalchok/Ghoda badi\",\n                \"slug\": \"rijalchok-ghoda-badi\"\n            },\n            {\n                \"id\": 206,\n                \"city\": \"Rimna\",\n                \"slug\": \"rimna\"\n            },\n            {\n                \"id\": 215,\n                \"city\": \"Rolpa\",\n                \"slug\": \"rolpa\"\n            },\n            {\n                \"id\": 245,\n                \"city\": \"Rukumkhalanga\",\n                \"slug\": \"rukumkhalanga\"\n            },\n            {\n                \"id\": 28,\n                \"city\": \"Rukumkot\",\n                \"slug\": \"rukumkot\"\n            },\n            {\n                \"id\": 86,\n                \"city\": \"Sadbach\",\n                \"slug\": \"sadbach\"\n            },\n            {\n                \"id\": 111,\n                \"city\": \"SafeyBagar\",\n                \"slug\": \"safeybagar\"\n            },\n            {\n                \"id\": 113,\n                \"city\": \"Sajhghat\",\n                \"slug\": \"sajhghat\"\n            },\n            {\n                \"id\": 244,\n                \"city\": \"Salabhang\",\n                \"slug\": \"salabhang\"\n            },\n            {\n                \"id\": 169,\n                \"city\": \"salli\",\n                \"slug\": \"salli\"\n            },\n            {\n                \"id\": 223,\n                \"city\": \"Salyan\",\n                \"slug\": \"salyan\"\n            },\n            {\n                \"id\": 103,\n                \"city\": \"Samsherganj\",\n                \"slug\": \"samsherganj\"\n            },\n            {\n                \"id\": 224,\n                \"city\": \"Sankhamul\",\n                \"slug\": \"sankhamul\"\n            },\n            {\n                \"id\": 217,\n                \"city\": \"Satdobato\",\n                \"slug\": \"satdobato\"\n            },\n            {\n                \"id\": 157,\n                \"city\": \"Satti\",\n                \"slug\": \"satti\"\n            },\n            {\n                \"id\": 202,\n                \"city\": \"Sawakhola\",\n                \"slug\": \"sawakhola\"\n            },\n            {\n                \"id\": 290,\n                \"city\": \"Sera\",\n                \"slug\": \"sera\"\n            },\n            {\n                \"id\": 226,\n                \"city\": \"Sgim Kharka\",\n                \"slug\": \"sgim-kharka\"\n            },\n            {\n                \"id\": 246,\n                \"city\": \"Shank\",\n                \"slug\": \"shank\"\n            },\n            {\n                \"id\": 130,\n                \"city\": \"Shanti Bazar\",\n                \"slug\": \"shanti-bazar\"\n            },\n            {\n                \"id\": 243,\n                \"city\": \"Shimroute\",\n                \"slug\": \"shimroute\"\n            },\n            {\n                \"id\": 285,\n                \"city\": \"Shinga Tatopani\",\n                \"slug\": \"shinga-tatopani\"\n            },\n            {\n                \"id\": 75,\n                \"city\": \"Shisne\",\n                \"slug\": \"shisne\"\n            },\n            {\n                \"id\": 271,\n                \"city\": \"Shreebhawar\",\n                \"slug\": \"shreebhawar\"\n            },\n            {\n                \"id\": 222,\n                \"city\": \"Shreenagar\",\n                \"slug\": \"shreenagar\"\n            },\n            {\n                \"id\": 110,\n                \"city\": \"Silgadhi\",\n                \"slug\": \"silgadhi\"\n            },\n            {\n                \"id\": 154,\n                \"city\": \"Sillagada\",\n                \"slug\": \"sillagada\"\n            },\n            {\n                \"id\": 238,\n                \"city\": \"Simaltari\",\n                \"slug\": \"simaltari\"\n            },\n            {\n                \"id\": 31,\n                \"city\": \"Simli\",\n                \"slug\": \"simlya\"\n            },\n            {\n                \"id\": 283,\n                \"city\": \"Singa\",\n                \"slug\": \"singa\"\n            },\n            {\n                \"id\": 140,\n                \"city\": \"Sobarnapur\",\n                \"slug\": \"sobarnapur\"\n            },\n            {\n                \"id\": 279,\n                \"city\": \"Subeda\",\n                \"slug\": \"subeda\"\n            },\n            {\n                \"id\": 93,\n                \"city\": \"Sukkhad\",\n                \"slug\": \"sukkhad\"\n            },\n            {\n                \"id\": 213,\n                \"city\": \"Sulichaur\",\n                \"slug\": \"sulichaur\"\n            },\n            {\n                \"id\": 257,\n                \"city\": \"Sunauli\",\n                \"slug\": \"sunauli\"\n            },\n            {\n                \"id\": 274,\n                \"city\": \"Sunkudaa\",\n                \"slug\": \"sunkudaa\"\n            },\n            {\n                \"id\": 54,\n                \"city\": \"Surkhet\",\n                \"slug\": \"surkhet\"\n            },\n            {\n                \"id\": 62,\n                \"city\": \"Syanja\",\n                \"slug\": \"syanja\"\n            },\n            {\n                \"id\": 100,\n                \"city\": \"Syaowl\",\n                \"slug\": \"syaowl\"\n            },\n            {\n                \"id\": 106,\n                \"city\": \"Syaule\",\n                \"slug\": \"syaule\"\n            },\n            {\n                \"id\": 292,\n                \"city\": \"Tallafat\",\n                \"slug\": \"tallafat\"\n            },\n            {\n                \"id\": 300,\n                \"city\": \"Tallu Bagar\",\n                \"slug\": \"tallu-bagar\"\n            },\n            {\n                \"id\": 278,\n                \"city\": \"Tamel\",\n                \"slug\": \"tamel\"\n            },\n            {\n                \"id\": 237,\n                \"city\": \"Tamgas\",\n                \"slug\": \"tamgas\"\n            },\n            {\n                \"id\": 117,\n                \"city\": \"Tapkesera\",\n                \"slug\": \"tapkesera\"\n            },\n            {\n                \"id\": 228,\n                \"city\": \"Taplejung\",\n                \"slug\": \"taplegung\"\n            },\n            {\n                \"id\": 127,\n                \"city\": \"Tarataal\",\n                \"slug\": \"tarataal\"\n            },\n            {\n                \"id\": 30,\n                \"city\": \"Tatopani\",\n                \"slug\": \"tatopani\"\n            },\n            {\n                \"id\": 184,\n                \"city\": \"Tenkoriya\",\n                \"slug\": \"tenkoriya\"\n            },\n            {\n                \"id\": 80,\n                \"city\": \"Thakleni\",\n                \"slug\": \"thakleni\"\n            },\n            {\n                \"id\": 282,\n                \"city\": \"Thakurdwar\",\n                \"slug\": \"thakurdwar\"\n            },\n            {\n                \"id\": 240,\n                \"city\": \"Tharmarey\",\n                \"slug\": \"tharmarey\"\n            },\n            {\n                \"id\": 230,\n                \"city\": \"Therathum\",\n                \"slug\": \"therathum\"\n            },\n            {\n                \"id\": 139,\n                \"city\": \"Thori\",\n                \"slug\": \"thori\"\n            },\n            {\n                \"id\": 233,\n                \"city\": \"Thulabesi\",\n                \"slug\": \"thulabesi\"\n            },\n            {\n                \"id\": 156,\n                \"city\": \"Tikapur\",\n                \"slug\": \"tikapur\"\n            },\n            {\n                \"id\": 71,\n                \"city\": \"Tila\",\n                \"slug\": \"tila\"\n            },\n            {\n                \"id\": 46,\n                \"city\": \"TipLang\",\n                \"slug\": \"tiplang\"\n            },\n            {\n                \"id\": 70,\n                \"city\": \"Tribeni\",\n                \"slug\": \"tribeni\"\n            },\n            {\n                \"id\": 118,\n                \"city\": \"Tripada\",\n                \"slug\": \"tripada\"\n            },\n            {\n                \"id\": 37,\n                \"city\": \"Tukuche\",\n                \"slug\": \"tukuche\"\n            },\n            {\n                \"id\": 143,\n                \"city\": \"Tulsipur\",\n                \"slug\": \"tulsipur\"\n            },\n            {\n                \"id\": 203,\n                \"city\": \"Tumlingtar\",\n                \"slug\": \"tumlingtar\"\n            },\n            {\n                \"id\": 188,\n                \"city\": \"Tunibagar\",\n                \"slug\": \"tunibagar\"\n            },\n            {\n                \"id\": 63,\n                \"city\": \"Walling\",\n                \"slug\": \"walling\"\n            },\n            {\n                \"id\": 289,\n                \"city\": \"Wamitaksar\",\n                \"slug\": \"wamitaksar\"\n            },\n            {\n                \"id\": 183,\n                \"city\": \"Yedhukuwa\",\n                \"slug\": \"yedhukuwa\"\n            }\n        ]\n    },\n    \"message\": \"Location\"\n}"
+						}
+					]
+				},
+				{
+					"name": "location single detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/location-detail/:location_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"location-detail",
+								":location_id"
+							],
+							"variable": [
+								{
+									"key": "location_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "location single detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api-external/location-detail/:location_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"location-detail",
+										":location_id"
+									],
+									"variable": [
+										{
+											"key": "location_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Aug 2024 09:25:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc; expires=Tue, 13-Aug-2024 11:25:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"city\": \"Kathmandu\",\n        \"slug\": \"ktm\"\n    },\n    \"message\": \"Location Single\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "route",
+			"item": [
+				{
+					"name": "route list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/route-list?paginate=&limit=&page=&search_keyword=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"route-list"
+							],
+							"query": [
+								{
+									"key": "paginate",
+									"value": "",
+									"description": "e.g. 1"
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "e.g. 10"
+								},
+								{
+									"key": "page",
+									"value": "",
+									"description": "e.g. 1"
+								},
+								{
+									"key": "search_keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "route list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api-external/route-list?paginate=&limit=&page=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"route-list"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "",
+											"description": "e.g. 1"
+										},
+										{
+											"key": "limit",
+											"value": "",
+											"description": "e.g. 10"
+										},
+										{
+											"key": "page",
+											"value": "",
+											"description": "e.g. 1"
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Aug 2024 09:25:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc; expires=Tue, 13-Aug-2024 11:25:56 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 65,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 161,\n                    \"city\": \"Hile\",\n                    \"slug\": \"hile\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-025\"\n            },\n            {\n                \"id\": 64,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 302,\n                    \"city\": \"Gaurigunj\",\n                    \"slug\": \"gaurigunj\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-064\"\n            },\n            {\n                \"id\": 63,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 301,\n                    \"city\": \"Rajgadh\",\n                    \"slug\": \"rajgadh\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-063\"\n            },\n            {\n                \"id\": 37,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 300,\n                    \"city\": \"Tallu Bagar\",\n                    \"slug\": \"tallu-bagar\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-037\"\n            },\n            {\n                \"id\": 62,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 299,\n                    \"city\": \"Ranipani\",\n                    \"slug\": \"ranipani\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-062\"\n            },\n            {\n                \"id\": 6,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 39,\n                    \"city\": \"Jomsom\",\n                    \"slug\": \"jomsom\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-006\"\n            },\n            {\n                \"id\": 61,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 298,\n                    \"city\": \"Ratna Chaur\",\n                    \"slug\": \"ratna-chaur\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-061\"\n            },\n            {\n                \"id\": 60,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 297,\n                    \"city\": \"Rajbiraj\",\n                    \"slug\": \"rajbiraj\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-060\"\n            },\n            {\n                \"id\": 59,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 166,\n                    \"city\": \"Budhabare\",\n                    \"slug\": \"budhabare\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-059\"\n            },\n            {\n                \"id\": 58,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 296,\n                    \"city\": \"Haraiya\",\n                    \"slug\": \"haraiya\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-058\"\n            },\n            {\n                \"id\": 57,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 24,\n                    \"city\": \"Bhalkot\",\n                    \"slug\": \"bhalkot\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-057\"\n            },\n            {\n                \"id\": 56,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 288,\n                    \"city\": \"Bhuwachidi(Gulmi)\",\n                    \"slug\": \"bhuwachidi-gulmi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-056\"\n            },\n            {\n                \"id\": 17,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 132,\n                    \"city\": \"Bardiya\",\n                    \"slug\": \"bardiya\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-017\"\n            },\n            {\n                \"id\": 55,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 287,\n                    \"city\": \"Mirmi\",\n                    \"slug\": \"mirmi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-055\"\n            },\n            {\n                \"id\": 54,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 47,\n                    \"city\": \"Darbang\",\n                    \"slug\": \"darbang\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-054\"\n            },\n            {\n                \"id\": 53,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 280,\n                    \"city\": \"Bajhang\",\n                    \"slug\": \"bajhang\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-053\"\n            },\n            {\n                \"id\": 52,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 148,\n                    \"city\": \"Darchula\",\n                    \"slug\": \"darchula\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-052\"\n            },\n            {\n                \"id\": 51,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 22,\n                    \"city\": \"Burtibang\",\n                    \"slug\": \"burtibang\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-051\"\n            },\n            {\n                \"id\": 50,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 15,\n                    \"city\": \"Baglung\",\n                    \"slug\": \"baglung\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-050\"\n            },\n            {\n                \"id\": 49,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 40,\n                    \"city\": \"Beni\",\n                    \"slug\": \"beni\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-049\"\n            },\n            {\n                \"id\": 48,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 257,\n                    \"city\": \"Sunauli\",\n                    \"slug\": \"sunauli\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-048\"\n            },\n            {\n                \"id\": 47,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 256,\n                    \"city\": \"Lumbini\",\n                    \"slug\": \"lumbini\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-047\"\n            },\n            {\n                \"id\": 46,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 254,\n                    \"city\": \"Pyuthan\",\n                    \"slug\": \"pyuthan\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-046\"\n            },\n            {\n                \"id\": 45,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 28,\n                    \"city\": \"Rukumkot\",\n                    \"slug\": \"rukumkot\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-045\"\n            },\n            {\n                \"id\": 44,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 239,\n                    \"city\": \"Gulmi\",\n                    \"slug\": \"gulmi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-044\"\n            },\n            {\n                \"id\": 43,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 233,\n                    \"city\": \"Thulabesi\",\n                    \"slug\": \"thulabesi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-043\"\n            },\n            {\n                \"id\": 42,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 156,\n                    \"city\": \"Tikapur\",\n                    \"slug\": \"tikapur\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-042\"\n            },\n            {\n                \"id\": 41,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 230,\n                    \"city\": \"Therathum\",\n                    \"slug\": \"therathum\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-041\"\n            },\n            {\n                \"id\": 40,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 228,\n                    \"city\": \"Taplejung\",\n                    \"slug\": \"taplegung\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-040\"\n            },\n            {\n                \"id\": 39,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 223,\n                    \"city\": \"Salyan\",\n                    \"slug\": \"salyan\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-039\"\n            },\n            {\n                \"id\": 38,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 215,\n                    \"city\": \"Rolpa\",\n                    \"slug\": \"rolpa\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-038\"\n            },\n            {\n                \"id\": 36,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 167,\n                    \"city\": \"Pashupatinagar\",\n                    \"slug\": \"pashupatinagar\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-036\"\n            },\n            {\n                \"id\": 35,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 163,\n                    \"city\": \"Nepaltar\",\n                    \"slug\": \"nepaltar\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-035\"\n            },\n            {\n                \"id\": 34,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 51,\n                    \"city\": \"Nepalgunj\",\n                    \"slug\": \"dharan\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-034\"\n            },\n            {\n                \"id\": 33,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 204,\n                    \"city\": \"Khadbari\",\n                    \"slug\": \"khadbari\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-033\"\n            },\n            {\n                \"id\": 32,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 197,\n                    \"city\": \"Katari\",\n                    \"slug\": \"katari\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-032\"\n            },\n            {\n                \"id\": 31,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 195,\n                    \"city\": \"Jumla\",\n                    \"slug\": \"jumla\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-031\"\n            },\n            {\n                \"id\": 30,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 179,\n                    \"city\": \"Janakpur\",\n                    \"slug\": \"janakpur\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-030\"\n            },\n            {\n                \"id\": 29,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 172,\n                    \"city\": \"Jajarkot\",\n                    \"slug\": \"jajarkot\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-029\"\n            },\n            {\n                \"id\": 28,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 168,\n                    \"city\": \"Illam\",\n                    \"slug\": \"illam\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-028\"\n            },\n            {\n                \"id\": 27,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 64,\n                    \"city\": \"Galayang\",\n                    \"slug\": \"galayang\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-027\"\n            },\n            {\n                \"id\": 26,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 162,\n                    \"city\": \"GaiGhat\",\n                    \"slug\": \"gaighat\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-026\"\n            },\n            {\n                \"id\": 24,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 159,\n                    \"city\": \"Dhangadi\",\n                    \"slug\": \"dhangadi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-024\"\n            },\n            {\n                \"id\": 23,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 88,\n                    \"city\": \"Dadeldhura\",\n                    \"slug\": \"dadeldhura\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-023\"\n            },\n            {\n                \"id\": 22,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 78,\n                    \"city\": \"Dang\",\n                    \"slug\": \"dang\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-022\"\n            },\n            {\n                \"id\": 21,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 137,\n                    \"city\": \"Birgunj\",\n                    \"slug\": \"birgunj\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-021\"\n            },\n            {\n                \"id\": 19,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 4,\n                    \"city\": \"Biratnagar\",\n                    \"slug\": \"brtngr\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-019\"\n            },\n            {\n                \"id\": 18,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 134,\n                    \"city\": \"Beltar\",\n                    \"slug\": \"beltar\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-018\"\n            },\n            {\n                \"id\": 16,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 112,\n                    \"city\": \"Bajura\",\n                    \"slug\": \"bajura\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-016\"\n            },\n            {\n                \"id\": 15,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 91,\n                    \"city\": \"Baitadi\",\n                    \"slug\": \"baitadi\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-015\"\n            },\n            {\n                \"id\": 14,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 83,\n                    \"city\": \"Bahane\",\n                    \"slug\": \"bahane\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-014\"\n            },\n            {\n                \"id\": 13,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 77,\n                    \"city\": \"Bagkmara\",\n                    \"slug\": \"bagkmara\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-013\"\n            },\n            {\n                \"id\": 12,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 67,\n                    \"city\": \"Agahakhola\",\n                    \"slug\": \"agahakhola\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-012\"\n            },\n            {\n                \"id\": 11,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 65,\n                    \"city\": \"Dailekh\",\n                    \"slug\": \"dailekh\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-011\"\n            },\n            {\n                \"id\": 10,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 62,\n                    \"city\": \"Syanja\",\n                    \"slug\": \"syanja\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-010\"\n            },\n            {\n                \"id\": 9,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 29,\n                    \"city\": \"Khalanga\",\n                    \"slug\": \"khalanga\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-009\"\n            },\n            {\n                \"id\": 8,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 54,\n                    \"city\": \"Surkhet\",\n                    \"slug\": \"surkhet\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-008\"\n            },\n            {\n                \"id\": 7,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 52,\n                    \"city\": \"Dharan\",\n                    \"slug\": \"dharan-2\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-007\"\n            },\n            {\n                \"id\": 5,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 31,\n                    \"city\": \"Simli\",\n                    \"slug\": \"simlya\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-005\"\n            },\n            {\n                \"id\": 1,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 12,\n                    \"city\": \"Kakadvitta\",\n                    \"slug\": \"kakadvitta\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-001\"\n            },\n            {\n                \"id\": 4,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 11,\n                    \"city\": \"Bhadrapur\",\n                    \"slug\": \"bhardrapur\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-004\"\n            },\n            {\n                \"id\": 2,\n                \"from_location\": {\n                    \"id\": 1,\n                    \"city\": \"Kathmandu\",\n                    \"slug\": \"ktm\"\n                },\n                \"to_location\": {\n                    \"id\": 2,\n                    \"city\": \"Mahendranagar\",\n                    \"slug\": \"mnr\"\n                },\n                \"status\": \"Enabled\",\n                \"code\": \"R-002\"\n            }\n        ]\n    },\n    \"message\": \"Route\"\n}"
+						}
+					]
+				},
+				{
+					"name": "route single detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api-external/route-detail/:route_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-external",
+								"route-detail",
+								":route_id"
+							],
+							"variable": [
+								{
+									"key": "route_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "route single detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api-external/route-detail/:route_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api-external",
+										"route-detail",
+										":route_id"
+									],
+									"variable": [
+										{
+											"key": "route_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Aug 2024 09:26:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "buspark_ticketing_session=4vTalkL0kK7b8ioVwSBbKeVinZSw69G23V5OL7Gc; expires=Tue, 13-Aug-2024 11:26:02 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"from_location\": {\n            \"id\": 1,\n            \"city\": \"Kathmandu\",\n            \"slug\": \"ktm\"\n        },\n        \"to_location\": {\n            \"id\": 12,\n            \"city\": \"Kakadvitta\",\n            \"slug\": \"kakadvitta\"\n        },\n        \"status\": \"Enabled\",\n        \"code\": \"R-001\"\n    },\n    \"message\": \"Route Single\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "bus",
 			"item": [
 				{
@@ -386,7 +840,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api-external/bus-schedule-list?date=2081-04-22&route_code=&association_code=&bus_facility_type_code=&paginate=&limit=&page=",
+							"raw": "{{url}}/api-external/bus-schedule-list?date=2081-05-01&route_code=&association_code=&bus_facility_type_code=&paginate=&limit=&page=",
 							"host": [
 								"{{url}}"
 							],
@@ -397,7 +851,7 @@
 							"query": [
 								{
 									"key": "date",
-									"value": "2081-04-22",
+									"value": "2081-05-01",
 									"description": "required, Schedule Bus Date e.g. 2081-04-03"
 								},
 								{
