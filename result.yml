@@ -2031,7 +2031,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Wed, 04 Sep 2024 11:52:13 GMT
+                example: Thu, 05 Sep 2024 05:19:05 GMT
             Content-Type:
               schema:
                 type: string
@@ -2043,7 +2043,7 @@ paths:
             X-RateLimit-Remaining:
               schema:
                 type: integer
-                example: '59'
+                example: '56'
             Vary:
               schema:
                 type: string
@@ -2052,8 +2052,8 @@ paths:
               schema:
                 type: string
                 example: >-
-                  buspark_ticketing_session=tIQCavVI1s5pK1wrJwba9Rbb6FHoVZIx4PrUARYR;
-                  expires=Wed, 04-Sep-2024 13:52:14 GMT; Max-Age=7200; path=/;
+                  buspark_ticketing_session=rqlIX8yirGsgjqptf8trGYSfqdfTJD3tw3lR1qnj;
+                  expires=Thu, 05-Sep-2024 07:19:05 GMT; Max-Age=7200; path=/;
                   httponly; samesite=lax
           content:
             application/json:
@@ -2073,153 +2073,33 @@ paths:
                     - bus_id: 7
                       bus_no: ba3kha 9665
                       id: 7
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 4
-                        name: Deluxe
-                        description: ''
-                        code: Deluxe
                     - bus_id: 8
                       bus_no: ba5kha 283
                       id: 8
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                     - bus_id: 9
                       bus_no: ba4kha 5790
                       id: 9
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 4
-                        name: Deluxe
-                        description: ''
-                        code: Deluxe
                     - bus_id: 10
                       bus_no: ba4kha 5788
                       id: 10
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 4
-                        name: Deluxe
-                        description: ''
-                        code: Deluxe
                     - bus_id: 12
                       bus_no: ba3kha 9674
                       id: 12
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 4
-                        name: Deluxe
-                        description: ''
-                        code: Deluxe
                     - bus_id: 13
                       bus_no: ba4kha 5758
                       id: 13
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                     - bus_id: 14
                       bus_no: ba5kha 9858
                       id: 14
-                      bus_type:
-                        id: 32
-                        name: NBus 31(C4 B2 L1)
-                        total_seats: 31
-                        max_grid_x: 13
-                        max_grid_y: 8
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                     - bus_id: 15
                       bus_no: pra3.1.5kha 9859
                       id: 15
-                      bus_type:
-                        id: 32
-                        name: NBus 31(C4 B2 L1)
-                        total_seats: 31
-                        max_grid_x: 13
-                        max_grid_y: 8
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                     - bus_id: 16
                       bus_no: ga1kha 8551
                       id: 16
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                     - bus_id: 17
                       bus_no: ga1kha 7899
                       id: 17
-                      bus_type:
-                        id: 8
-                        name: Seat32(C4 B2 L2)
-                        total_seats: 32
-                        max_grid_x: 12
-                        max_grid_y: 10
-                        description: null
-                      bus_facility_type:
-                        id: 1
-                        name: AC
-                        description: ''
-                        code: AC
                   links:
                     first: http://localhost:8000/api-external/bus-list?page=1
                     last: http://localhost:8000/api-external/bus-list?page=110
@@ -2262,7 +2142,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Wed, 04 Sep 2024 11:52:29 GMT
+                example: Thu, 05 Sep 2024 05:52:19 GMT
             Content-Type:
               schema:
                 type: string
@@ -2274,7 +2154,7 @@ paths:
             X-RateLimit-Remaining:
               schema:
                 type: integer
-                example: '58'
+                example: '59'
             Vary:
               schema:
                 type: string
@@ -2283,8 +2163,8 @@ paths:
               schema:
                 type: string
                 example: >-
-                  buspark_ticketing_session=tIQCavVI1s5pK1wrJwba9Rbb6FHoVZIx4PrUARYR;
-                  expires=Wed, 04-Sep-2024 13:52:29 GMT; Max-Age=7200; path=/;
+                  buspark_ticketing_session=rqlIX8yirGsgjqptf8trGYSfqdfTJD3tw3lR1qnj;
+                  expires=Thu, 05-Sep-2024 07:52:19 GMT; Max-Age=7200; path=/;
                   httponly; samesite=lax
           content:
             application/json:
@@ -2296,6 +2176,17 @@ paths:
                     bus_id: 7
                     bus_no: ba3kha 9665
                     id: 7
+                    association:
+                      id: 59
+                      slug: ghodaghodi-yatayat-pvt-ltd
+                      name: Ghodaghodi Yatayat Pvt Ltd
+                      logo: null
+                      photo: null
+                      code: S-059
+                    company:
+                      id: 18
+                      slug: ghodaghodi-yatayat-c1
+                      company_name: Ghodaghodi Yatayat
                     bus_type:
                       id: 8
                       name: Seat32(C4 B2 L2)
@@ -2303,231 +2194,6 @@ paths:
                       max_grid_x: 12
                       max_grid_y: 10
                       description: null
-                      bus_type_seats:
-                        - id: 112
-                          bus_type_id: 8
-                          seat_name: Bख
-                          grid_x: 6
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 113
-                          bus_type_id: 8
-                          seat_name: B2
-                          grid_x: 7
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 114
-                          bus_type_id: 8
-                          seat_name: B4
-                          grid_x: 8
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 115
-                          bus_type_id: 8
-                          seat_name: B6
-                          grid_x: 9
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 116
-                          bus_type_id: 8
-                          seat_name: B8
-                          grid_x: 10
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 117
-                          bus_type_id: 8
-                          seat_name: B10
-                          grid_x: 11
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 118
-                          bus_type_id: 8
-                          seat_name: B12
-                          grid_x: 12
-                          grid_y: 5
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 119
-                          bus_type_id: 8
-                          seat_name: Bक
-                          grid_x: 6
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 120
-                          bus_type_id: 8
-                          seat_name: B1
-                          grid_x: 7
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 121
-                          bus_type_id: 8
-                          seat_name: B3
-                          grid_x: 8
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 122
-                          bus_type_id: 8
-                          seat_name: B5
-                          grid_x: 9
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 123
-                          bus_type_id: 8
-                          seat_name: B7
-                          grid_x: 10
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 124
-                          bus_type_id: 8
-                          seat_name: B9
-                          grid_x: 11
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 125
-                          bus_type_id: 8
-                          seat_name: B11
-                          grid_x: 12
-                          grid_y: 6
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 126
-                          bus_type_id: 8
-                          seat_name: '14'
-                          grid_x: 12
-                          grid_y: 7
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 127
-                          bus_type_id: 8
-                          seat_name: '13'
-                          grid_x: 12
-                          grid_y: 8
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 128
-                          bus_type_id: 8
-                          seat_name: A2
-                          grid_x: 7
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 129
-                          bus_type_id: 8
-                          seat_name: A4
-                          grid_x: 8
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 130
-                          bus_type_id: 8
-                          seat_name: A6
-                          grid_x: 9
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 131
-                          bus_type_id: 8
-                          seat_name: A8
-                          grid_x: 10
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 132
-                          bus_type_id: 8
-                          seat_name: A10
-                          grid_x: 11
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 133
-                          bus_type_id: 8
-                          seat_name: A12
-                          grid_x: 12
-                          grid_y: 9
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 134
-                          bus_type_id: 8
-                          seat_name: C1
-                          grid_x: 1
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 135
-                          bus_type_id: 8
-                          seat_name: C2
-                          grid_x: 2
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 136
-                          bus_type_id: 8
-                          seat_name: C3
-                          grid_x: 3
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 137
-                          bus_type_id: 8
-                          seat_name: C4
-                          grid_x: 4
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 138
-                          bus_type_id: 8
-                          seat_name: A1
-                          grid_x: 7
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 139
-                          bus_type_id: 8
-                          seat_name: A3
-                          grid_x: 8
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 140
-                          bus_type_id: 8
-                          seat_name: A5
-                          grid_x: 9
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 141
-                          bus_type_id: 8
-                          seat_name: A7
-                          grid_x: 10
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 142
-                          bus_type_id: 8
-                          seat_name: A9
-                          grid_x: 11
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
-                        - id: 143
-                          bus_type_id: 8
-                          seat_name: A11
-                          grid_x: 12
-                          grid_y: 10
-                          created_at: 2022-08-23, 09:50 AM
-                          updated_at: 2022-08-23, 09:50 AM
                     bus_facility_type:
                       id: 4
                       name: Deluxe
@@ -2538,290 +2204,162 @@ paths:
                       grid_x: 6
                       grid_y: 5
                       seat_name: Bख
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 113
                       grid_x: 7
                       grid_y: 5
                       seat_name: B2
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 114
                       grid_x: 8
                       grid_y: 5
                       seat_name: B4
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 115
                       grid_x: 9
                       grid_y: 5
                       seat_name: B6
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 116
                       grid_x: 10
                       grid_y: 5
                       seat_name: B8
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 117
                       grid_x: 11
                       grid_y: 5
                       seat_name: B10
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 118
                       grid_x: 12
                       grid_y: 5
                       seat_name: B12
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 119
                       grid_x: 6
                       grid_y: 6
                       seat_name: Bक
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 120
                       grid_x: 7
                       grid_y: 6
                       seat_name: B1
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 121
                       grid_x: 8
                       grid_y: 6
                       seat_name: B3
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 122
                       grid_x: 9
                       grid_y: 6
                       seat_name: B5
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 123
                       grid_x: 10
                       grid_y: 6
                       seat_name: B7
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 124
                       grid_x: 11
                       grid_y: 6
                       seat_name: B9
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 125
                       grid_x: 12
                       grid_y: 6
                       seat_name: B11
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 126
                       grid_x: 12
                       grid_y: 7
                       seat_name: '14'
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 127
                       grid_x: 12
                       grid_y: 8
                       seat_name: '13'
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 128
                       grid_x: 7
                       grid_y: 9
                       seat_name: A2
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 129
                       grid_x: 8
                       grid_y: 9
                       seat_name: A4
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 130
                       grid_x: 9
                       grid_y: 9
                       seat_name: A6
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 131
                       grid_x: 10
                       grid_y: 9
                       seat_name: A8
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 132
                       grid_x: 11
                       grid_y: 9
                       seat_name: A10
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 133
                       grid_x: 12
                       grid_y: 9
                       seat_name: A12
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 134
                       grid_x: 1
                       grid_y: 10
                       seat_name: C1
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 135
                       grid_x: 2
                       grid_y: 10
                       seat_name: C2
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 136
                       grid_x: 3
                       grid_y: 10
                       seat_name: C3
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 137
                       grid_x: 4
                       grid_y: 10
                       seat_name: C4
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 138
                       grid_x: 7
                       grid_y: 10
                       seat_name: A1
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 139
                       grid_x: 8
                       grid_y: 10
                       seat_name: A3
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 140
                       grid_x: 9
                       grid_y: 10
                       seat_name: A5
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 141
                       grid_x: 10
                       grid_y: 10
                       seat_name: A7
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 142
                       grid_x: 11
                       grid_y: 10
                       seat_name: A9
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                     - seat_id: 143
                       grid_x: 12
                       grid_y: 10
                       seat_name: A11
-                      seat_status: Disabled
-                      start_time: null
-                      end_time: null
-                      available_to: ''
-                      user_id: ''
+                      seat_status: Active
                 message: success
   /api-external/bus-schedule-list:
     get:
@@ -2889,7 +2427,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Wed, 04 Sep 2024 11:52:45 GMT
+                example: Thu, 05 Sep 2024 05:52:31 GMT
             Content-Type:
               schema:
                 type: string
@@ -2901,7 +2439,7 @@ paths:
             X-RateLimit-Remaining:
               schema:
                 type: integer
-                example: '57'
+                example: '58'
             Vary:
               schema:
                 type: string
@@ -2910,8 +2448,8 @@ paths:
               schema:
                 type: string
                 example: >-
-                  buspark_ticketing_session=tIQCavVI1s5pK1wrJwba9Rbb6FHoVZIx4PrUARYR;
-                  expires=Wed, 04-Sep-2024 13:52:45 GMT; Max-Age=7200; path=/;
+                  buspark_ticketing_session=rqlIX8yirGsgjqptf8trGYSfqdfTJD3tw3lR1qnj;
+                  expires=Thu, 05-Sep-2024 07:52:31 GMT; Max-Age=7200; path=/;
                   httponly; samesite=lax
           content:
             application/json:
@@ -2926,8 +2464,8 @@ paths:
                     path: >-
                       http://localhost:8000/api-external/bus-schedule-list?limit=10
                     per_page: 10
-                    to: 1
-                    total: 1
+                    to: 2
+                    total: 2
                   data:
                     - id: 12720
                       departure_date: '2081-05-31'
@@ -2975,6 +2513,52 @@ paths:
                       shift: night
                       departure_date_ad: '2024-09-16'
                       available: 42
+                    - id: 12721
+                      departure_date: '2081-05-31'
+                      departure_time: '14:15:00'
+                      bus:
+                        bus_id: 241
+                        bus_no: na8kha 8414
+                        id: 241
+                        association:
+                          id: 59
+                          slug: ghodaghodi-yatayat-pvt-ltd
+                          name: Ghodaghodi Yatayat Pvt Ltd
+                          logo: null
+                          photo: null
+                          code: S-059
+                        company:
+                          id: 18
+                          slug: ghodaghodi-yatayat-c1
+                          company_name: Ghodaghodi Yatayat
+                        bus_type:
+                          id: 51
+                          name: NBus 39(C4 S2 A2 B2 L1)
+                          total_seats: 39
+                          max_grid_x: 14
+                          max_grid_y: 5
+                          description: null
+                        bus_facility_type:
+                          id: 4
+                          name: Deluxe
+                          description: ''
+                          code: Deluxe
+                      route_code: R-005
+                      route:
+                        id: 5
+                        from:
+                          id: 1
+                          city: Kathmandu
+                          slug: ktm
+                        to:
+                          id: 31
+                          city: Simli
+                          slug: simlya
+                        price: '2446.00'
+                        discount: null
+                      shift: night
+                      departure_date_ad: '2024-09-16'
+                      available: 39
                   links:
                     first: >-
                       http://localhost:8000/api-external/bus-schedule-list?limit=10&page=1
@@ -3042,7 +2626,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Wed, 04 Sep 2024 11:53:02 GMT
+                example: Thu, 05 Sep 2024 05:55:47 GMT
             Content-Type:
               schema:
                 type: string
@@ -3054,7 +2638,7 @@ paths:
             X-RateLimit-Remaining:
               schema:
                 type: integer
-                example: '56'
+                example: '59'
             Vary:
               schema:
                 type: string
@@ -3063,8 +2647,8 @@ paths:
               schema:
                 type: string
                 example: >-
-                  buspark_ticketing_session=tIQCavVI1s5pK1wrJwba9Rbb6FHoVZIx4PrUARYR;
-                  expires=Wed, 04-Sep-2024 13:53:02 GMT; Max-Age=7200; path=/;
+                  buspark_ticketing_session=rqlIX8yirGsgjqptf8trGYSfqdfTJD3tw3lR1qnj;
+                  expires=Thu, 05-Sep-2024 07:55:47 GMT; Max-Age=7200; path=/;
                   httponly; samesite=lax
           content:
             application/json:
@@ -3124,8 +2708,8 @@ paths:
                       grid_y: 4
                       seat_name: Bख
                       seat_status: Booked
-                      start_time: null
-                      end_time: null
+                      start_time: '2024-09-04 12:28:59'
+                      end_time: '2024-09-04 12:31:59'
                       available_to: System
                       user_id: 110
                     - seat_id: 7271
@@ -3142,8 +2726,8 @@ paths:
                       grid_y: 4
                       seat_name: B2
                       seat_status: Booked
-                      start_time: null
-                      end_time: null
+                      start_time: '2024-09-04 12:28:59'
+                      end_time: '2024-09-04 12:31:59'
                       available_to: System
                       user_id: 110
                     - seat_id: 7273
@@ -3552,7 +3136,7 @@ paths:
             Date:
               schema:
                 type: string
-                example: Wed, 04 Sep 2024 11:53:24 GMT
+                example: Thu, 05 Sep 2024 05:56:37 GMT
             Content-Type:
               schema:
                 type: string
@@ -3573,8 +3157,8 @@ paths:
               schema:
                 type: string
                 example: >-
-                  buspark_ticketing_session=tIQCavVI1s5pK1wrJwba9Rbb6FHoVZIx4PrUARYR;
-                  expires=Wed, 04-Sep-2024 13:53:24 GMT; Max-Age=7200; path=/;
+                  buspark_ticketing_session=rqlIX8yirGsgjqptf8trGYSfqdfTJD3tw3lR1qnj;
+                  expires=Thu, 05-Sep-2024 07:56:37 GMT; Max-Age=7200; path=/;
                   httponly; samesite=lax
           content:
             application/json:
@@ -3634,8 +3218,8 @@ paths:
                       grid_y: 4
                       seat_name: Bख
                       seat_status: Booked
-                      start_time: null
-                      end_time: null
+                      start_time: '2024-09-04 12:28:59'
+                      end_time: '2024-09-04 12:31:59'
                       available_to: System
                       user_id: 110
                     - seat_id: 7271
@@ -3652,8 +3236,8 @@ paths:
                       grid_y: 4
                       seat_name: B2
                       seat_status: Booked
-                      start_time: null
-                      end_time: null
+                      start_time: '2024-09-04 12:28:59'
+                      end_time: '2024-09-04 12:31:59'
                       available_to: System
                       user_id: 110
                     - seat_id: 7273
